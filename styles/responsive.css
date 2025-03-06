@@ -17,9 +17,6 @@
     .web_inner{
         padding: 0px;
     }
-    .web_contents {
-        height: 60%;
-    }
     .detail_aria {
         margin: 16% auto;
     }
@@ -31,9 +28,6 @@
     }
 }
 @media screen and (max-width:1600px){
-    .web_contents{
-        height: 60%;
-    }
     .swiper-slide .design_text {
         margin: 45px 0 50px;
         font-size:2.25rem;
@@ -204,9 +198,6 @@
     .web_project .web_contents .swiper-slide{
         padding: 20px;
     }
-    .web_contents{
-        height: 50%;
-    }
     .circle_detail{
         left: 3.5%; top: 5%;
     }
@@ -250,7 +241,7 @@
     .left_profile {
         background: #F5F5F5;
         width: 100%;
-        height: 435px; padding: 20px 0;
+        height: max-content; padding: 41px 0;
     }
     .btm_contents {
         flex-flow: column nowrap;
@@ -326,8 +317,7 @@
 }
 @media screen and (max-width:650px){
     .right_profile {
-        width: 80%; height: 475px;
-        margin-top: 70px;
+        width: 80%; height: max-content;
     }
     .right_profile .right_aria {
         align-content: start;
@@ -474,9 +464,6 @@
         font-size: 1.0625rem;
     }
     /* 마지막페이지 */
-    .web_contents{
-        height: 35%;
-    }
 }
 @media screen and (max-width:1000px){
     .quick_guide {
@@ -491,7 +478,6 @@
     .web_contents{
         margin: 15% auto 0;
         width: 50%;
-        height: 70%;
     }
     .web_inner{
         flex-flow: column nowrap;
@@ -564,9 +550,6 @@
     /* 마지막페이지 */
 }
 @media screen and (max-width:750px){
-    .web_contents{
-        height: 70%;
-    }
     .swiper-slide .design_text {
         margin: 40px 0 15px;
         font-size: 1.5rem;
@@ -586,7 +569,6 @@
     }
     .web_contents{
         width: 60%;
-        height: 70%;
     }
     .swiper-slide .web_inner li .tool_text {
         width: 40px;
@@ -618,12 +600,12 @@
         text-align: center;
         margin-bottom: 15px;
     }
+    .swiper-slide .web_inner li:last-child a:last-of-type {
+        margin-bottom: 0px;
+    }
 }
 
 @media screen and (max-width:640px){
-    .web_contents {
-        height: 65%;
-    }
     .main_page .left_top_circle {
         width: 400px;
         height: 400px;
@@ -728,7 +710,6 @@
     .web_contents{
         margin: 30% auto 0;
         width: 70%;
-        height: 65%;
     }
     .web_project .sns_aria {
         flex-flow: column wrap;
