@@ -482,8 +482,8 @@ main{
 }
 .vertical_7 .last_page .last_middle_aria {
     width: max-content; margin: 0 auto;
-    position: relative; 
-    margin-top: 370px;
+    position: absolute; top: 43%; left: 50%;
+    transform: translateX(-50%);
 }
 .vertical_7 .last_page .last_middle_aria em{
     font-size:2.25rem; font-weight: 700; color: #fff;
