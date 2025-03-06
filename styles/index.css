@@ -22,8 +22,7 @@ main{
 }
 .vertical_1 .main_page .main_middle_aria {
     width: max-content; margin: 0 auto;
-    position: relative; 
-    margin-top: 300px;
+    position: absolute; top: 43%; left: 50%; transform: translateX(-50%);
 }
 .vertical_1 .main_page .main_middle_aria p{
     font-size:1.25rem; font-weight: 400; color: #fff;
@@ -44,7 +43,7 @@ main{
 }
 .vertical_1 .main_page .main_btm_aria {
     display: flex; flex-flow: column nowrap; text-align: center; align-items: center;
-    margin-top: 340px;
+    position: absolute; bottom:5%; z-index: 999; right: 50%;
 }
 .vertical_1 .main_page .main_btm_aria span{
     font-weight: 600; font-size: 0.8125rem; color: #fff;
