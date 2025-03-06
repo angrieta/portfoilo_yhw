@@ -1,0 +1,36 @@
+@keyframes rotate {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes mouseDown {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(30px);}
+}
+@keyframes btnScaleOn {
+    0% {transform:scale(1);}
+    100% {transform:scale(2.5);}
+}
+@keyframes btnScaleOff {
+    0% {transform:scale(2.5);}
+    100% {transform:scale(1);}
+}
+@keyframes on {
+    0% {transform: translateX(150px); opacity: 0;}
+    100% {transform: translateX(0); opacity: 1;}
+}
+@keyframes off {
+    0% {transform: translateX(0px); opacity: 0} 
+    100% {transform: translateX(150px); opacity: 0}
+}
+
+@keyframes WebBtn {
+    100% {border:0; background-color: #fff; color:#50C2C5; border: 1px solid #fff;}
+}
+@keyframes swiperBtn {
+    0% {transform:scale(1);}
+    100% {transform:scale(1.2);}
+}
+@keyframes snsBtn {
+    0% {transform:scale(1);}
+    100% {transform:scale(1.05);}
+}

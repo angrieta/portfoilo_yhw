@@ -1,0 +1,742 @@
+@media screen and (max-width:1860px){
+    .web_inner{
+        padding: 0 20px;
+    }
+    .btm_contents{
+        width: 100%;
+
+    }
+}
+@media screen and (max-width:1760px){
+    .swiper-slide .design_text {
+        margin: 10px 0 100px;
+    }
+    .web_project .web_contents .swiper-slide{
+        padding: 20px;
+    }
+    .web_inner{
+        padding: 0px;
+    }
+    .web_contents {
+        height: 60%;
+    }
+    .detail_aria {
+        margin: 16% auto;
+    }
+    #detail_page .swiper-button-next{
+        position: absolute; top: 56%;
+    }
+    #detail_page .swiper-button-prev{
+        position: absolute; top: 56%;
+    }
+}
+@media screen and (max-width:1600px){
+    .web_contents{
+        height: 60%;
+    }
+    .swiper-slide .design_text {
+        margin: 45px 0 50px;
+        font-size:2.25rem;
+    }
+    .swiper-slide .web_inner h3{
+        font-size:1.5rem;
+    }
+    .swiper-slide .web_inner li em {
+        font-size:1rem;
+    }
+    .swiper-slide .web_inner li span {
+        font-size: 1rem; 
+    }
+    .swiper-slide .web_inner li a{
+        font-size: 1rem; margin-right: 15px;
+    }
+    .swiper-slide .web_inner li em {
+        width: 75px;
+    }
+    .swiper-slide .web_inner li .tool_text {
+        width: 75px;
+    }
+    .swiper-slide .web_inner li .tool_img img:nth-child(1) {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+    .swiper-slide .web_inner li .tool_img img {
+        width: 30px;
+        margin-right: 5px;
+    }
+    .web_inner .design_text_box {
+        margin-left: 30px;
+    }
+    .web_project .web_contents .swiper-slide{
+        padding: 20px;
+    }
+}
+@media screen and (max-width:1680px){
+    .right_profile .right_aria{
+        margin-left: 70px;
+    }
+    .right_profile {
+        margin-left: 40px;
+    }
+    .right_profile .left_aria div h3{
+        width: 70%;
+    }
+    .right_profile .right_aria div h3{
+        width: 58%;
+    }
+    .right_profile .left_aria div h3 em, .right_profile .right_aria div h3 em {
+        font-size:1.125rem;
+    }
+    .right_profile .left_aria div h3::after {
+        right: 80px;
+        top: 21.5px;
+    }
+    .right_profile .right_aria div h3::after {
+        right: 140px;
+        top: 21.5px;
+    }
+    .right_profile .left_aria div h3 img,.right_profile .right_aria div h3 img {
+        width: 20px;
+        height: 20px;
+    }
+    .right_profile .left_aria div ul li span
+    ,.right_profile .right_aria div ul li span {
+        font-size:0.875rem;
+    }
+    .right_profile .left_aria div ul li em
+    ,.right_profile .right_aria div ul li em {
+        font-size: 0.9375rem;
+    }
+    .right_profile .right_aria div ul .contact_aria span {
+        width: 60px;
+    }
+    .tool .tool_top img, .tool_btm img {
+        width: 30px;
+    }
+}
+@media screen and (max-width:1560px){
+    .detail_aria {
+        margin: 18% auto;
+    }
+    #detail_page .swiper-button-next{
+        position: absolute; top: 58%;
+    }
+    #detail_page .swiper-button-prev{
+        position: absolute; top: 58%;
+    }
+}
+@media screen and (max-width:1460px){
+    .swiper-slide .design_text {
+        margin: 20px 0 10px;
+        font-size: 2.25rem;
+    }
+}
+@media screen and (max-width:1470px){
+    .profile_title h2 {
+        font-size:1.875rem;
+    }
+    .profile_title p, .profile_title p em {
+        font-size:1.5rem;
+    }
+    .profile_info li em, .profile_info li em, .profile_info .hobby p{
+        font-size: 0.9375rem;
+    }
+    .profile_info li span,.profile_info li .text_deco {
+        font-size:0.875rem;
+    }
+    .profile_info li {
+        padding-bottom: 10px;
+    }
+    .profile_info {
+        margin-left: 20px;
+    }
+    .profile_info li:nth-child(3) em:nth-child(2){
+        width: 40px;
+    }
+    .profile_info li em{
+        width: 50px;
+    }
+    .profile_info .deco_aria {
+        margin-left: 12px;
+    }
+}
+@media screen and (max-width:1360px){
+    /* 첫페이지 */
+    .vertical_1 .main_page .main_top_aria p{font-size: 1.1875rem;}
+    .vertical_1 .main_page .main_middle_aria .main_title_top,
+    .vertical_1 .main_page .main_middle_aria .main_title_btm{
+        font-size: 1.0625rem;
+    }
+    .vertical_1 .main_page .main_middle_aria h1 {
+        font-size: 6.75rem;
+    }
+    /* 첫페이지 */
+    /* 마지막페이지 */
+    .vertical_7 .last_page .last_top_aria p {
+        font-size: 1.1875rem;
+    }
+    .vertical_7 .last_page .last_middle_aria em, .vertical_7 .last_page .last_middle_aria p{
+        font-size:1.625rem
+    }
+    .last_page .btm_text span,.last_page .btm_text em{
+        font-size: 1.1875rem;
+    }
+    /* 마지막페이지 */
+    .swiper-slide .design_text {
+        margin: 20px 0 30px;
+        font-size:2.125rem;
+    }
+    .swiper-slide .web_inner h3 {
+        font-size:1.375rem;
+    }
+    .swiper-slide .web_inner li a{
+        font-size:0.875rem;
+        padding: 12px 10px;
+    }
+    .swiper-slide .web_inner li .tool_img img:nth-child(1) {
+        width: 26px;
+        height: 26px;
+    }
+    .swiper-slide .web_inner li .tool_img img {
+        width: 26px;
+    }
+    .web_project .web_contents .swiper-slide{
+        padding: 20px;
+    }
+    .web_contents{
+        height: 50%;
+    }
+    .circle_detail{
+        left: 3.5%; top: 5%;
+    }
+}
+@media screen and (max-width:1290px){
+    .profile_title h2 {
+        font-size:1.625rem
+    }
+    .vertical_7 .last_page .last_middle_aria em, .vertical_7 .last_page .last_middle_aria p{
+        font-size:1.625rem;
+        font-size: 1.4375rem;
+    }
+    .profile_info {
+        margin-left: 10px;
+    }
+    .profile_info li {
+        padding-bottom: 5px;
+    }
+    .profile_info .deco_aria {
+        margin-left: 15px;
+    }
+    .profile_info li em, .profile_info li em, .profile_info .hobby p {
+        font-size:0.75rem;
+    }
+    .profile_info li span, .profile_info li .text_deco {
+        font-size: 0.6875rem;
+    }
+    .profile_info li:nth-child(3) em:nth-child(2) {
+        width: 29px;
+    }
+    .profile_info li .text_deco {
+        margin-right: 5px;
+    }
+}
+/* 프로필페이지 */
+@media screen and (max-width:1210px){
+    .profile_page {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .left_profile {
+        background: #F5F5F5;
+        width: 100%;
+        height: 435px; padding: 20px 0;
+    }
+    .btm_contents {
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+    .profile_title h2 {
+        text-align: center;
+        font-size:1.5rem;
+    }
+    .profile_title p, .profile_title p em {
+        font-size:0.875rem;
+        padding: 10px 0;
+    }
+    .profile_info .deco_aria .text_deco {
+        margin-bottom: 0px;
+    }
+    .left_photo {
+        width: 150px;
+    }
+    .left_photo img {
+        width: 100%; margin-bottom: 15px;
+    }
+    .profile_info li:nth-child(3) em:nth-child(2) {
+        width: 32px;
+    }
+    .profile_info {
+        margin-left: 0px;
+    }
+    .profile_info li .text_deco {
+        margin-right: 5px;
+    }
+    .profile_info .deco_aria {
+        margin-left: 0px;
+    }
+    .profile_info .hobby p {
+        width: 50px;
+    }
+    .right_profile .left_aria {
+        align-content: start;
+    }
+    .right_profile {
+        margin-left: 0; margin-top: 20px;
+    }
+    .right_profile .left_aria {
+        width: 50%;
+    }
+    .right_profile .right_aria {
+        margin-left: 0px; width: 50%;
+    }
+    .right_profile .right_aria .education {
+        margin-bottom: 20px;
+    }
+    .right_profile .right_aria .contact {
+        margin-bottom: 20px;
+    }
+    .right_profile .left_aria div ul, .right_profile .right_aria div ul {
+        margin-top: 18px;
+    }
+    .right_profile .left_aria .experience {
+        margin-bottom: 30px;
+    }
+    .right_profile .right_aria div h3 {
+        width: 70%;
+    }
+    .right_profile .left_aria div h3::after {
+        right: 90px;
+        top: 21.5px;
+    }
+    .right_profile .right_aria div h3::after {
+        right: 90px;
+        top: 21.5px;
+    }
+}
+@media screen and (max-width:650px){
+    .right_profile {
+        width: 80%; height: 475px;
+        margin-top: 70px;
+    }
+    .right_profile .right_aria {
+        align-content: start;
+        margin-left: 10px;
+    }
+    .right_profile .left_aria div h3 em, .right_profile .right_aria div h3 em {
+        font-size:0.75rem;
+    }
+    .right_profile .left_aria div h3 img, .right_profile .right_aria div h3 img {
+        width: 14px;
+        height: 14px;
+    }
+    .right_profile .left_aria div h3::after {
+        display: none;
+    }
+    .right_profile .right_aria div h3::after {
+        right: 145px;
+        top: 16px;
+        display: none;
+    }
+    .right_profile .left_aria div ul li span, .right_profile .right_aria div ul li span {
+        font-size: 0.6875rem;
+    }
+    .right_profile .left_aria div ul, .right_profile .right_aria div ul {
+        margin-top: 12px;
+    }
+    .right_profile .left_aria .experience {
+        margin-bottom: 12px;
+    }
+    .right_profile .left_aria div ul li em, .right_profile .right_aria div ul li em {
+        font-size:0.75rem; line-height: 1.3;
+    }
+    .right_profile .right_aria div ul .contact_aria em {
+        font-size:0.75rem;
+    }
+    .tool .tool_top {
+        margin: 10px 0 8px 0;
+    }
+    .right_profile .left_aria div ul li {
+        margin-bottom: 15px;
+    }
+    .right_profile .right_aria div ul li {
+        margin-bottom: 15px;
+    }
+}
+/* 프로필페이지 */
+@media screen and (max-width:1240px){
+    .swiper-slide .design_text {
+        margin: 40px 0 15px;
+        font-size:1.5rem;
+    }
+    .swiper-slide .web_inner h3 {
+        font-size:1.125rem;
+        margin-bottom: 15px;
+    }
+    .swiper-slide .web_inner li em {
+        width: 60px;
+        font-size: 0.8125rem;
+    }
+    .swiper-slide .web_inner li span {
+        font-size: 0.8125rem;
+    }
+    .swiper-slide .web_inner li {
+        margin-bottom: 12px;
+    }
+    .swiper-slide .web_inner li:nth-child(5) {
+        margin-bottom: 15px;
+    }
+    .swiper-slide .web_inner li a {
+        font-size:0.75rem;
+        padding: 8px 8px;
+    }
+    .detail_aria{
+        margin: 12% auto 0 ; 
+    }
+}
+.swiper-slide .web_inner li .tool_img img:nth-child(1) {
+    width: 21px;
+    height: 21px;
+}
+.swiper-slide .web_inner li .tool_img img {
+    width: 21px;
+}
+@media screen and (max-width:1120px){
+    .swiper-slide .design_text {
+        margin: 40px 0 15px;
+        font-size:1.5rem;
+    }
+    .swiper-slide .web_inner h3 {
+        font-size:1.125rem;
+        margin-bottom: 15px;
+    }
+    .swiper-slide .web_inner li em {
+        width: 60px;
+        font-size: 0.8125rem;
+    }
+    .swiper-slide .web_inner li span {
+        font-size: 0.8125rem;
+    }
+    .swiper-slide .web_inner li {
+        margin-bottom: 12px;
+    }
+    .swiper-slide .web_inner li:nth-child(5) {
+        margin-bottom: 15px;
+    }
+    .swiper-slide .web_inner li a {
+        font-size:0.75rem;
+        padding: 8px 8px;
+    }
+    .swiper-slide .web_inner li .tool_text {
+        font-size: 0.8125rem;
+    }
+}
+.swiper-slide .web_inner li .tool_img img:nth-child(1) {
+    width: 21px;
+    height: 21px;
+}
+.swiper-slide .web_inner li .tool_img img {
+    width: 21px;
+}
+@media screen and (max-width:1080px){
+    /* 첫페이지 */
+    .vertical_1 .main_page .main_top_aria p{font-size: 1.0625rem;}
+    .vertical_1 .main_page .main_middle_aria .main_title_top,
+    .vertical_1 .main_page .main_middle_aria .main_title_btm{
+        font-size:1rem;
+    }
+    .vertical_1 .main_page .main_middle_aria h1 {
+        font-size: 6.125rem;
+    }
+    /* 첫페이지 */
+    .swiper-slide .design_text {
+        margin: 10px 0 15px;
+        font-size: 1.5rem;
+    }
+    /* 마지막페이지 */
+    .vertical_7 .last_page .last_top_aria p {
+        font-size: 1.0625rem;
+    }
+    .vertical_7 .last_page .last_middle_aria em, .vertical_7 .last_page .last_middle_aria p{
+        font-size:1.375rem;
+    }
+    .last_page .btm_text span,.last_page .btm_text em{
+        font-size: 1.0625rem;
+    }
+    /* 마지막페이지 */
+    .web_contents{
+        height: 35%;
+    }
+}
+@media screen and (max-width:1000px){
+    .quick_guide {
+        display: none;
+    }
+    .detail_main_text,.project_title, .sns_title,
+    .banner_title{
+        font-size:2.5rem;
+        width: 270px;
+        top: 9%; left: 10%;
+    }
+    .web_contents{
+        margin: 15% auto 0;
+        width: 50%;
+        height: 70%;
+    }
+    .web_inner{
+        flex-flow: column nowrap;
+        
+    }
+    .web_project .swiper-button-prev {
+        display: none;
+    }
+    .web_project .swiper-button-next {
+        display: none;
+    }
+}
+@media screen and (max-width:999px){
+    .banner_text .swiper {
+        width: 60%;
+    }
+}
+@media screen and (max-width:800px){
+    /* 첫페이지 */
+    .vertical_1 .main_page .main_top_aria p{font-size:0.875rem;}
+    .vertical_1 .main_page .main_middle_aria .main_title_top,
+    .vertical_1 .main_page .main_middle_aria .main_title_btm{
+        font-size: 0.8125rem;
+    }
+    .vertical_1 .main_page .main_middle_aria h1 {
+        font-size:3.75rem;
+    }
+    .main_page .right_bottom_circle {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        bottom: -10%;
+        left: -8%;
+    }
+    .main_page .left_top_circle {
+        width: 650px;
+        height: 650px;
+        position: absolute;
+        top: -25%;
+        right: -30%;
+    }
+    .vertical_1 .main_page .main_middle_aria {
+        margin-top: 350px;
+    }
+    /* 첫페이지 */
+    /* 마지막페이지 */
+    .vertical_7 .last_page .last_top_aria p {
+        font-size:0.875rem;
+    }
+    .vertical_7 .last_page .last_middle_aria em, .vertical_7 .last_page .last_middle_aria p{
+        font-size: 1.1875rem;
+    }
+    .last_page .btm_text span,.last_page .btm_text em{
+        font-size:0.875rem;
+    }
+    .last_page .left_top_circle {
+        width: 650px;
+        height: 650px;
+        position: absolute;
+        top: -25%;
+        right: -30%;
+    }
+    .last_page .right_bottom_circle {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        bottom: -10%;
+        left: -8%;
+    }
+    /* 마지막페이지 */
+}
+@media screen and (max-width:750px){
+    .web_contents{
+        height: 70%;
+    }
+    .swiper-slide .design_text {
+        margin: 40px 0 15px;
+        font-size: 1.5rem;
+    }
+    .web_inner .design_text_box {
+        margin-left: 15px;
+    }
+    .swiper-slide .web_inner li a {
+        font-size:0.625rem;
+        padding: 8px 8px;
+        margin-right: 10px;
+    }
+    .sns_project .detail_title {
+        font-size:2rem;
+        width: 220px;
+        margin: 0px 0 100px 50px !important;
+    }
+    .web_contents{
+        width: 60%;
+        height: 70%;
+    }
+    .swiper-slide .web_inner li .tool_text {
+        width: 40px;
+    }
+    .swiper-slide .design_text {
+        margin: 20px 0 15px;
+    }
+    .swiper-slide .web_inner h3 {
+        font-size:0.75rem;
+        margin-bottom: 15px;
+    }
+    .swiper-slide .web_inner li em {
+        width: 40px;
+        font-size:0.5625rem;
+    }
+    .swiper-slide .web_inner li span {
+        font-size:0.5625rem;
+        white-space: nowrap;
+    }
+    .web_inner .design_text_box {
+        margin-left: 0px;
+    }
+    .swiper-slide .web_inner li:last-child {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .swiper-slide .web_inner li:last-child a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .web_contents {
+        height: 65%;
+    }
+    .main_page .left_top_circle {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: -15%;
+        right: -30%;
+    }
+    .last_page .left_top_circle {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: -15%;
+        right: -30%;
+    }
+}
+@media screen and (max-width:550px){
+    .right_profile .right_aria div ul .contact_aria em {
+        white-space: nowrap;
+    }
+    .tool .tool_top img, .tool_btm img {
+        width: 20px; margin-right: 5px;
+    }
+    .vertical_1 .main_page .main_top_aria {
+        padding: 40px 20px 0 20px;
+    }
+    .vertical_1 .main_page .main_top_aria p{font-size:0.75rem;}
+    .vertical_1 .main_page .main_middle_aria .main_title_top,
+    .vertical_1 .main_page .main_middle_aria .main_title_btm{
+        font-size:0.625rem 
+    }
+    .vertical_1 .main_page .main_middle_aria h1 {
+        font-size:2.5rem;
+    }
+    .vertical_1 .main_page .main_btm_aria img {
+        width: 25px;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .vertical_1 .main_page .main_btm_aria span {
+        font-size:0.625rem 
+    }
+    .main_page .right_bottom_circle {
+        bottom: -10%;
+        left: -20%;
+    }
+    /* 마지막페이지 */
+    .vertical_7 .last_page .last_top_aria {
+        padding: 40px 20px 0 20px;
+    }
+    .vertical_7 .last_page .last_top_aria p {
+        font-size:0.75rem;
+    }
+    .vertical_7 .last_page .last_middle_aria em, .vertical_7 .last_page .last_middle_aria p{
+        font-size:1rem;
+    }
+    .last_page .btm_text span,.last_page .btm_text em{
+        font-size:0.75rem;
+    }
+    
+    /* 마지막페이지 */
+}
+@media screen and (max-width:450px){
+    .detail_aria {
+        width: 85%;
+    }
+    .vertical_1 .main_page .main_middle_aria h1 {
+        font-size:2.125rem;
+    }
+    .vertical_1 .main_page .main_middle_aria .main_title_top {
+        left: -30px;
+    }
+    .vertical_1 .main_page .main_middle_aria .main_title_btm {
+        right: -30px; bottom: -8px;
+    }
+    .main_page .right_bottom_circle {
+        bottom: -14%;
+        left: -32%;
+    }
+    .main_page .right_ani_circle {
+        width: 100px;
+        height: 100px;
+        bottom: 20%;
+        left: 10%;
+    }
+    .last_page .right_bottom_circle {
+        bottom: -14%;
+        left: -32%;
+    }
+    .last_page .right_ani_circle {
+        width: 100px;
+        height: 100px;
+        bottom: 20%;
+        left: 10%;
+    }
+    
+}
+@media screen and (max-width:500px){
+    .banner_text .swiper {
+        width: 85%;
+        padding: 15px 20px;
+    }
+    .web_contents{
+        margin: 30% auto 0;
+        width: 70%;
+        height: 65%;
+    }
+    .web_project .sns_aria {
+        flex-flow: column wrap;
+        padding-top: 80px;
+        width: 80%;
+        height: 50%;
+    }
+    .banner_title{
+        top: 9.5%; left: 16%;
+    }
+}
