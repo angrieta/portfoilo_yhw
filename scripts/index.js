@@ -165,7 +165,7 @@ for(let i of detail_aria){
         //console.log(i.src)
         //console.log(popup_bg.children[0].children[0])
         popup_bg.children[0].children[0].src = i.src
-        popup_bg.children[0].style.maxWidth = '600px'
+        popup_bg.children[0].style.maxWidth = '800px'
         popup_bg.children[0].style.margin = '100px auto'
         popup_bg.children[0].style.overflow = 'auto'
         popup_bg.children[0].style.padding = '0 20px 0 20px'
