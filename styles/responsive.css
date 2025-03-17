@@ -544,6 +544,15 @@
         bottom: -10%;
         left: -8%;
     }
+    #detail_page .tip {
+        font-size:0.625rem;
+    }
+    .sns_project .tip {
+        font-size:0.625rem;
+    }
+    .banner_text .tip {
+        font-size:0.625rem;
+    }
     /* 마지막페이지 */
 }
 @media screen and (max-width:750px){
@@ -699,7 +708,15 @@
         bottom: 20%;
         left: 10%;
     }
-    
+    #detail_page .tip {
+        right: 22%;
+    }
+    .sns_project .tip {
+        right: 28%;
+    }
+    .banner_text .tip {
+        right: 28%;
+    }
 }
 @media screen and (max-width:500px){
     .banner_text .swiper {

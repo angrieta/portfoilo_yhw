@@ -180,10 +180,6 @@ main{
     width: 200px; padding-bottom: 5px;
     border-bottom:1px solid #000 ;
 }
-.right_profile .left_aria div h3::after{
-    display: block; content: ''; background-color: #000; width: 8px; height: 8px;
-    position: absolute; right: 36.5%; top: 27.5px; border-radius: 50%;
-}
 .right_profile .left_aria div h3 em{
     font-size:1.25rem; font-weight: 700; display: inline-block; margin-left: 10px;
 }
@@ -220,10 +216,6 @@ main{
     display: flex; align-items: center;
     width: 200px; padding-bottom: 5px;
     border-bottom:1px solid #000 ;
-}
-.right_profile .right_aria div h3::after {
-    display: block; content: ''; background-color: #000; width: 8px; height: 8px;
-    position: absolute; right: 46.5%; top: 27.5px; border-radius: 50%;
 }
 .right_profile .right_aria div h3 img {width: 26px; height: 26px;}
 .right_profile .right_aria div h3 em {font-size:1.25rem; font-weight: 700; display: inline-block; margin-left: 10px;}
@@ -664,4 +656,17 @@ main{
 
 .left_photo img{
     width: 100%;
+}
+
+#detail_page .tip {
+    position: absolute; right: 0; bottom: 3%;
+    color: #50C2C5;
+}
+.sns_project .tip {
+    position: absolute; right: 5%; bottom: 3%;
+    color: #ffffff;
+}
+.banner_text .tip {
+    position: absolute; right: 5%; bottom: 3%;
+    color: #50C2C5;
 }
