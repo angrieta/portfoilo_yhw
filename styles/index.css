@@ -317,17 +317,25 @@ main{
 .web_inner .project_3 img,
 .web_inner .project_4 img{
     border-radius: 15px;
-    width: 100%;
+    width: 95%;
 } 
+.web_inner .project_5 img{
+    width: 95%;
+    border-radius: 15px;
+}
 .swiper-slide .design_text{
     font-family: "Yeseva One", serif;
     font-weight: 400; color: #fff;
     font-style: normal; font-size:2.5rem;
-    margin: 30px 0 142px;
+    margin: 30px 0 90px;
 }
 .swiper-slide .web_inner h3{
     font-size:1.625rem; color: #fff; font-weight: 600;
     margin-bottom: 30px;
+}
+.swiper-slide .web_inner .project_5 h3{
+    font-size:1.625rem; color: #fff; font-weight: 600;
+    margin-bottom: 10px;
 }
 .swiper-slide .web_inner li {
     display: flex; align-items: center;
