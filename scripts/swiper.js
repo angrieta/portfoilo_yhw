@@ -1,4 +1,6 @@
+var slideSpeed = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 350;
 var vertical = new Swiper(".wrap", {
+    speed: slideSpeed,
     direction: "vertical",
     mousewheel: true,
     pagination: {
@@ -13,10 +15,10 @@ var vertical = new Swiper(".wrap", {
 });
 
 var webProject = new Swiper(".web_contents", {
-    autoplay:{
-        delay:33333333333333, //다음 슬라이드전환까지 대기시간
-        disableOnInteraction:false, // 사용자 상호작용 상관없이 계속 진행
-    },
+    speed: slideSpeed,
+    autoHeight: false,
+    nested: true,
+    autoplay: false,
     loop:true,
     slidesPerView: 1,
     on:{
@@ -25,15 +27,13 @@ var webProject = new Swiper(".web_contents", {
         }
     },
     navigation: {
-        nextEl: ".web_project .swiper-button-next",
-        prevEl: ".web_project .swiper-button-prev",
+        nextEl: "#publish_aria .swiper-button-next",
+        prevEl: "#publish_aria .swiper-button-prev",
     },
 });
 var DetailProject = new Swiper(".detail_aria", {
-    autoplay:{
-        delay:33333333333333, //다음 슬라이드전환까지 대기시간
-        disableOnInteraction:false, // 사용자 상호작용 상관없이 계속 진행
-    },
+    speed: slideSpeed,
+    autoplay: false,
     loop:true,
     slidesPerView: 3,
     spaceBetween: 30,
@@ -43,8 +43,8 @@ var DetailProject = new Swiper(".detail_aria", {
         }
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: "#detail_page .swiper-button-next",
+        prevEl: "#detail_page .swiper-button-prev",
     },
     breakpoints: {
         1920: {
@@ -63,10 +63,8 @@ var DetailProject = new Swiper(".detail_aria", {
 });
 
 var snsProject = new Swiper(".sns_aria", {
-    autoplay:{
-        delay:33333333333333, //다음 슬라이드전환까지 대기시간
-        disableOnInteraction:false, // 사용자 상호작용 상관없이 계속 진행
-    },
+    speed: slideSpeed,
+    autoplay: false,
     loop:true,
     slidesPerView: 4,
     spaceBetween: 10,
@@ -76,8 +74,8 @@ var snsProject = new Swiper(".sns_aria", {
         }
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".sns_project .swiper-button-next",
+        prevEl: ".sns_project .swiper-button-prev",
     },
     breakpoints: {
         1920: {
@@ -97,10 +95,8 @@ var snsProject = new Swiper(".sns_aria", {
 });
 
 var bannerProject1 = new Swiper(".banner_aria1", {
-    autoplay:{
-        delay:33333333333333, //다음 슬라이드전환까지 대기시간
-        disableOnInteraction:false, // 사용자 상호작용 상관없이 계속 진행
-    },
+    speed: slideSpeed,
+    autoplay: false,
     loop:true,
     slidesPerView: 3,
     spaceBetween: 20,
@@ -110,8 +106,8 @@ var bannerProject1 = new Swiper(".banner_aria1", {
         }
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".banner_text .swiper-button-next",
+        prevEl: ".banner_text .swiper-button-prev",
     },
     breakpoints: {
         1920: {
@@ -126,10 +122,8 @@ var bannerProject1 = new Swiper(".banner_aria1", {
     }    
 });
 var bannerProject2 = new Swiper(".banner_aria2", {
-    autoplay:{
-        delay:33333333333333, //다음 슬라이드전환까지 대기시간
-        disableOnInteraction:false, // 사용자 상호작용 상관없이 계속 진행
-    },
+    speed: slideSpeed,
+    autoplay: false,
     loop:true,
     slidesPerView: 3,
     spaceBetween: 20,
@@ -139,8 +133,8 @@ var bannerProject2 = new Swiper(".banner_aria2", {
         }
     },
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".banner_text .swiper-button-next",
+        prevEl: ".banner_text .swiper-button-prev",
     },
     breakpoints: {
         1920: {
