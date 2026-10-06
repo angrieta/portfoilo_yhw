@@ -1,0 +1,30 @@
+/* Intro copy promoted to the page heading on catalogue, stock and estimate. */
+.sub-wrap:has(> .sub-container > :is(.catalog-intro,.stock-head)){padding-top:40px}
+.page-intro-title{
+  margin:0;color:#152238;font-size:30px;font-weight:750;line-height:1.4;
+  letter-spacing:-1px;word-break:keep-all;text-wrap:balance;
+}
+.page-intro-title em{font-style:normal;color:#2a88ff}
+.catalog-intro{margin-bottom:0}
+.sub-container:has(> .catalog-intro) .brand-circles{padding-bottom:0}
+.stock-head:has(.page-intro-title){align-items:flex-end;gap:28px;margin-bottom:0}
+.stock-head:has(.page-intro-title)+.stock-top{margin-top:0}
+.stock-finder+.stock-toolbar{margin-top:0;margin-bottom:0}
+.stock-finder .brand-circles{padding-bottom:0}
+.stock-head .stock-update-note{margin:10px 0 0;color:#738399;font-size:15px;font-weight:400;line-height:1.5;word-break:keep-all}
+.stock-head .page-intro-title{font-size:28px}
+.stock-head:has(.page-intro-title) .stock-asof{flex:none;padding-bottom:4px;font-size:18px;color:#111}
+.stock-head .stock-asof span{color:#2b88ff}
+.estimate-intro .page-intro-title{font-size:28px}
+.stock-finder .brand-section-title{margin:0 0 22px;color:#152238;font-size:28px;line-height:1.4;font-weight:750;letter-spacing:-.8px;word-break:keep-all}
+.brand-section-title em{font-style:normal;color:#2a88ff}
+@media(max-width:1200px){.stock-head:has(.page-intro-title){display:block}.stock-head:has(.page-intro-title) .stock-asof{padding-top:12px}}
+@media(max-width:600px){
+  .sub-wrap:has(> .sub-container > :is(.catalog-intro,.stock-head)){padding-top:24px}
+  .page-intro-title,.stock-head .page-intro-title,.estimate-intro .page-intro-title{font-size:22px;letter-spacing:-.6px;line-height:1.45;text-wrap:initial}
+  .catalog-intro{margin-bottom:4px}
+  .stock-head:has(.page-intro-title){margin-bottom:12px}
+  .stock-head .stock-update-note{font-size:14px;margin-top:8px}
+  .stock-head:has(.page-intro-title) .stock-asof{font-size:16px}
+  .stock-finder .brand-section-title{font-size:22px;line-height:1.45;margin-bottom:20px}
+}

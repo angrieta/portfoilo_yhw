@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CARMONG · 장기렌트 · 리스 비교견적</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="css/index.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<meta name="robots" content="noindex,nofollow"><script src="../demo-guard.js"></script></head>
+<body>
+
+  <!-- ===== 인트로 스플래시 ===== -->
+  <div class="intro" id="intro">
+    <button class="intro-skip" id="introSkip">건너뛰기</button>
+    <div class="intro-stage">
+      <div class="intro-robot">
+        <img class="intro-head" src="asset/intro_face.png" alt="CARMONG" />
+        <div class="face" id="introFace">
+          <div class="eyes">
+            <div class="eye eye-left">
+              <div class="eye-neutral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="eye-smile">
+                <i></i><i></i><i></i><i></i>
+                <i></i><i class="on"></i><i class="on"></i><i></i>
+                <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+                <i class="on"></i><i></i><i></i><i class="on"></i>
+              </div>
+            </div>
+            <div class="eye eye-right">
+              <div class="eye-neutral"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="eye-smile">
+                <i></i><i></i><i></i><i></i>
+                <i></i><i class="on"></i><i class="on"></i><i></i>
+                <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+                <i class="on"></i><i></i><i></i><i class="on"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mouth">
+            <!-- 평범한 입 (일자) -->
+            <div class="m-neutral">
+              <div class="mrow"><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            </div>
+            <!-- 웃는 입 -->
+            <div class="m-smile">
+              <div class="mrow"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i></div>
+              <div class="mrow"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+              <div class="mrow"><i></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-logo" aria-label="CARMONG">
+        <span>C</span><span>A</span><span>R</span><span>M</span><span>O</span><span>N</span><span>G</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var intro = document.getElementById("intro");
+      if (!intro) return;
+      var face = document.getElementById("introFace");
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      // 평범한 얼굴 → 웃는 얼굴
+      var t1 = setTimeout(function () { if (face) face.classList.add("smiling"); }, 1350);
+      function dismiss() {
+        if (intro.classList.contains("hide")) return;
+        intro.classList.add("hide");
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+        clearTimeout(t1); clearTimeout(t2);
+      }
+      var t2 = setTimeout(dismiss, 3200);
+      var skip = document.getElementById("introSkip");
+      if (skip) skip.addEventListener("click", dismiss);
+    })();
+  </script>
+
+  <div class="page">
+
+    <!-- 1. HEADER -->
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="CARMONG">CARMONG</a>
+      <div class="head-btns">
+        <a class="btn-allcar" href="all_car.html">전 차종 견적</a>
+        <button class="btn-quote">견적신청</button>
+      </div>
+    </header>
+
+    <!-- 2. HERO (배경 bg_001.png 위에 텍스트·비주얼·메뉴카드가 한 섹션) -->
+    <section class="hero">
+      <div class="hero-top">
+        <!-- 떠다니는 노란 원 애니메이션 -->
+        <div class="hero-bubbles">
+          <span class="bubble b1"></span>
+          <span class="bubble b2"></span>
+          <span class="bubble b3"></span>
+          <span class="bubble b4"></span>
+          <span class="bubble b5"></span>
+          <span class="bubble b6"></span>
+          <span class="bubble b7"></span>
+          <span class="bubble b8"></span>
+          <span class="bubble b9"></span>
+          <span class="bubble b10"></span>
+          <span class="bubble b11"></span>
+        </div>
+        <span class="circle c1"></span>
+        <span class="circle c2"></span>
+        <span class="circle c3"></span>
+        <span class="circle c4"></span>
+        <span class="circle c5"></span>
+
+        <div class="hero-visual">
+          <img class="hero-char" src="asset/character_hero.png" alt="카몽 캐릭터" />
+          <img class="hero-car" src="asset/car_hero.png" alt="차량 이미지" />
+        </div>
+
+        <div class="hero-text">
+          <span class="hero-eyebrow">카몽을 선택하는 이유</span>
+          <h1 class="hero-title">장기렌트·리스 비교견적</h1>
+          <p class="hero-desc">400개 제휴사와 함께<br />최적의 렌트·리스 조건을 제공합니다.</p>
+          <a class="hero-btn" href="#">견적신청</a>
+        </div>
+      </div>
+
+      <!-- Hero 하단 메뉴 카드 (같은 섹션) -->
+      <div class="menu">
+      <div class="pick">
+        <div class="pick-eyebrow">카몽 Pick</div>
+        <div class="pick-title">많이 찾는 메뉴</div>
+        <a class="pick-item" href="all_car.html?find=1">
+          <span class="pick-ico"><img src="asset/review.png" alt="" /></span>
+          <span class="pick-label">차종 탐색</span>
+          <span class="pick-arrow">›</span>
+        </a>
+        <a class="pick-item" href="all_car.html">
+          <span class="pick-ico"><img src="asset/fast_delivery.png" alt="" /></span>
+          <span class="pick-label">인기 차량</span>
+          <span class="pick-arrow">›</span>
+        </a>
+        <a class="pick-item survey-open" href="#rentLeaseSurvey">
+          <span class="pick-ico"><img src="asset/popular.png" alt="" /></span>
+          <span class="pick-label">렌트/리스 테스트</span>
+          <span class="pick-arrow">›</span>
+        </a>
+      </div>
+
+      <a class="side-card faq" href="faq.html">
+        <span class="side-eyebrow">궁금한게 있다면?</span>
+        <span class="side-title">FAQ</span>
+        <span class="side-ico"><img src="asset/FAQ.png" alt="" /></span>
+      </a>
+
+      <a class="side-card promo" href="#">
+        <span class="side-eyebrow">EVENT</span>
+        <span class="side-title">프로모션</span>
+        <span class="side-ico"><img src="asset/promotion.png" alt="" /></span>
+      </a>
+      </div><!-- /.menu -->
+    </section>
+
+    <!-- 3. 누적 이용 데이터 -->
+    <section class="data">
+      <div class="sec-eyebrow">누적</div>
+      <h2 class="sec-title">이용 데이터</h2>
+      <div class="data-grid">
+        <div class="data-card">
+          <span class="data-emoji"><img src="asset/견적신청_img.png" alt="" /></span>
+          <div class="data-label">총 견적 수</div>
+          <div class="data-num">653,453</div>
+          <p class="data-desc">누적 견적 제공 건수를 통해 카몽이 얼마나 많은 고객의 렌트·리스 비교를 도왔는지 확인할 수 있습니다.</p>
+        </div>
+        <div class="data-card">
+          <span class="data-emoji"><img src="asset/이용자_수.png" alt="" /></span>
+          <div class="data-label">실제 이용 고객 수</div>
+          <div class="data-num">162,641</div>
+          <p class="data-desc">상담부터 계약까지 카몽을 이용해 차량을 선택한 고객 수입니다.</p>
+        </div>
+        <div class="data-card">
+          <span class="data-emoji"><img src="asset/일정.png" alt="" /></span>
+          <div class="data-label">월 평균 견적 문의</div>
+          <div class="data-num">30,000+</div>
+          <p class="data-desc">매월 접수되는 견적 문의 건수를 기준으로, 카몽에 대한 꾸준한 고객 관심을 보여줍니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 추천 차량 -->
+    <section class="cars">
+      <div class="cars-head">
+        <div>
+          <div class="sec-eyebrow">5월</div>
+          <h2 class="sec-title">카몽 추천 차량</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">전체</button>
+          <button class="filter" data-filter="value">가성비</button>
+          <button class="filter" data-filter="consult">상담사</button>
+          <button class="filter" data-filter="now">즉시 출고</button>
+        </div>
+      </div>
+
+      <div class="car-list" id="carList"><!-- JS: all_cars_data.js 기반 5월 추천 차량 --></div>
+    </section>
+
+    <!-- 5. HINT 카드 -->
+    <section class="hints">
+      <a class="hint-card hint-left survey-open" href="#rentLeaseSurvey">
+        <span class="hint-label">HINT</span>
+        <img class="hint-img" src="asset/hint_left.png" alt="" />
+        <div class="hint-text">장기렌트, 리스<br />설문으로 결정하기</div>
+      </a>
+      <a class="hint-card hint-right corporate-open" href="#corporateProsCons">
+        <span class="hint-label">HINT</span>
+        <img class="hint-img" src="asset/hint_right.png" alt="" />
+        <div class="hint-text">법인 차량<br />장단점 알아보기</div>
+      </a>
+    </section>
+
+    <!-- 6. 견적 신청 안내 -->
+    <section class="cta" aria-label="견적 신청 안내">
+      <h2 class="cta-title">내 조건에 맞는 견적이 궁금하다면?</h2>
+      <p class="cta-copy">차종과 이용 방식을 알려주시면 장기렌트와 리스 조건을 비교해 안내해드립니다.</p>
+      <div class="cta-row">
+        <a class="cta-btn quote-open" href="#quoteModal">견적신청 하러가기</a>
+        <a class="cta-btn secondary" href="index.html">메인으로</a>
+      </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo" aria-label="CARMONG">CARMONG</div>
+          <div class="footer-sub">장기렌트·리스 비교견적</div>
+        </div>
+        <div class="footer-sns">
+          <a href="#" aria-label="YouTube"><img src="asset/youtube_rogo.png" alt="YouTube" /></a>
+          <a href="#" aria-label="Instagram"><img src="asset/instar.png" alt="Instagram" /></a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-intro">14년의 업력을 바탕으로 고객에게 꼭 맞는 장기렌트·리스 비교 견적 솔루션을 제공합니다. 카몽은 다양한 고객 니즈에 맞춘 맞춤형 컨설팅으로 더 합리적인 차량 선택을 돕습니다.</p>
+      <p class="footer-info">
+        (주)카몽 | 대표자: 이현우 | 사업자등록번호: 122-86-45067<br />
+        주소: 인천 부평구 주부토로 236, 인천테크노밸리 U1센터 21층<br />
+        고객센터: 1661-5519 | contact@carmong.kr
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- 렌트/리스 선택 설문 모달 -->
+  <div class="survey-overlay" id="rentLeaseSurvey" aria-hidden="true">
+    <div class="survey-scroll">
+      <div class="survey-stage" id="surveyStage" aria-hidden="true">
+        <div class="survey-speech" id="surveySpeech">첫 번째 질문!</div>
+        <img class="survey-runner" id="surveyRunner" src="asset/run_bay.png" alt="" />
+        <div class="survey-run-track">
+          <span class="survey-run-fill" id="surveyRunFill"></span>
+        </div>
+      </div>
+
+      <section class="survey-panel" aria-labelledby="surveyTitle">
+        <div class="survey-head">
+          <button class="survey-close" id="surveyClose" type="button" aria-label="닫기">&times;</button>
+          <p class="survey-head-sub">나에게 맞는 선택은?</p>
+          <h3 class="survey-head-title" id="surveyTitle">신차장기렌트 vs 리스</h3>
+        </div>
+
+        <div class="survey-body">
+          <div class="survey-progress" aria-live="polite">
+            <span id="surveyProgressText">질문 1 / 5</span>
+            <div class="survey-progress-track" aria-hidden="true">
+              <span class="survey-progress-fill" id="surveyProgressFill"></span>
+            </div>
+          </div>
+
+          <div class="survey-step" data-step="0">
+            <h4 class="survey-question">질문 1. 자동차 보험은 어떻게 생각하시나요?</h4>
+            <button class="survey-option" type="button" data-score="lease">
+              <span class="survey-option-img"><img src="asset/낮은 보험료.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>A. 보험료를 직접 낮추고 싶어요</strong>
+                <span>무사고 경력이 길다면 직접 보험을 관리하는 방식이 유리할 수 있어요.</span>
+              </span>
+            </button>
+            <button class="survey-option" type="button" data-score="rent">
+              <span class="survey-option-img"><img src="asset/보험료 포함.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>B. 보험료가 비싸서 포함된 상품이 좋아요</strong>
+                <span>나이가 어리거나 사고 이력이 있다면 보험이 포함된 장기렌트가 유리할 수 있어요.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="survey-step" data-step="1" hidden>
+            <h4 class="survey-question">질문 2. 번호판은 얼마나 중요하신가요?</h4>
+            <button class="survey-option" type="button" data-score="rent">
+              <span class="survey-option-img"><img src="asset/장기렌트 번호판.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>A. 상관없어요, 실속이 더 중요해요</strong>
+                <span>장기렌트는 전용 번호판이 적용되지만 비용 면에서 유리할 수 있어요.</span>
+              </span>
+            </button>
+            <button class="survey-option" type="button" data-score="lease">
+              <span class="survey-option-img"><img src="asset/일반 번호판.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>B. 일반 번호판을 선호해요</strong>
+                <span>리스는 일반 번호판 사용이 가능해요.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="survey-step" data-step="2" hidden>
+            <h4 class="survey-question">질문 3. 차량 관리는 어떻게 하고 싶으신가요?</h4>
+            <button class="survey-option" type="button" data-score="rent">
+              <span class="survey-option-img"><img src="asset/전문가 알아서.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>A. 전문가가 알아서 관리해줬으면 좋겠어요</strong>
+                <span>장기렌트는 방문 정비 서비스를 신청할 수 있어 관리 부담을 줄일 수 있어요.</span>
+              </span>
+            </button>
+            <button class="survey-option" type="button" data-score="lease">
+              <span class="survey-option-img"><img src="asset/직접.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>B. 제가 직접 관리하는 게 편해요</strong>
+                <span>직접 정비와 관리를 하면 비용을 절감할 수 있어요.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="survey-step" data-step="3" hidden>
+            <h4 class="survey-question">질문 4. 사업자이신가요?</h4>
+            <button class="survey-option" type="button" data-score="neutral">
+              <span class="survey-option-img"><img src="asset/사업자.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>A. 네, 사업자입니다</strong>
+                <span>렌트와 리스 모두 비용처리가 가능해요.</span>
+              </span>
+            </button>
+            <button class="survey-option" type="button" data-score="neutral">
+              <span class="survey-option-img"><img src="asset/대출 계획 on.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>B. 아니요, 직장인/개인입니다</strong>
+                <span>개인 이용자는 이용 목적과 예산에 따라 선택이 달라질 수 있어요.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="survey-step" data-step="4" hidden>
+            <h4 class="survey-question">질문 5. 대출 계획이 있으신가요?</h4>
+            <button class="survey-option" type="button" data-score="rent">
+              <span class="survey-option-img"><img src="asset/대출 계획 on.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>A. 네, 대출 한도가 중요해요</strong>
+                <span>장기렌트는 일반적으로 대출로 잡히지 않아 한도 관리에 유리할 수 있어요.</span>
+              </span>
+            </button>
+            <button class="survey-option" type="button" data-score="lease">
+              <span class="survey-option-img"><img src="asset/대출 계획 off.png" alt="" /></span>
+              <span class="survey-option-copy">
+                <strong>B. 크게 상관없어요</strong>
+                <span>리스는 금융 상품으로 분류되어 대출 한도에 영향을 줄 수 있어요.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="survey-result" id="surveyResult" hidden>
+            <p class="survey-result-label">설문 결과</p>
+            <h4 class="survey-result-title" id="surveyResultTitle">장기렌트가 더 잘 맞아요</h4>
+            <p class="survey-result-copy" id="surveyResultCopy">보험과 관리 부담을 줄이고 싶다면 장기렌트 조건을 먼저 비교해보는 것이 좋아요.</p>
+            <div class="survey-result-actions">
+              <button class="survey-reset" type="button" id="surveyReset">다시하기</button>
+              <button class="survey-done" type="button" id="surveyDone">닫기</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 법인 차량 장단점 모달 -->
+  <div class="corp-overlay" id="corporateProsCons" aria-hidden="true">
+    <div class="corp-scroll">
+      <div class="corp-stage">
+        <div class="corp-robot-clip">
+          <img class="corp-robot" src="asset/견적신청 로봇.png" alt="" />
+        </div>
+        <span class="corp-bubble corp-bubble-left">법인 차량이란<br />무엇인가요?</span>
+        <span class="corp-bubble corp-bubble-right">상세하게 알아보고<br />최대 혜택 받자!</span>
+      </div>
+
+      <section class="corp-panel" aria-labelledby="corpTitle">
+        <div class="corp-head">
+          <button class="corp-close" id="corpClose" type="button" aria-label="닫기">&times;</button>
+          <p class="corp-head-sub">법인 차량 장단점</p>
+          <h3 class="corp-head-title" id="corpTitle">법인 차량이란?</h3>
+        </div>
+
+        <div class="corp-body">
+          <h4 class="corp-section-title">장점 !</h4>
+          <ol class="corp-list">
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Advantages_001.png" alt="" /></span>
+              <span>업무용 차량 비용을 회사 비용으로 처리할 수 있음</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Advantages_002.png" alt="" /></span>
+              <span>임직원 출장, 영업, 외근 등 업무 차량 관리에 유리함</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Advantages_003.png" alt="" /></span>
+              <span>개인 차량과 회사 차량을 구분할 수 있음</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Advantages_004.png" alt="" /></span>
+              <span>장기렌트/리스 이용 시 초기 비용 부담을 줄일 수 있음</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Advantages_005.png" alt="" /></span>
+              <span>차량 유지비, 보험료, 세금 등을 법인 기준으로 관리 가능</span>
+            </li>
+          </ol>
+
+          <h4 class="corp-section-title">단점 !</h4>
+          <ol class="corp-list">
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Disadvantages_001.png" alt="" /></span>
+              <span>사적인 사용이 많으면 비용 처리에 제한이 생길 수 있음</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Disadvantages_002.png" alt="" /></span>
+              <span>운행기록, 증빙 자료 등 관리가 필요할 수 있음</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Disadvantages_003.png" alt="" /></span>
+              <span>법인 명의라 개인이 자유롭게 처분하기 어려움</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Disadvantages_004.png" alt="" /></span>
+              <span>보험 조건이나 운전자 범위 설정을 신경 써야 함</span>
+            </li>
+            <li class="corp-item">
+              <span class="corp-icon"><img src="asset/Disadvantages_005.png" alt="" /></span>
+              <span>회계·세무 처리 기준을 확인해야 함</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="corp-cta">
+          <p>* 단점이 있어도 상담을 받아보면 선택 기준이 달라질 수 있습니다. 먼저 상담을 받아보시는 걸 추천드립니다.</p>
+          <button class="corp-quote-btn" id="corpQuoteButton" type="button">법인 견적신청</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 견적신청 폼 모달 -->
+  <div class="quote-overlay" id="quoteModal" aria-hidden="true">
+    <div class="quote-scroll">
+      <div class="quote-stage">
+        <div class="quote-robot-clip">
+          <img class="quote-robot" src="asset/견적신청 로봇.png" alt="" />
+        </div>
+        <span class="qbubble qbubble-left">최대한 빠르고<br />저렴하게!!</span>
+        <span class="qbubble qbubble-right">간단히 체크하고<br />이름, 연락처 입력!</span>
+      </div>
+
+      <div class="quote-panel">
+        <div class="quote-head">
+          <button class="quote-close" id="quoteClose" aria-label="닫기">&times;</button>
+          <p class="quote-head-sub">실시간 상담 가능! 20명 카매니저 대기중입니다.</p>
+          <h3 class="quote-head-title">간단하게 체크하고 무료로 견적신청 받자!</h3>
+        </div>
+
+        <form class="quote-form" id="quoteForm">
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span> 이용 방식 선택 (필수)</label>
+            <span class="quote-survey-applied" id="quoteSurveyApplied" hidden>설문 결과 적용</span>
+            <div class="qseg" data-group="usage">
+              <button type="button" class="qseg-btn active" data-usage="rent">장기렌트</button>
+              <button type="button" class="qseg-btn" data-usage="lease">리스</button>
+            </div>
+          </div>
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span> 고객 유형 선택 (필수)</label>
+            <div class="qseg" data-group="customer">
+              <button type="button" class="qseg-btn active" data-customer="personal">개인 고객</button>
+              <button type="button" class="qseg-btn" data-customer="corporate">법인 사업자</button>
+            </div>
+          </div>
+
+          <div class="qfield">
+            <label class="qlabel">희망차종(선택)</label>
+            <input class="qinput" type="text" placeholder="차량명 입력해주세요." />
+          </div>
+
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span>고객명(필수)</label>
+            <input class="qinput" type="text" placeholder="고객명 입력해주세요." />
+          </div>
+
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span>연락처(필수)</label>
+            <input class="qinput" type="tel" placeholder="연락처 입력해주세요." />
+          </div>
+
+          <div class="qconsent">
+            <label class="qconsent-check">
+              <input type="checkbox" id="quoteAgree" />
+              <span class="qconsent-box" aria-hidden="true"></span>
+              <span class="qconsent-text">개인정보활용(필수/선택)동의</span>
+            </label>
+            <button type="button" class="qconsent-more">자세히보기</button>
+          </div>
+
+          <button type="submit" class="quote-submit">견적 신청하기</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="carbay_images/all_cars_data.js"></script>
+  <script>
+    // 스크롤 방향에 따른 헤더 표시/숨김
+    var pageHeader = document.querySelector(".header");
+    var lastScrollY = window.scrollY;
+    var headerTicking = false;
+
+    function updateHeaderVisibility() {
+      var currentScrollY = window.scrollY;
+      if (pageHeader) {
+        if (currentScrollY > lastScrollY + 6 && currentScrollY > 80) {
+          pageHeader.classList.add("is-hidden");
+        } else if (currentScrollY < lastScrollY - 6 || currentScrollY <= 20) {
+          pageHeader.classList.remove("is-hidden");
+        }
+      }
+      lastScrollY = currentScrollY;
+      headerTicking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!headerTicking) {
+        window.requestAnimationFrame(updateHeaderVisibility);
+        headerTicking = true;
+      }
+    }, { passive: true });
+
+    // ===== 5월 카몽 추천 차량 (all_cars_data.js 기반) =====
+    (function () {
+      var CARS = window.ALL_CARS || [];
+      var listEl = document.getElementById("carList");
+      if (!listEl || !CARS.length) return;
+
+      function won(v) { return (v || 0).toLocaleString("ko-KR"); }
+      function findCar(key) {
+        var exact = CARS.filter(function (c) { return c.name === key; })[0];
+        if (exact) return exact;
+        return CARS.filter(function (c) { return c.name.indexOf(key) !== -1; })
+                   .sort(function (a, b) { return a.name.length - b.name.length; })[0] || null;
+      }
+
+      // 5월 추천 큐레이션 — 카테고리별 차종 (상담사추천 / 즉시출고 / 가성비)
+      var CURATION = [
+        { cat: "consult", names: ["그랜저", "G80", "팰리세이드", "카니발"] },
+        { cat: "now",     names: ["쏘렌토", "싼타페", "스포티지", "아반떼"] },
+        { cat: "value",   names: ["레이", "캐스퍼", "모닝", "셀토스"] }
+      ];
+      var TAG = {
+        consult: { cls: "",      txt: "강력<br>추천", desc: "카몽 상담사 추천 차량" },
+        now:     { cls: "now",   txt: "즉시<br>출고", desc: "카몽 즉시 출고 추천 차량" },
+        value:   { cls: "price", txt: "가격<br>추천", desc: "카몽 가성비 추천 차량" }
+      };
+
+      var html = "";
+      CURATION.forEach(function (group) {
+        var t = TAG[group.cat];
+        group.names.forEach(function (key) {
+          var c = findCar(key);
+          if (!c) return;
+          var m = c.rent || c.lease;
+          var price = m ? ("월 <b>" + won(m) + "</b>원") : "<b>견적 문의</b>";
+          html +=
+            '<a class="car-card" data-cat="' + group.cat + '" href="detail.html?id=' + c.id + '">' +
+              '<span class="car-tag ' + t.cls + '">' + t.txt + '</span>' +
+              '<div class="car-info">' +
+                '<div class="car-desc">' + t.desc + '</div>' +
+                '<div class="car-name">' + c.brand + ' ' + c.name + '</div>' +
+                '<div class="car-price">' + price + '</div>' +
+              '</div>' +
+              '<div class="car-img"><img src="' + c.image + '" loading="lazy" alt="" ' +
+                'onerror="this.style.visibility=\'hidden\'"></div>' +
+            '</a>';
+        });
+      });
+      listEl.innerHTML = html;
+
+      // 필터 탭
+      document.querySelectorAll(".filter").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".filter").forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          var f = btn.dataset.filter || "all";
+          listEl.querySelectorAll(".car-card").forEach(function (card) {
+            card.style.display = (f === "all" || card.dataset.cat === f) ? "" : "none";
+          });
+        });
+      });
+    })();
+
+    // 이용 데이터 진입 애니메이션
+    var dataSection = document.querySelector(".data");
+    if (dataSection) {
+      if ("IntersectionObserver" in window) {
+        var dataObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              dataSection.classList.add("is-visible");
+              observer.unobserve(dataSection);
+            }
+          });
+        }, { threshold: 0.25 });
+        dataObserver.observe(dataSection);
+      } else {
+        dataSection.classList.add("is-visible");
+      }
+    }
+
+    // 추천 차량 진입 애니메이션
+    var carsSection = document.querySelector(".cars");
+    if (carsSection) {
+      if ("IntersectionObserver" in window) {
+        var carsObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              carsSection.classList.add("is-visible");
+              observer.unobserve(carsSection);
+            }
+          });
+        }, { threshold: 0.15 });
+        carsObserver.observe(carsSection);
+      } else {
+        carsSection.classList.add("is-visible");
+      }
+    }
+
+    // HINT 카드 진입 애니메이션
+    var hintsSection = document.querySelector(".hints");
+    if (hintsSection) {
+      if ("IntersectionObserver" in window) {
+        var hintsObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              hintsSection.classList.add("is-visible");
+              observer.unobserve(hintsSection);
+            }
+          });
+        }, { threshold: 0.25 });
+        hintsObserver.observe(hintsSection);
+      } else {
+        hintsSection.classList.add("is-visible");
+      }
+    }
+
+    // 출고후기 Swiper
+    if (document.querySelector(".review-swiper")) {
+      new Swiper(".review-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 12,
+        grabCursor: true
+      });
+    }
+
+    // ===== 렌트/리스 선택 설문 모달 =====
+    (function () {
+      var modal = document.getElementById("rentLeaseSurvey");
+      if (!modal) return;
+
+      var openers = document.querySelectorAll(".survey-open");
+      var closer = document.getElementById("surveyClose");
+      var done = document.getElementById("surveyDone");
+      var reset = document.getElementById("surveyReset");
+      var steps = Array.prototype.slice.call(modal.querySelectorAll(".survey-step"));
+      var result = document.getElementById("surveyResult");
+      var progressText = document.getElementById("surveyProgressText");
+      var progressFill = document.getElementById("surveyProgressFill");
+      var surveyStage = document.getElementById("surveyStage");
+      var surveySpeech = document.getElementById("surveySpeech");
+      var surveyRunFill = document.getElementById("surveyRunFill");
+      var resultTitle = document.getElementById("surveyResultTitle");
+      var resultCopy = document.getElementById("surveyResultCopy");
+      var currentStep = 0;
+      var surveyRecommendedUsage = "rent";
+      var scores = { rent: 0, lease: 0 };
+      var speechLabels = ["첫 번째 질문!", "두 번째 질문!", "세 번째 질문!", "네 번째 질문!", "다섯 번째 질문!"];
+
+      function updateStage(index, isResult) {
+        var ratio = isResult ? 1 : (steps.length <= 1 ? 0 : index / (steps.length - 1));
+        var runnerLeft = 15 + ratio * 66;
+        var bubbleLeft = Math.min(26 + ratio * 40, 66);
+        var trackWidth = isResult ? 100 : runnerLeft;
+        var bubbleTurnsLeft = index >= steps.length - 2 || isResult;
+        var bubbleRotate = bubbleTurnsLeft ? -10 : 16;
+
+        if (surveyStage) {
+          surveyStage.style.setProperty("--survey-runner-left", runnerLeft + "%");
+          surveyStage.style.setProperty("--survey-bubble-left", bubbleLeft + "%");
+          surveyStage.style.setProperty("--survey-bubble-rotate", bubbleRotate + "deg");
+          surveyStage.classList.toggle("is-bubble-left", bubbleTurnsLeft);
+        }
+        if (surveySpeech) surveySpeech.textContent = isResult ? "결과 확인!" : speechLabels[index];
+        if (surveyRunFill) surveyRunFill.style.width = trackWidth + "%";
+      }
+
+      function setStep(index) {
+        currentStep = index;
+        steps.forEach(function (step, i) {
+          step.hidden = i !== index;
+          step.classList.remove("is-choosing");
+          step.querySelectorAll(".survey-option").forEach(function (option) {
+            option.classList.remove("is-selected");
+          });
+        });
+        if (result) result.hidden = true;
+        if (progressText) progressText.textContent = "질문 " + (index + 1) + " / " + steps.length;
+        if (progressFill) progressFill.style.width = (((index + 1) / steps.length) * 100) + "%";
+        updateStage(index, false);
+      }
+
+      function resetSurvey() {
+        scores = { rent: 0, lease: 0 };
+        setStep(0);
+      }
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        resetSurvey();
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function openQuoteFromResult() {
+        closeModal();
+        window.setTimeout(function () {
+          window.dispatchEvent(new CustomEvent("carmong:openQuote", {
+            detail: {
+              fromSurvey: true,
+              usage: surveyRecommendedUsage
+            }
+          }));
+        }, 320);
+      }
+
+      function showResult() {
+        steps.forEach(function (step) { step.hidden = true; });
+        if (progressText) progressText.textContent = "설문 완료";
+        if (progressFill) progressFill.style.width = "100%";
+        updateStage(steps.length - 1, true);
+        if (result) result.hidden = false;
+
+        if (scores.rent > scores.lease) {
+          surveyRecommendedUsage = "rent";
+          resultTitle.textContent = "장기렌트가 더 잘 맞아요";
+          resultCopy.textContent = "보험 포함, 전용 번호판, 관리 편의성, 대출 한도 관리가 중요하다면 장기렌트 조건을 먼저 비교해보는 것이 좋아요.";
+          if (done) done.textContent = "장기렌트 견적신청";
+        } else if (scores.lease > scores.rent) {
+          surveyRecommendedUsage = "lease";
+          resultTitle.textContent = "리스가 더 잘 맞아요";
+          resultCopy.textContent = "일반 번호판, 직접 보험 관리, 직접 차량 관리가 중요하다면 리스 조건을 먼저 비교해보는 것이 좋아요.";
+          if (done) done.textContent = "리스 견적신청";
+        } else {
+          surveyRecommendedUsage = "rent";
+          resultTitle.textContent = "렌트와 리스 모두 비교가 필요해요";
+          resultCopy.textContent = "선택 기준이 균형적이라 차종, 예산, 보험 조건까지 함께 비교하면 더 정확하게 결정할 수 있어요.";
+          if (done) done.textContent = "장기렌트 견적신청";
+        }
+      }
+
+      openers.forEach(function (button) { button.addEventListener("click", openModal); });
+      if (closer) closer.addEventListener("click", closeModal);
+      if (done) done.addEventListener("click", openQuoteFromResult);
+      if (reset) reset.addEventListener("click", resetSurvey);
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal || e.target.classList.contains("survey-scroll")) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      modal.querySelectorAll(".survey-option").forEach(function (option) {
+        option.addEventListener("click", function () {
+          var step = option.closest(".survey-step");
+          if (!step || step.classList.contains("is-choosing")) return;
+
+          var score = option.getAttribute("data-score");
+          if (score === "rent" || score === "lease") scores[score] += 1;
+
+          step.classList.add("is-choosing");
+          option.classList.add("is-selected");
+
+          window.setTimeout(function () {
+            if (currentStep < steps.length - 1) {
+              setStep(currentStep + 1);
+            } else {
+              showResult();
+            }
+          }, 260);
+        });
+      });
+
+      resetSurvey();
+    })();
+
+    // ===== 법인 차량 장단점 모달 =====
+    (function () {
+      var modal = document.getElementById("corporateProsCons");
+      if (!modal) return;
+
+      var openers = document.querySelectorAll(".corporate-open");
+      var closer = document.getElementById("corpClose");
+      var quoteButton = document.getElementById("corpQuoteButton");
+      var panel = modal.querySelector(".corp-panel");
+      var body = modal.querySelector(".corp-body");
+
+      function updateScrollThumb() {
+        if (!panel || !body) return;
+
+        var trackTop = 104;
+        var trackBottom = 120;
+        var trackHeight = Math.max(0, panel.clientHeight - trackTop - trackBottom);
+        var maxScroll = Math.max(0, body.scrollHeight - body.clientHeight);
+        var thumbHeight = trackHeight;
+        var thumbY = 0;
+
+        if (maxScroll > 1 && trackHeight > 0) {
+          thumbHeight = Math.max(36, Math.round((body.clientHeight / body.scrollHeight) * trackHeight));
+          thumbHeight = Math.min(thumbHeight, trackHeight);
+          thumbY = Math.round((body.scrollTop / maxScroll) * (trackHeight - thumbHeight));
+        }
+
+        panel.classList.toggle("is-scrollable", maxScroll > 1);
+        panel.style.setProperty("--corp-scroll-thumb-height", thumbHeight + "px");
+        panel.style.setProperty("--corp-scroll-thumb-y", thumbY + "px");
+      }
+
+      function openModal(e) {
+        if (e) e.preventDefault();
+        if (body) body.scrollTop = 0;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        updateScrollThumb();
+        window.setTimeout(updateScrollThumb, 80);
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function openCorporateQuote() {
+        closeModal();
+        window.setTimeout(function () {
+          window.dispatchEvent(new CustomEvent("carmong:openQuote", {
+            detail: {
+              fromCorporate: true,
+              customer: "corporate"
+            }
+          }));
+        }, 320);
+      }
+
+      openers.forEach(function (button) { button.addEventListener("click", openModal); });
+      if (closer) closer.addEventListener("click", closeModal);
+      if (quoteButton) quoteButton.addEventListener("click", openCorporateQuote);
+      if (body) body.addEventListener("scroll", updateScrollThumb, { passive: true });
+      window.addEventListener("resize", updateScrollThumb);
+      modal.querySelectorAll("img").forEach(function (img) {
+        if (!img.complete) img.addEventListener("load", updateScrollThumb, { once: true });
+      });
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal || e.target.classList.contains("corp-scroll")) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+    })();
+
+    // ===== 견적신청 폼 모달 =====
+    (function () {
+      var modal = document.getElementById("quoteModal");
+      if (!modal) return;
+      var openers = document.querySelectorAll(".btn-quote, .hero-btn, .quote-open");
+      var closer = document.getElementById("quoteClose");
+      var surveyApplied = document.getElementById("quoteSurveyApplied");
+
+      function setUsage(usage) {
+        var usageGroup = modal.querySelector('.qseg[data-group="usage"]');
+        if (!usageGroup) return;
+
+        usageGroup.querySelectorAll(".qseg-btn").forEach(function (button) {
+          button.classList.toggle("active", button.getAttribute("data-usage") === usage);
+        });
+      }
+
+      function setCustomer(customer) {
+        var customerGroup = modal.querySelector('.qseg[data-group="customer"]');
+        if (!customerGroup) return;
+
+        customerGroup.querySelectorAll(".qseg-btn").forEach(function (button) {
+          button.classList.toggle("active", button.getAttribute("data-customer") === customer);
+        });
+      }
+
+      function openModal(e, options) {
+        if (e) e.preventDefault();
+        var opts = options || {};
+        var fromSurvey = !!opts.fromSurvey;
+        var fromCorporate = !!opts.fromCorporate;
+        modal.classList.toggle("from-survey", fromSurvey);
+        modal.classList.toggle("from-corporate", fromCorporate);
+        if (surveyApplied) {
+          surveyApplied.textContent = fromCorporate ? "법인 상담 적용" : "설문 결과 적용";
+          surveyApplied.hidden = !(fromSurvey || fromCorporate);
+        }
+        if (opts.usage) setUsage(opts.usage);
+        if (opts.customer) setCustomer(opts.customer);
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      openers.forEach(function (b) { b.addEventListener("click", openModal); });
+      if (closer) closer.addEventListener("click", closeModal);
+      window.addEventListener("carmong:openQuote", function (e) {
+        openModal(null, e.detail || {});
+      });
+
+      // 노란 배경(폼 바깥) 클릭 시 닫기
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal ||
+            e.target.classList.contains("quote-scroll") ||
+            e.target.classList.contains("quote-stage")) {
+          closeModal();
+        }
+      });
+      // ESC 닫기
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      // 세그먼트(토글) 버튼 단일 선택
+      modal.querySelectorAll(".qseg").forEach(function (group) {
+        group.addEventListener("click", function (e) {
+          var btn = e.target.closest(".qseg-btn");
+          if (!btn) return;
+          group.querySelectorAll(".qseg-btn").forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+        });
+      });
+
+      // 제출(데모)
+      var form = document.getElementById("quoteForm");
+      if (form) form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("포트폴리오 시연용 화면입니다. 실제 상담은 접수되지 않습니다.");
+        closeModal();
+      });
+    })();
+  </script>
+
+<div class="layer_popup_wrap_new agreement_new" id="agreementPopupNew" aria-hidden="true">
+	<div class="layer_popup_renew02">
+		<div class="popup_title_renew02">
+			<p class="tc"> <strong>이용자 동의사항</strong></p>
+			<button class="popup_close_renew02 agree_popup_close_btn_new" id="agree_popup_close_btn_new" type="button" aria-label="닫기">&times;</button>
+		</div>
+		<div class="popup_body_renew02">
+			<div class="terms_wrap">
+				<ul class="terms_list">
+					<li class="terms_item open terms_chk_all">
+						<div class="btn02">
+							<span class="input_chk_new">
+								<input type="checkbox" id="chk_all" class="check_all" name="check_all">
+								&nbsp;<label for="chk_all"><span class="chk_all_txt">전체동의</span></label>
+							</span>
+						</div>
+					</li>
+					<li class="terms_item view_agree_detail_btn open">
+						<div class="btn02 agree_check_btn">
+                                <span class="input_chk_new">
+                                    <input type="checkbox" id="privacy_agree" class="chk pop_privacy_agree" name="privacy_agree" value="1">
+                                    &nbsp;<label for="privacy_agree" class="collect_personal">개인정보 수집 및 이용 동의 <span class="blue bold">(필수)</span></label>
+                                </span>
+							<span class="arrow_down"><img src="../../images/icons/arrow-down.svg" alt="화살표아래"></span>
+						</div>
+						<div class="desc">
+							<p>
+								<span class="red bold">
+									㈜카몽을 통하여 제공하는 서비스를 고객님이 이용하도록 하기 위해서 그 수집 및 이용이 필요한 최소한의 개인정보이므로 해당 항목에 (필수)동의를 해 주셔야 서비스 이용이 가능합니다. (주)카몽은 (이하 "회사"는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다. 회사는 개인정보처리방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드리며, 본 개인정보처리방침은 카몽 모든 서비스에 적용되며, 수집된 개인정보는 서비스 제공을 위한 전화, 문자 등의 연락 수단으로 이용될 수 있습니다.
+								</span>
+
+							</p>
+							<table class="terms_table">
+								<colgroup>
+									<col width="40%">
+									<col width="30%">
+									<col width="30%">
+								</colgroup>
+								<tbody>
+								<tr>
+									<th>목적</th>
+									<th>항목</th>
+									<th>보유기간</th>
+								</tr>
+								<tr>
+									<td>서비스 제공에 관한 계약이행 및 회원의 관리</td>
+									<td>성명,전화번호(휴대폰),이메일주소</td>
+									<td>재화 및 서비스 공급완료시</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li class="terms_item view_agree_detail_btn close">
+						<div class="btn02 agree_check_btn">
+                                <span class="input_chk_new">
+                                    <input type="checkbox" id="maketing_agree" class="chk pop_maketing_agree" name="maketing_agree" value="1">
+                                    &nbsp;<label for="maketing_agree" class="collect_choice01">마케팅광고·홍보활용 동의 <span class="normal">(선택)</span></label>
+                                </span>
+							<span class="arrow_down"><img src="../../images/icons/arrow-down.svg" alt="화살표아래"></span>
+						</div>
+						<div class="desc">
+							<p>
+								<span class="red bold">
+									귀하는 동의를 거부할 권리가 있으나, 위 사항에 동의하지 않으실 경우, 상품(서비스)소개, 이벤트 안내 등에 따른 혜택의 제한이 있을 수 있습니다. 그 밖에 카몽 견적신청 등과 관련된 불이익은 없습니다.
+								</span>
+								<br>
+								개인정보 보유 및 이용기간동의일부터 사용자가 동의를 철회할 때까지 보유, 이용하게 됩니다.
+							</p>
+							<table class="terms_table">
+								<colgroup>
+									<col width="30%">
+									<col width="30%">
+									<col width="40%">
+								</colgroup>
+								<tbody>
+								<tr>
+									<th>목적</th>
+									<th>항목</th>
+									<th>보유기간</th>
+								</tr>
+								<tr>
+									<td>광고, 이벤트 및 프로모션 및 고충처리</td>
+									<td>주소, 전화번호(자택, 휴대폰), 이메일주소</td>
+									<td>-회원 탈퇴시<br> -민원처리 종료시</td>
+								</tr>
+								</tbody>
+							</table>
+							<p>
+								<strong>개인정보 보유기간 상세내용</strong> <br>
+								개인정보 수집 및 이용동의(필수)동의 항목의 &gt; 개인정보의 보유 및 이용기간 &gt; 표참고
+							</p>
+						</div>
+					</li>
+					<li class="terms_item view_agree_detail_btn close">
+						<div class="btn02 agree_check_btn">
+							<span class="input_chk_new">
+								<input type="checkbox" id="consignment_agree" class="chk pop_consignment_agree" name="consignment_agree" value="1">
+								&nbsp;<label for="consignment_agree" class="collect_choice02">개인정보 제3자 제공 위탁 동의 <span class="normal">(선택)</span></label>
+							</span>
+							<span class="arrow_down"><img src="../../images/icons/arrow-down.svg" alt="화살표아래"></span>
+						</div>
+						<div class="desc">
+							<p>
+								<span class="red bold">
+									아래 개인정보 처리 위탁에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 원활한 서비스 제공에 일부 제한을 받을 수 있습니다.
+								</span>
+							</p>
+							<table class="terms_table">
+								<colgroup>
+									<col width="40%">
+									<col width="60%">
+								</colgroup>
+								<tbody>
+								<tr>
+									<th>위탁업무 내용</th>
+									<th>위탁업체</th>
+								</tr>
+								<tr>
+									<td>
+										렌터카 중개 및 알선(장기렌터카/리스 서비스제공)
+									</td>
+									<td>
+										레드캡, 농협캐피탈(렌트), 농협캐피탈(리스), 나우카, 지모터스, 롯데렌터카, 롯데캐피탈, 롯데오토리스, (주)이어카, 메리츠캐피탈, 미래에셋캐피탈, 삼성카드, 신한카드, 아마존카, 아주캐피탈, 알페라, 오릭스, 우리카드, 조이렌트카, 하나캐피탈, 하모니렌트카, 한진렌터카, 현대캐피탈, 효성캐피탈, AJ렌터카, BNK캐피탈, CNH프리미어렌탈, DGB캐피탈, JB우리캐피탈, KB캐피탈(인천지점), KB캐피탈(수원지점), "KDB캐피탈, (산은캐피탈)", SK렌터카
+									</td>
+								</tr>
+								</tbody>
+							</table>
+							<p class="blue tr"> * 카몽 제휴업체 리스트 확인필요	</p>
+						</div>
+					</li>
+
+					<li class="terms_item view_agree_detail_btn close">
+						<div class="btn02 agree_check_btn">
+							<span class="input_chk_new">
+								<input type="checkbox" id="3rd_marketing_agree" class="chk pop_3rd_marketing_agree" name="3rd_marketing_agree" value="1">
+								&nbsp;<label for="3rd_marketing_agree" class="collect_choice02">개인정보 제 3자 마케팅 활용 동의 <span class="normal">(선택)</span></label>
+							</span>
+							<span class="arrow_down"><img src="../../images/icons/arrow-down.svg" alt="화살표아래"></span>
+						</div>
+						<div class="desc">
+							<p>
+								<span class="red bold">
+									목적
+									(주)카몽은 고객들에게 보다 다양한 정보를 제공하고, 서비스의 질을 향상시키기 위하여 당사의 비즈니스 파트너에게 본 활용동의서에 동의한 회원의 개인정보를 제공합니다.<br>
+									회원님들 중 제3자 마케팅 활용동의서에 동의하신 회원님들의 정보만이 제공되며, 제공된 정보는 명시된 이용목적을 벗어나 이용되지 않고, 개인정보의 유출 등 사고가 일어나지 않도록 더욱 철저한 <br>
+									보안이 이루어지도록 노력하고 있습니다.
+								</span>
+							</p>
+							<table class="terms_table">
+								<colgroup>
+									<col width="25%">
+									<col width="25%">
+									<col width="25%">
+									<col width="25%">
+								</colgroup>
+								<tbody>
+								<tr>
+									<th>제공받는자</th>
+									<th>제공목적</th>
+									<th>제공항목</th>
+									<th>제공기간</th>
+								</tr>
+								<tr>
+									<td>
+										(주)이어카
+									</td>
+									<td>
+										이벤트, 신규서비스 및 마케팅 알림
+									</td>
+									<td>
+										휴대폰번호
+									</td>
+									<td>
+										제3자 정보 제공동의 철회 시 또는 제휴 계약 종료 시까지
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li class="terms_action">
+						<button class="agreement_new_close_btn agree_popup_close_btn_new" type="button">닫기</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <script>
+    // ===== 개인정보 동의 상세 팝업 =====
+    (function () {
+      var popup = document.getElementById("agreementPopupNew");
+      var moreButton = document.querySelector(".qconsent-more");
+      var quoteAgree = document.getElementById("quoteAgree");
+      if (!popup || !moreButton) return;
+
+      var allCheck = popup.querySelector(".check_all");
+      var detailChecks = Array.prototype.slice.call(popup.querySelectorAll(".chk"));
+      var privacyCheck = popup.querySelector(".pop_privacy_agree");
+
+      function openAgreementPopup(e) {
+        if (e) e.preventDefault();
+        popup.classList.add("open");
+        popup.setAttribute("aria-hidden", "false");
+      }
+
+      function closeAgreementPopup() {
+        popup.classList.remove("open");
+        popup.setAttribute("aria-hidden", "true");
+      }
+
+      function syncChecks() {
+        if (allCheck) {
+          allCheck.checked = detailChecks.length > 0 && detailChecks.every(function (check) {
+            return check.checked;
+          });
+        }
+        if (quoteAgree && privacyCheck) quoteAgree.checked = privacyCheck.checked;
+      }
+
+      moreButton.addEventListener("click", openAgreementPopup);
+
+      popup.querySelectorAll(".agree_popup_close_btn_new").forEach(function (button) {
+        button.addEventListener("click", closeAgreementPopup);
+      });
+
+      popup.addEventListener("click", function (e) {
+        if (e.target === popup) closeAgreementPopup();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && popup.classList.contains("open")) closeAgreementPopup();
+      });
+
+      popup.querySelectorAll(".view_agree_detail_btn .agree_check_btn").forEach(function (button) {
+        button.addEventListener("click", function (e) {
+          if (e.target.closest("input") || e.target.closest("label")) return;
+          var item = button.closest(".terms_item");
+          if (!item) return;
+          var isOpen = !item.classList.contains("open");
+          item.classList.toggle("open", isOpen);
+          item.classList.toggle("close", !isOpen);
+        });
+      });
+
+      if (allCheck) {
+        allCheck.addEventListener("change", function () {
+          detailChecks.forEach(function (check) {
+            check.checked = allCheck.checked;
+          });
+          syncChecks();
+        });
+      }
+
+      detailChecks.forEach(function (check) {
+        check.addEventListener("change", syncChecks);
+      });
+
+      if (quoteAgree) {
+        quoteAgree.addEventListener("change", function () {
+          if (privacyCheck) privacyCheck.checked = quoteAgree.checked;
+          syncChecks();
+        });
+      }
+
+      syncChecks();
+    })();
+  </script>
+</body>
+</html>

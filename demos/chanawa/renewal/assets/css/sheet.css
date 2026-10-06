@@ -1,0 +1,90 @@
+/* Shared dialogs: ID scoping isolates them from main/subpage form rules. */
+:is(#rwQuote,#rwGeneralQuote){--rwq-accent:#2a88ff;position:fixed;inset:0;width:100%;height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;color:#17243b;font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;font-size:14px;line-height:1.5;overflow:clip;z-index:10000}
+:is(#rwQuote,#rwGeneralQuote):not([open]){display:none}
+:is(#rwQuote,#rwGeneralQuote)[open]{display:flex;align-items:flex-end;justify-content:center}
+:is(#rwQuote,#rwGeneralQuote)::backdrop{background:transparent}
+:is(#rwQuote,#rwGeneralQuote) *{box-sizing:border-box;min-width:0}
+:is(#rwQuote,#rwGeneralQuote) [hidden]{display:none!important}
+:is(#rwQuote,#rwGeneralQuote) :is(p,h2,h3,fieldset,legend,label){margin:0;float:none;position:static;width:auto;height:auto}
+:is(#rwQuote,#rwGeneralQuote) button{font-family:inherit;cursor:pointer;line-height:1.4;box-shadow:none;letter-spacing:normal}
+:is(#rwQuote,#rwGeneralQuote) button:focus-visible{outline:2px solid #87baff;outline-offset:-3px}
+:is(#rwQuote,#rwGeneralQuote) .rwq-backdrop{position:absolute;inset:0;background:rgb(15 23 42 / .55)}
+:is(#rwQuote,#rwGeneralQuote) .rwq-sheet{position:relative;width:100%;max-width:444px;max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px);margin:0;padding:0;background:#fff;border-radius:22px 22px 0 0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#ccd7e5 transparent}
+:is(#rwQuote,#rwGeneralQuote).is-open .rwq-sheet{animation:rwq-enter .24s cubic-bezier(.22,.61,.36,1)}
+:is(#rwQuote,#rwGeneralQuote).is-open .rwq-backdrop{animation:rwq-fade .2s ease-out}
+@keyframes rwq-enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rwq-fade{from{opacity:0}to{opacity:1}}
+:is(#rwQuote,#rwGeneralQuote) .rwq-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px;background:#2a88ff;color:white}
+:is(#rwQuote,#rwGeneralQuote) .rwq-title{font-size:19px;font-weight:800;line-height:1.35;color:#fff}
+:is(#rwQuote,#rwGeneralQuote) .rwq-sub{margin-top:6px;font-size:12px;font-weight:500;color:#fff}
+:is(#rwQuote,#rwGeneralQuote) .rwq-x{position:relative;display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:#ffffff30;color:#fff;font-size:0;line-height:0}
+:is(#rwQuote,#rwGeneralQuote) .rwq-x::before,:is(#rwQuote,#rwGeneralQuote) .rwq-x::after{content:'';position:absolute;top:50%;left:50%;width:14px;height:2px;border-radius:1px;background:currentColor;transform:translate(-50%,-50%) rotate(45deg)}
+:is(#rwQuote,#rwGeneralQuote) .rwq-x::after{transform:translate(-50%,-50%) rotate(-45deg)}
+:is(#rwQuote,#rwGeneralQuote) .rwq-body{position:relative;padding:18px 20px max(22px,env(safe-area-inset-bottom));background:#fff}
+:is(#rwQuote,#rwGeneralQuote) .rwq-badge{position:absolute;top:14px;left:20px;background:#f44a6e;color:#fff;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700;z-index:1}
+:is(#rwQuote,#rwGeneralQuote) .rwq-badge:empty{display:none}
+#rwQuote .rwq-badge.stock-mid{background:#2a88ff}
+#rwQuote .rwq-badge.stock-high{background:#00e14b}
+:is(#rwQuote,#rwGeneralQuote) .rwq-visual{display:grid;place-items:center;height:124px}
+:is(#rwQuote,#rwGeneralQuote) .rwq-img{display:block;width:100%;max-width:280px;height:124px;object-fit:contain}
+#rwQuote .rwq-visual{position:relative}
+#rwQuote.is-carousel .rwq-visual{touch-action:pan-y;user-select:none}
+#rwQuote.is-carousel .rwq-img{max-width:calc(100% - 80px)}
+#rwQuote .rwq-nav{position:absolute;top:50%;display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid #d1e3ff;border-radius:10px;background:#f3f8ff;color:#2a88ff;transform:translateY(-50%)}
+#rwQuote .rwq-prev{left:0}
+#rwQuote .rwq-next{right:0}
+#rwQuote .rwq-nav::before{content:'';width:7px;height:7px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg);margin-right:3px}
+#rwQuote .rwq-prev::before{transform:rotate(-135deg);margin-right:0;margin-left:3px}
+#rwQuote .rwq-nav:active{background:#dcecff}
+#rwQuote .rwq-dots{display:flex;justify-content:center;align-items:center;margin-top:4px}
+#rwQuote .rwq-dots button{display:grid;place-items:center;width:22px;height:22px;padding:0;border:0;background:transparent}
+#rwQuote .rwq-dots button::before{content:'';width:6px;height:6px;border-radius:9px;background:#d6dfec}
+#rwQuote .rwq-dots button[aria-current=true]::before{width:18px;background:#2a88ff}
+#rwQuote .rwq-slide-status{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:is(#rwQuote,#rwGeneralQuote) .rwq-brand{margin-top:8px;text-align:center;font-size:12px;color:#64748b}
+:is(#rwQuote,#rwGeneralQuote) .rwq-model{margin-top:2px;text-align:center;font-size:22px;line-height:1.3;font-weight:800;color:#17243b}
+:is(#rwQuote,#rwGeneralQuote) .rwq-price{display:grid;gap:8px;margin-top:16px;padding:14px 16px;border-radius:12px;background:#f5f8fc}
+:is(#rwQuote,#rwGeneralQuote) .rwq-price-row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:#52627a}
+:is(#rwQuote,#rwGeneralQuote) .rwq-price-row strong{font-size:20px;font-weight:750;font-variant-numeric:tabular-nums;color:#52627a}
+:is(#rwQuote,#rwGeneralQuote) .rwq-price-row .rent{color:#2a88ff}
+:is(#rwQuote,#rwGeneralQuote) .rwq-note{margin-top:8px;font-size:12px;color:#64748b;text-align:center;white-space:pre-line}
+:is(#rwQuote,#rwGeneralQuote) .rwq-note:empty{display:none}
+:is(#rwQuote,#rwGeneralQuote) .rwq-form{display:grid;gap:16px;width:auto;min-height:0;margin:18px 0 0;border:0;float:none}
+:is(#rwQuote,#rwGeneralQuote) .rwq-field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#334155}
+:is(#rwQuote,#rwGeneralQuote) .rwq-field input{display:block;position:static;width:100%;height:48px;min-height:48px;margin:0;padding:0 12px;border:1px solid #d6dfec;border-radius:10px;background:#fff;color:#17243b;line-height:1.4;font-family:inherit;font-size:16px;font-weight:400;box-shadow:none;text-align:left;appearance:none}
+:is(#rwQuote,#rwGeneralQuote) .rwq-field input::placeholder{color:#91a0b6;font-size:13px;opacity:1}
+:is(#rwQuote,#rwGeneralQuote) .rwq-field input:focus{outline:none;border-color:#2a88ff;box-shadow:0 0 0 3px #2a88ff18}
+:is(#rwQuote,#rwGeneralQuote) i{color:#f44a6e;font-style:normal}
+:is(#rwQuote,#rwGeneralQuote) .rwq-agree{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+:is(#rwQuote,#rwGeneralQuote) .rwq-agree label{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:#334155;cursor:pointer}
+:is(#rwQuote,#rwGeneralQuote) :is(input[type=checkbox],input[type=radio]){position:static;display:inline-block;appearance:auto;opacity:1;width:18px;height:18px;flex:0 0 18px;margin:0;padding:0;accent-color:#2a88ff;cursor:pointer}
+:is(#rwQuote,#rwGeneralQuote) .rwq-view{padding:0;border:0;border-radius:0;background:transparent;color:#788aa7;text-decoration:underline;font-size:12px;font-weight:400;white-space:nowrap}
+:is(#rwQuote,#rwGeneralQuote) .rwq-submit{display:block;width:100%;min-height:50px;margin:0;padding:13px 16px;border:0;border-radius:10px;background:#2a88ff;color:white;text-align:center;font-size:16px;font-weight:700}
+:is(#rwQuote,#rwGeneralQuote) .rwq-submit:hover{background:#1877ed}
+:is(#rwQuote,#rwGeneralQuote) .rwq-status{color:#b42344;font-size:13px;line-height:1.5}
+#rwGeneralQuote .rwq-general-head{position:relative;background:#f0f2f7;overflow:hidden}
+#rwGeneralQuote .rwq-general-img{display:block;width:100%;height:auto;aspect-ratio:557/380;object-fit:cover;object-position:center bottom}
+#rwGeneralQuote .rwq-general-copy{position:absolute;top:18px;left:18px;right:18px}
+#rwGeneralQuote .rwq-live{position:relative;display:inline-flex;align-items:center;max-width:calc(100% - 28px);padding:3px 12px 3px 27px;border-radius:99px;background:#fff;color:#334155;font-size:12px}
+#rwGeneralQuote .rwq-live::before,#rwGeneralQuote .rwq-live::after{content:'';position:absolute;left:12px;top:50%;box-sizing:border-box;width:8px;height:8px;border-radius:50%;transform:translateY(-50%);transform-origin:50% 50%;pointer-events:none}
+#rwGeneralQuote .rwq-live::before{background:#f44a6e}
+#rwGeneralQuote .rwq-live::after{border:1px solid #f44a6e;animation:rwq-live-pulse 2s ease-out infinite}
+@keyframes rwq-live-pulse{0%{transform:translateY(-50%) scale(1);opacity:.65}75%,100%{transform:translateY(-50%) scale(2.5);opacity:0}}
+#rwGeneralQuote .rwq-lead{margin-top:12px;font-size:14px;color:#17243b;line-height:1.6;word-break:keep-all;white-space:pre-line}
+#rwGeneralQuote .rwq-general-head .rwq-x{position:absolute;right:10px;top:10px;color:#17243b;background:#ffffffb3}
+#rwGeneralQuote .rwq-form{margin:0;padding:16px 16px max(8px,env(safe-area-inset-bottom));gap:14px}
+#rwGeneralQuote .rwq-points{padding:0;border:0}
+#rwGeneralQuote .rwq-points legend{padding:0 0 8px;font-size:13px;font-weight:650;color:#17243b}
+#rwGeneralQuote .rwq-points>div{display:flex;flex-wrap:wrap;gap:12px 16px}
+#rwGeneralQuote .rwq-points label{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#334155}
+#rwGeneralQuote .rwq-name-phone{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#rwGeneralQuote .rwq-field input{height:46px;min-height:46px;padding:0 12px 2px;background:#fff;font-size:14px;line-height:normal;text-align:left}
+#rwGeneralQuote .rwq-field input::placeholder{line-height:normal;text-align:left}
+#rwGeneralQuote .rwq-field small{color:#8a97aa;font-size:12px;font-weight:400}
+#rwGeneralQuote .rwq-agree{padding:0;border:0}
+#rwGeneralQuote .rwq-view{padding:6px 14px;border-radius:999px;background:#4a4f5a;color:#fff;text-decoration:none;font-size:12px;font-weight:500}
+#rwGeneralQuote .rwq-submit{background:#2f6bff}
+#rwGeneralQuote .rwq-submit:hover{background:#255be0}
+@media(min-width:701px){:is(#rwQuote,#rwGeneralQuote)[open]{align-items:center}:is(#rwQuote,#rwGeneralQuote) .rwq-sheet{border-radius:20px;max-height:calc(100dvh - 40px)}}
+@media(prefers-reduced-motion:reduce){:is(#rwQuote,#rwGeneralQuote).is-open :is(.rwq-sheet,.rwq-backdrop){animation:none}}
+@media(prefers-reduced-motion:reduce){#rwGeneralQuote .rwq-live::after{animation:none;opacity:0}}

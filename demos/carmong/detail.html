@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CARMONG · 차종 상세</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="css/faq.css" />
+<link rel="stylesheet" href="css/detail.css" />
+<meta name="robots" content="noindex,nofollow"><script src="../demo-guard.js"></script></head>
+<body>
+  <main class="page">
+
+    <!-- ===== HEADER (index와 동일) ===== -->
+    <header class="header">
+      <a href="index.html" class="logo" aria-label="CARMONG 홈">CARMONG</a>
+      <div class="head-btns">
+        <a class="btn-allcar" href="all_car.html">전 차종 견적</a>
+        <a class="btn-quote" href="#quoteModal">견적신청</a>
+      </div>
+    </header>
+
+    <!-- ===== 1. 상세 HERO ===== -->
+    <section class="dhero">
+      <div class="dhero-bubbles" aria-hidden="true">
+        <span class="dbub b1"></span><span class="dbub b2"></span><span class="dbub b3"></span>
+        <span class="dbub b4"></span><span class="dbub b5"></span><span class="dbub b6"></span>
+        <span class="dbub b7"></span><span class="dbub b8"></span>
+      </div>
+
+      <div class="dhero-visual" aria-hidden="true">
+        <img class="dh-car" id="dCarImg" src="" alt="" />
+      </div>
+
+      <div class="dhero-body">
+        <div class="dh-brand"><img id="dBrandLogo" src="" alt="" /><span id="dBrandName"></span></div>
+        <h1 class="dh-name" id="dName">차량</h1>
+        <p class="dh-tagline" id="dTagline"></p>
+
+        <div class="dh-prices">
+          <div class="dh-price rent">
+            <div class="dh-price-label">장기렌트</div>
+            <div class="dh-price-val" id="dRent">월 <b>-</b> 원~</div>
+          </div>
+          <div class="dh-price lease">
+            <div class="dh-price-label">리스</div>
+            <div class="dh-price-val" id="dLease">월 <b>-</b> 원~</div>
+          </div>
+          <div class="dh-price newcar">
+            <div class="dh-price-label">신차 출시 가격</div>
+            <div class="dh-price-val" id="dNew"><b>-</b> 원~</div>
+          </div>
+        </div>
+        
+      </div>
+
+      <a class="dh-cta quote-open" id="dCta" href="#quoteModal">최저가 견적 받기</a>
+      <!-- ===== 3. 캐릭터 ===== -->
+        <div class="dchar">
+          <img class="dchar-img" src="asset/detail_page_chracter.png" alt="" />
+        </div>
+    </section>
+
+    <!-- ===== 2. 스펙 표 ===== -->
+    <div class="dspec-wrap">
+      <div class="dspec">
+        <div class="dspec-col"><div class="dspec-h">차종</div><div class="dspec-v" id="dsBody">-</div></div>
+        <div class="dspec-col"><div class="dspec-h">연료</div><div class="dspec-v" id="dsFuel">-</div></div>
+        <div class="dspec-col"><div class="dspec-h">배기량</div><div class="dspec-v" id="dsCc">-</div></div>
+        <div class="dspec-col"><div class="dspec-h">연비</div><div class="dspec-v" id="dsEff">-</div></div>
+      </div>
+    </div>
+
+
+    <!-- ===== 4. 같은 제조사 차량 보기 ===== -->
+    <section class="dbrand">
+      <div class="dbrand-head">
+        <h2 class="dbrand-title">같은 제조사 차량보기</h2>
+      </div>
+      <div class="swiper brandSwiper">
+        <div class="swiper-wrapper" id="brandWrapper"><!-- JS --></div>
+      </div>
+    </section>
+
+    <!-- ===== 5. FAQ (faq.html과 동일) ===== -->
+    <section class="hero" aria-labelledby="faqTitle">
+      <div class="faq-bubbles" aria-hidden="true">
+        <span class="faq-bubble b1"></span><span class="faq-bubble b2"></span><span class="faq-bubble b3"></span>
+        <span class="faq-bubble b4"></span><span class="faq-bubble b5"></span><span class="faq-bubble b6"></span>
+      </div>
+      <div class="hero-icon"><img src="asset/FAQ.png" alt="" /></div>
+      <div class="eyebrow">FAQ</div>
+      <h2 class="title" id="faqTitle">자주 묻는 질문</h2>
+      <p class="desc">장기렌트와 리스 상담 전 가장 많이 궁금해하시는 내용을 간단하고 명확하게 정리했습니다.</p>
+    </section>
+
+    <section class="faq-list" aria-label="FAQ 목록">
+      <article class="faq-item open">
+        <button class="faq-question" type="button" aria-expanded="true">
+          <span class="q-text"><span class="q-prefix">Q.</span>장기렌트와 리스는 어떤 차이가 있나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">장기렌트는 렌트사 명의 차량을 월 렌탈료로 이용하는 방식이고, 리스는 금융사가 차량을 구입한 뒤 이용자에게 빌려주는 금융 상품에 가깝습니다. 보험, 세금, 비용 처리 방식이 달라 상담 시 이용 목적에 맞춰 비교해드립니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>초기비용 없이도 이용할 수 있나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">가능한 조건이 있습니다. 보증금, 선납금, 선수금 없이 진행 가능한 상품도 있으며 신용 조건과 차량, 계약 기간에 따라 월 납입료가 달라질 수 있습니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>계약 기간은 어떻게 정하나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">보통 24개월부터 60개월까지 선택하며, 많이 이용하는 기간은 36개월과 48개월입니다. 기간이 길수록 월 납입료는 낮아질 수 있지만 총 이용 계획을 함께 고려하는 것이 좋습니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>신용등급이 낮아도 신청할 수 있나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">신청은 가능하지만 승인 여부와 조건은 금융사 심사에 따라 달라집니다. 여러 제휴 조건을 비교해 가능한 방향을 안내해드립니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>사고가 나면 보험 처리는 어떻게 되나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">장기렌트는 보통 렌트사 보험 조건에 따라 처리하고, 리스는 개인 보험 또는 계약 조건에 따라 처리합니다. 면책금과 자기부담금은 상품별로 다르므로 계약 전 확인이 필요합니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>약정 거리를 초과하면 어떻게 되나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">계약 시 정한 연간 약정 주행거리를 초과하면 만기 시 초과 운행 부담금이 발생할 수 있습니다. 평소 주행 패턴에 맞춰 여유 있게 설정하는 것을 추천드립니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>계약 만기 후 차량은 어떻게 되나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">상품에 따라 반납, 인수, 재계약 중 선택할 수 있습니다. 인수 가능 여부와 인수가격은 계약 조건에 따라 달라집니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>차량 색상이나 옵션을 직접 고를 수 있나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">신차 주문 차량은 색상과 옵션 선택이 가능합니다. 즉시 출고 차량은 이미 확보된 재고 기준이라 선택 범위가 제한될 수 있지만 출고가 빠른 장점이 있습니다.</p>
+        </div></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="q-text"><span class="q-prefix">Q.</span>견적은 어떻게 받나요?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer"><div class="answer-inner">
+          <p class="answer-copy">원하는 차종, 이용 방식, 고객 유형, 연락처를 남겨주시면 카매니저가 조건을 확인한 뒤 비교 견적을 안내해드립니다.</p>
+        </div></div>
+      </article>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" aria-label="견적 신청 안내">
+      <h2 class="cta-title">내 조건에 맞는 견적이 궁금하다면?</h2>
+      <p class="cta-copy">차종과 이용 방식을 알려주시면 장기렌트와 리스 조건을 비교해 안내해드립니다.</p>
+      <div class="cta-row">
+        <a class="cta-btn quote-open" href="#quoteModal">견적신청 하러가기</a>
+        <a class="cta-btn secondary" href="all_car.html">전 차종 보기</a>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo" aria-label="CARMONG">CARMONG</div>
+          <div class="footer-sub">장기렌트·리스 비교견적</div>
+        </div>
+        <div class="footer-sns">
+          <a href="#" aria-label="YouTube"><img src="asset/youtube_rogo.png" alt="YouTube" /></a>
+          <a href="#" aria-label="Instagram"><img src="asset/instar.png" alt="Instagram" /></a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-intro">14년의 업력을 바탕으로 고객에게 꼭 맞는 장기렌트·리스 비교 견적 솔루션을 제공합니다. 카몽은 다양한 고객 니즈에 맞춘 맞춤형 컨설팅으로 더 합리적인 차량 선택을 돕습니다.</p>
+      <p class="footer-info">
+        (주)카몽 | 대표자: 이현우 | 사업자등록번호: 122-86-45067<br />
+        주소: 인천 부평구 주부토로 236, 인천테크노밸리 U1센터 21층<br />
+        고객센터: 1661-5519 | contact@carmong.kr
+      </p>
+    </footer>
+  </main>
+
+  <!-- ===== 견적신청 폼 모달 (faq.html과 동일) ===== -->
+  <div class="quote-overlay" id="quoteModal" aria-hidden="true">
+    <div class="quote-scroll">
+      <div class="quote-stage">
+        <div class="quote-robot-clip"><img class="quote-robot" src="asset/견적신청 로봇.png" alt="" /></div>
+        <span class="qbubble qbubble-left">최대한 빠르고<br />저렴하게!!</span>
+        <span class="qbubble qbubble-right">간단히 체크하고<br />이름, 연락처 입력!</span>
+      </div>
+      <div class="quote-panel">
+        <div class="quote-head">
+          <button class="quote-close" id="quoteClose" aria-label="닫기">&times;</button>
+          <p class="quote-head-sub">실시간 상담 가능! 20명 카매니저 대기중입니다.</p>
+          <h3 class="quote-head-title">간단하게 체크하고 무료로 견적신청 받자!</h3>
+        </div>
+        <form class="quote-form" id="quoteForm">
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span> 이용 방식 선택 (필수)</label>
+            <div class="qseg" data-group="usage">
+              <button type="button" class="qseg-btn active">장기렌트</button>
+              <button type="button" class="qseg-btn">리스</button>
+            </div>
+          </div>
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span> 고객 유형 선택 (필수)</label>
+            <div class="qseg" data-group="customer">
+              <button type="button" class="qseg-btn active">개인 고객</button>
+              <button type="button" class="qseg-btn">법인 사업자</button>
+            </div>
+          </div>
+          <div class="qfield">
+            <label class="qlabel">희망차종(선택)</label>
+            <input class="qinput" id="qCarName" type="text" placeholder="차량명 입력해주세요." />
+          </div>
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span>고객명(필수)</label>
+            <input class="qinput" type="text" placeholder="고객명 입력해주세요." />
+          </div>
+          <div class="qfield">
+            <label class="qlabel"><span class="req">*</span>연락처(필수)</label>
+            <input class="qinput" type="tel" placeholder="연락처 입력해주세요." />
+          </div>
+          <div class="qconsent">
+            <label class="qconsent-check">
+              <input type="checkbox" id="quoteAgree" />
+              <span class="qconsent-box" aria-hidden="true"></span>
+              <span class="qconsent-text">개인정보활용(필수/선택)동의</span>
+            </label>
+            <button type="button" class="qconsent-more">자세히보기</button>
+          </div>
+          <button type="submit" class="quote-submit">견적 신청하기</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="carbay_images/all_cars_data.js"></script>
+  <script>
+  (function(){
+    "use strict";
+    var CARS   = window.ALL_CARS   || [];
+    var BRANDS = window.ALL_BRANDS || [];
+
+    /* 차종/연료/배기량/연비 — 대표 트림 기준 (인기 차종 정확값, 나머지는 추후 보강) */
+    var CAR_SPECS = {
+      "G80":["준대형","가솔린","2,497cc","10.5km/ℓ"],
+      "G70":["중형 세단","가솔린","1,998cc","11.0km/ℓ"],
+      "G90":["대형 세단","가솔린","3,470cc","8.9km/ℓ"],
+      "GV80":["대형 SUV","가솔린","2,497cc","9.5km/ℓ"],
+      "GV70":["중형 SUV","가솔린","2,497cc","10.8km/ℓ"],
+      "GV60":["준중형 SUV","전기","-","4.8km/kWh"],
+      "그랜저":["준대형 세단","가솔린","2,497cc","11.7km/ℓ"],
+      "쏘나타":["중형 세단","가솔린","1,999cc","13.0km/ℓ"],
+      "아반떼":["준중형 세단","가솔린","1,598cc","14.5km/ℓ"],
+      "쏘렌토":["중형 SUV","디젤","2,151cc","14.3km/ℓ"],
+      "싼타페":["중형 SUV","가솔린","2,497cc","10.7km/ℓ"],
+      "투싼":["준중형 SUV","가솔린","1,598cc","12.7km/ℓ"],
+      "팰리세이드":["대형 SUV","디젤","2,199cc","12.4km/ℓ"],
+      "코나":["소형 SUV","가솔린","1,598cc","12.8km/ℓ"],
+      "캐스퍼":["경형 SUV","가솔린","998cc","13.0km/ℓ"],
+      "아이오닉 5":["준중형 SUV","전기","-","4.8km/kWh"],
+      "아이오닉 6":["중형 세단","전기","-","5.6km/kWh"],
+      "스포티지":["준중형 SUV","가솔린","1,598cc","12.5km/ℓ"],
+      "셀토스":["소형 SUV","가솔린","1,598cc","12.8km/ℓ"],
+      "카니발":["미니밴","디젤","2,151cc","13.1km/ℓ"],
+      "레이":["경차","가솔린","998cc","13.0km/ℓ"],
+      "모닝":["경차","가솔린","998cc","14.0km/ℓ"],
+      "니로":["소형 SUV","하이브리드","1,580cc","19.1km/ℓ"],
+      "K5":["중형 세단","가솔린","1,999cc","13.0km/ℓ"],
+      "K8":["준대형 세단","가솔린","2,497cc","11.5km/ℓ"],
+      "K9":["대형 세단","가솔린","3,342cc","9.6km/ℓ"],
+      "EV6":["준중형 SUV","전기","-","4.6km/kWh"],
+      "EV3":["소형 SUV","전기","-","5.0km/kWh"],
+      "EV9":["대형 SUV","전기","-","4.0km/kWh"],
+      "타스만":["픽업트럭","디젤","2,151cc","10.2km/ℓ"],
+      "토레스":["중형 SUV","가솔린","1,497cc","11.2km/ℓ"]
+    };
+    var DETAIL_OVERRIDES = {
+      "4603": {
+        spec: ["준대형", "가솔린", "2,497cc", "10.5km/ℓ"],
+        newPrice: 58990000,
+        tagline: "품격 있는 이동을 위한 프리미엄 준대형 세단"
+      }
+    };
+    function lookupSpec(name){
+      var best=null, bestLen=0;
+      for(var k in CAR_SPECS){
+        if(name.indexOf(k)!==-1 && k.length>bestLen){ best=CAR_SPECS[k]; bestLen=k.length; }
+      }
+      return best || ["-","-","-","-"];
+    }
+
+    function param(n){ return new URLSearchParams(location.search).get(n); }
+    function won(v){ return (v||0).toLocaleString("ko-KR"); }
+    function brandOf(name){ return (BRANDS.filter(function(b){return b.name===name;})[0]) || null; }
+
+    /* ----- 차량 찾기 ----- */
+    var id = param("id");
+    var car = CARS.filter(function(c){ return c.id===id; })[0];
+    if(!car){ car = CARS.filter(function(c){ return c.name.indexOf("G80")!==-1; })[0] || CARS[0]; }
+    if(!car){ return; }
+
+    var brand = brandOf(car.brand);
+    var override = DETAIL_OVERRIDES[car.id] || {};
+    var spec = override.spec || lookupSpec(car.name);
+    var displayNewPrice = override.newPrice || car.newPrice;
+
+    /* ----- HERO 채우기 ----- */
+    document.title = "CARMONG · " + car.brand + " " + car.name;
+    if(brand){ var bl=document.getElementById("dBrandLogo"); bl.src=brand.logo; bl.onerror=function(){this.style.display="none";}; }
+    document.getElementById("dBrandName").textContent = car.brand;
+    document.getElementById("dName").textContent = car.brand + " " + car.name;
+    document.getElementById("dTagline").textContent = override.tagline || (car.brand + "의 " + spec[0]);
+
+    var carImg = document.getElementById("dCarImg");
+    carImg.src = car.image; carImg.alt = car.name;
+    carImg.onerror = function(){ this.style.visibility="hidden"; };
+
+    function setPrice(elId, val){
+      var el = document.getElementById(elId);
+      el.innerHTML = val ? "월 <b>"+won(val)+"</b> 원~" : "<b>견적 문의</b>";
+    }
+    setPrice("dRent", car.rent);
+    setPrice("dLease", car.lease);
+    document.getElementById("dNew").innerHTML = displayNewPrice ? "<b>"+won(displayNewPrice)+"</b> 원~" : "<b>견적 문의</b>";
+
+    document.getElementById("dCta").textContent = car.name + " 최저가 견적받기";
+    var qn = document.getElementById("qCarName"); if(qn){ qn.value = car.brand + " " + car.name; }
+
+    /* ----- 스펙표 ----- */
+    document.getElementById("dsBody").textContent = spec[0];
+    document.getElementById("dsFuel").textContent = spec[1];
+    document.getElementById("dsCc").textContent   = spec[2];
+    document.getElementById("dsEff").textContent  = spec[3];
+
+    /* ----- 같은 제조사 차량 ----- */
+    var same = CARS.filter(function(c){ return c.brand===car.brand && c.id!==car.id; })
+                   .sort(function(a,b){ return (a.rank||999)-(b.rank||999); })
+                   .slice(0,12);
+    function priceHtml(c){
+      var o="";
+      if(c.rent)  o+='<div class="p-rent">렌트 월 '+won(c.rent)+'원~</div>';
+      if(c.lease) o+='<div class="p-lease">리스 월 '+won(c.lease)+'원~</div>';
+      if(!c.rent && !c.lease) o='<div class="p-rent">견적 문의</div>';
+      return o;
+    }
+    var blogo = brand ? brand.logo : "";
+    document.getElementById("brandWrapper").innerHTML = same.map(function(c){
+      return '<div class="swiper-slide"><a class="bcard" href="detail.html?id='+c.id+'">'+
+        '<div class="bcard-thumb"><img src="'+c.image+'" loading="lazy" alt="" onerror="this.style.visibility=\'hidden\'"></div>'+
+        '<div class="bcard-name">'+(blogo?'<img class="blogo" src="'+blogo+'" alt="" onerror="this.style.display=\'none\'">':'')+'<span>'+c.name+'</span></div>'+
+        '<div class="bcard-price">'+priceHtml(c)+'</div>'+
+      '</a></div>';
+    }).join("");
+    if(same.length){
+      new Swiper(".brandSwiper", { slidesPerView:"auto", spaceBetween:12, freeMode:true });
+    }
+
+    /* ----- FAQ 토글 ----- */
+    document.querySelectorAll(".faq-question").forEach(function(button){
+      button.addEventListener("click", function(){
+        var item=button.closest(".faq-item");
+        var open=item.classList.toggle("open");
+        button.setAttribute("aria-expanded", open?"true":"false");
+      });
+    });
+
+    /* ----- 견적신청 모달 ----- */
+    var modal=document.getElementById("quoteModal");
+    var openers=document.querySelectorAll(".btn-quote, .quote-open");
+    var closer=document.getElementById("quoteClose");
+    function openModal(e){ if(e)e.preventDefault(); modal.classList.add("open"); modal.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
+    function closeModal(){ modal.classList.remove("open"); modal.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+    openers.forEach(function(b){ b.addEventListener("click", openModal); });
+    if(closer) closer.addEventListener("click", closeModal);
+    modal.addEventListener("click", function(e){
+      if(e.target===modal || e.target.classList.contains("quote-scroll") || e.target.classList.contains("quote-stage")) closeModal();
+    });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape" && modal.classList.contains("open")) closeModal(); });
+    modal.querySelectorAll(".qseg").forEach(function(group){
+      group.addEventListener("click", function(e){
+        var btn=e.target.closest(".qseg-btn"); if(!btn) return;
+        group.querySelectorAll(".qseg-btn").forEach(function(b){ b.classList.remove("active"); });
+        btn.classList.add("active");
+      });
+    });
+    var form=document.getElementById("quoteForm");
+    if(form) form.addEventListener("submit", function(e){ e.preventDefault(); alert("포트폴리오 시연용 화면입니다. 실제 상담은 접수되지 않습니다."); closeModal(); });
+  })();
+  </script>
+</body>
+</html>

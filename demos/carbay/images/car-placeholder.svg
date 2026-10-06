@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- 이미지 준비중 플레이스홀더 — 사진 아이콘 + 안내 문구 -->
+  <rect x="252" y="132" width="96" height="76" rx="10" fill="none" stroke="#C6CCDD" stroke-width="6"/>
+  <circle cx="283" cy="158" r="9" fill="#C6CCDD"/>
+  <path d="M262 196 L292 168 L312 186 L326 174 L338 196 Z" fill="#C6CCDD"/>
+  <text x="300" y="254" text-anchor="middle" font-family="Pretendard, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="600" fill="#A9B0C3">이미지를 준비중입니다</text>
+</svg>

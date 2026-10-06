@@ -1,0 +1,70 @@
+/* The same in-flow, sticky shell is used by the home and all subpages. */
+html { scrollbar-gutter: stable; }
+#rw-header { display: block; position: sticky; top: 0; z-index: 1000; }
+html.mobile-menu-open { overflow: hidden; }
+body.rw { padding-top: 0; }
+
+/* The desktop quote follows scrolling only as far as the visible review cards. */
+@media (min-width: 1201px) {
+  body[data-renewal-header] #detail-estimate {
+    translate: 0 var(--detail-estimate-offset, 0px);
+  }
+}
+
+/* Hovered cards create their own stacking context; keep fixed consultation
+   controls above page content and below the shared header/dialogs. */
+body:is(.rw,[data-renewal-header]) > .m-btn-wrap {
+  z-index: 900;
+  isolation: isolate;
+}
+
+/* Match the renewal home's mobile consultation buttons on every subpage. */
+body[data-renewal-header] > .m-btn-wrap a {
+  border-radius: var(--rw-button-radius, 10px);
+}
+
+/* Remove only offsets that reserved space for the former fixed navbar. */
+body[data-renewal-header] > .sub-visual,
+body[data-renewal-header] > .sub-wrap,
+body[data-renewal-header] > .frmRequest > .sub-wrap,
+body[data-renewal-header] > #detail_info { top: 0; }
+body[data-renewal-header] > .community_container { top: 50px; }
+body[data-renewal-header] > .sell_mycar { padding-top: 0; }
+
+/* The review page also reserves navbar space with an inline/mobile margin. */
+body[data-renewal-header] > .section.section-gray {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+@media (max-width: 999px) {
+  body[data-renewal-header] > .frmRequest > .sub-wrap {
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  body[data-renewal-header] > .m-btn-wrap.m-estimate-btn {
+    height: 58px;
+    padding: 4px 16px;
+  }
+  body[data-renewal-header] > .m-btn-wrap.m-estimate-btn a {
+    height: 42px;
+  }
+  body[data-renewal-header] > .community_container {
+    top: 0;
+    padding-top: 16px;
+    gap: 16px;
+  }
+
+  /* Keep the existing fixed registration progress visible below the header. */
+  body[data-renewal-header] .sell_mycar .progress {
+    top: calc(var(--rw-header-height, 175px) + 12px);
+  }
+  body[data-renewal-header] .sell_mycar .left_aria {
+    padding-top: 96px;
+  }
+  body[data-renewal-header] .sell_mycar .left_contents_aria {
+    margin-top: 0;
+  }
+}

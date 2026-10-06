@@ -1,0 +1,42 @@
+.rw #navbar .rw-search-open{display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;background:transparent;color:#263348;cursor:pointer}
+.rw-search-open svg,.rws-input-wrap svg{width:23px;height:23px;flex-shrink:0}
+.rw #navbar .rw-search-open:hover{background:#edf5ff;color:var(--rw-blue)}
+.rw #navbar .p-navbar-r ul{gap:24px}
+.rw #navbar .pc .rw-search-open{display:flex;justify-content:center;gap:9px;width:auto;height:44px;padding:0 16px;border:1px solid #cfe2ff;background:#f0f7ff;color:#2377de;font:inherit;font-size:15px;font-weight:700;white-space:nowrap}
+.rw #navbar .pc .rw-search-open:hover{background:#e3efff;border-color:#91bfff}
+.rw #navbar .pc .rw-search-open svg{width:20px;height:20px}
+@media(max-width:1200px){
+  .rw{padding-top:100px}
+  .rw #navbar{height:100px}
+  .rw #navbar .container{width:100%;max-width:none}
+  .rw #navbar .mo-wrap{height:100px;padding:0;justify-content:flex-start;align-items:stretch}
+  .rw #navbar .mo-wrap::after{display:none}
+  .rw #navbar .nav_top{height:56px;flex:0 0 56px;padding:0 12px 0 16px;gap:4px;border-bottom:1px solid #edf0f4}
+  .rw #navbar .nav_top .m-logo{display:flex;align-items:center;height:100%;line-height:0}
+  .rw #navbar .nav_top .m-logo img{display:block}
+  .rw #navbar .nav_top .rw-search-open{margin-left:auto;margin-right:0;width:40px;height:40px}
+  .rw #navbar .nav_top .btn-menu{display:grid;place-items:center;width:40px;height:40px;line-height:0}
+  .rw #navbar .nav_top .btn-menu img{display:block;width:20px;margin:0}
+  .rw #navbar .navbar-sub{display:flex;align-items:center;flex:0 0 44px;height:44px;min-height:44px;margin:0;padding:0 16px;gap:20px;overflow-x:auto;overflow-y:hidden;opacity:1;transform:none;pointer-events:auto}
+  .rw #navbar .navbar-sub a{flex-shrink:0;height:44px;align-items:center;font-size:14px;line-height:1;white-space:nowrap}
+}
+.rws{width:min(540px,calc(100% - 32px));max-width:none;padding:0;margin:auto;max-height:calc(100dvh - 40px);border:1px solid #e2e8f0;border-radius:20px;background:#fff;color:var(--rw-ink);box-shadow:0 24px 80px #0f234633;font-family:inherit;overflow:hidden}
+.rws::backdrop{background:rgba(15,23,42,.48)}
+.rws-shell{display:flex;flex-direction:column;max-height:calc(100dvh - 42px);padding:24px}
+.rws-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.rws-head h2{font-size:23px;font-weight:800;line-height:1.4;margin:0;letter-spacing:-.6px}
+.rws-close{display:grid;place-items:center;flex:0 0 36px;height:36px;border:0;background:#f1f5f9;color:#64748b;font-size:26px;line-height:1;cursor:pointer}
+.rws-input-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0;padding:0 14px;border:1.5px solid #d7e3f2;border-radius:10px;background:#f8fbff;color:var(--rw-blue)}
+.rws-input-wrap:focus-within{border-color:var(--rw-blue);box-shadow:0 0 0 3px #2a88ff15}
+.rws-input-wrap input{width:100%;min-width:0;height:52px;background:transparent;border:0;outline:0;font:inherit;font-size:16px;color:var(--rw-ink)}
+.rws .rws-status{margin:20px 0 10px;font-size:13px;font-weight:600;color:#64748b}
+.rws-results{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.rws-result{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px 10px;border:0;border-bottom:1px solid #edf1f6;background:#fff;font:inherit;text-align:left;cursor:pointer;color:#0f172a}
+.rws-result:hover,.rws-result:focus-visible{background:#f0f7ff}
+.rws-result small{display:block;font-size:12px;color:#64748b;margin-bottom:5px}
+.rws-result strong{font-size:16px;font-weight:700}
+.rws-result > span:last-child{font-size:12px;color:var(--rw-blue);white-space:nowrap}
+.rws .rws-hint{margin:16px 0 0;font-size:12px;line-height:1.5;color:#64748b}
+.rws-empty{padding:30px 8px;text-align:center;font-size:14px;line-height:1.8;color:#64748b}
+.rws button:focus-visible,.rw-search-open:focus-visible{outline:2px solid var(--rw-blue);outline-offset:2px}
+@media(max-width:400px){.rws-shell{padding:20px 18px}.rws-head h2{font-size:21px}.rws-input-wrap{padding:0 10px;gap:8px}.rws-input-wrap input{font-size:14px}}

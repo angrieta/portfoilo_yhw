@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bebedepino</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <script src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="./images/header/top_logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/header/top_logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- 헤더 시작 -->
+    <header>
+        <div class="inner">
+            <div class="top_header">
+                <a class="logo" href="./index.html"><h1><img src="./images/header/rogo.png" alt="메인페이지로 가기"></h1></a>
+                <div class="top_right_menu">
+                    <a href="#">로그인</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#">고객센터</a>
+                </div>
+            </div>
+            <div class="btm_header">
+                <a href="#" class="btm_left_menu"><img src="./images/header/menu.png" alt="메뉴열기"></a>
+                <div class="btm_center_menu">
+                    <a href="#">신상품</a>
+                    <a href="#">BEST</a>
+                    <a href="#">세일</a>
+                    <a href="#">콜라보</a>
+                    <a href="#">신생아</a>
+                    <a href="#">베이비</a>
+                    <a href="#">키즈</a>
+                    <a href="#">액세서리</a>
+                    <a href="#">언더웨어</a>
+                </div>
+                <div class="btm_rigth_menu">
+                    <a href="#" class="search_btn"><img src="./images/header/ico_search.png" alt="검색"></a>
+                    <a href="#"><img src="./images/header/ico_cart.png" alt="장바구니"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더 종료 -->
+    <!-- 위로가기 시작-->
+    <div class="top_arrow">
+        <a href="#mainBnrArrow"><img src="./images/header/top_arrow.png" alt="위로가기"></a>
+    </div>
+    <!-- 위로가기 시작 -->
+    <!-- 검색 기능 시작  -->
+    <div class="search_aria">
+        <a href="#" class="search_close"><img src="./images/header/close.png" alt=""></a>
+        <div class="search_inner">
+            <form action="#" method="get" id="Search">
+                <input type="text" name="userSearch" id="userSearch" maxlength="30" placeholder="검색어를 입력해주세요.">
+                <p><img src="./images/header/ico_search_large.png" alt=""></p>
+            </form>
+            <div class="btm_contents">
+                <div class="suggest_search">
+                    <h3>추천 검색어</h3>
+                    <a href="#">1.와이키</a>
+                    <a href="#">2.허니베어</a>
+                    <a href="#">3.베니베어</a>
+                    <a href="#">4.울오버</a>
+                    <a href="#">5.맨투맨</a>
+                    <a href="#">6.핑크엘리펀트</a>
+                    <a href="#">7.러브데이지</a>
+                </div>
+                <div class="popular_search">
+                    <h3>추천 검색어</h3>
+                    <a href="#">1.후드티</a>
+                    <a href="#">2.원피스</a>
+                    <a href="#">3.티셔츠</a>
+                    <a href="#">4.패딩</a>
+                    <a href="#">5.가방</a>
+                    <a href="#">6.모자</a>
+                    <a href="#">7.디즈니</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 검색 기능 시작  -->
+    <!-- 메뉴 카테고리 시작  -->
+    <div class="header_menu">
+        <a href="#" class="menu_close"><img src="./images/header/close.png" alt=""></a>
+        <ul class="menu_box">
+            <li>
+                <div class="menu-item"><a href="#">전체보기</a></div>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">신상품</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">2025 봄</a></li>
+                    <li><a href="#">베이비</a></li>
+                    <li><a href="#">키즈</a></li>
+                    <li><a href="#">신생아</a></li>
+                    <li><a href="#">디즈니</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">BEST</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">후드티</a></li>
+                    <li><a href="#">티셔츠</a></li>
+                    <li><a href="#">바람막이</a></li>
+                    <li><a href="#">원피스</a></li>
+                    <li><a href="#">맨투맨</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">신생아</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">울오버</a></li>
+                    <li><a href="#">허니베어</a></li>
+                    <li><a href="#">하트제이미</a></li>
+                    <li><a href="#">브룩스베이비</a></li>
+                    <li><a href="#">레이첼</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">베이비</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">패딩</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">키즈</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">언더웨어</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">언더웨어</a></li>
+                    <li><a href="#">파자마</a></li>
+                    <li><a href="#">라운지웨어</a></li>
+                    <li><a href="#">패밀리웨어</a></li>
+                    <li><a href="#">액세서리</a></li>
+                    <li><a href="#">펫웨어</a></li>
+                    <li><a href="#">세일</a></li>
+                    <li><a href="#">아울렛</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">액세서리</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">양말</a></li>
+                    <li><a href="#">모자</a></li>
+                    <li><a href="#">스카프&턱받이</a></li>
+                    <li><a href="#">헤어 액세서리</a></li>
+                    <li><a href="#">기타</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">세일</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">패딩</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 메뉴 카테고리 종료  -->
+    <!-- main 시작 -->
+    <main>
+        <!-- 메인배너 시작 -->
+        <div class="swiper mainBnr" id="mainBnrArrow">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1"><img src="./images/index/bnr.png" alt=""></div>
+                <div class="swiper-slide slide2"><img src="./images/index/bnr-1.png" alt=""></div>
+                <div class="swiper-slide slide3"><img src="./images/index/bnr-2.png" alt=""></div>
+                <div class="swiper-slide slide4"><img src="./images/index/bnr-3.png" alt=""></div>
+                <div class="swiper-slide slide5"><img src="./images/index/bnr-4.png" alt=""></div>
+                <div class="swiper-slide slide6"><img src="./images/index/bnr-5.png" alt=""></div>
+                <div class="swiper-slide slide7"><img src="./images/index/bnr-6.png" alt=""></div>
+                <div class="swiper-slide slide8"><img src="./images/index/bnr-7.png" alt=""></div>
+                <div class="swiper-slide slide9"><img src="./images/index/bnr-8.png" alt=""></div>
+                <div class="swiper-slide slide10"><img src="./images/index/bnr-9.png" alt=""></div>
+                <div class="swiper-slide slide11"><img src="./images/index/bnr-10.png" alt=""></div>
+                <div class="swiper-slide slide12"><img src="./images/index/bnr-11.png" alt=""></div>
+                <div class="swiper-slide slide13"><img src="./images/index/bnr-12.png" alt=""></div>
+                <div class="swiper-slide slide14"><img src="./images/index/bnr-13.png" alt=""></div>
+                <div class="swiper-slide slide15"><img src="./images/index/bnr-14.png" alt=""></div>
+            </div>    
+            <div class="slide_bnr_btn">
+                <!-- (아래) 기본 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- 메인배너 종료 -->
+        <!-- New 시작 -->
+        <div class="sell new">
+            <div class="title">
+                <h2>NEW</h2>
+                <p>놓쳐서 안 될 새로운 상품 </p>
+            </div>
+            <div class="category">
+                <a href="#" class="active">전체</a>
+                <a href="#">후드</a>
+                <a href="#">재킷</a>
+                <a href="#">바람막이</a>
+                <a href="#">티셔츠</a>
+                <a href="#">악세서리</a>
+            </div>
+            <div class="swiper new_container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide1">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_001.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_002.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_003.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_004.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_005.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide1">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_001.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_002.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_003.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_004.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="./sell_page.html">
+                            <div><img src="./images/index/new_005.png" alt=""></div>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="sale_price">
+                                <del>56,000원</del>
+                            </div>
+                            <div>
+                                <em>10%</em>
+                                <span>50,400원</span>
+                            </div>
+                            <div class="star">
+                                <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>   
+            </div>  
+            <div class="slide_btn">
+                <!-- (아래) 기본 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="more_btn">
+                <a href="#" class="more_view">
+                    <p>상품 더보기</p>
+                </a> 
+            </div>
+        </div>
+        <!-- New 종료 -->
+        <!-- 광고배너 시작 -->
+        <div class="sell middle_banner">
+            <div class="title absolute_text">
+                <div class="center_container">
+                    <h2>미니도우 슬리피베어 키즈  티셔츠</h2>
+                    <p class="sub_text">부드럽고 고급스러운 소재, 감각스러운 컬러</p>
+                    <div class="more_btn mid_bnr">
+                        <a href="#" class="more_view">
+                            <p>상품 더보기</p>
+                        </a> 
+                    </div> 
+                </div>
+            </div>
+            <div class="banner_bg_main"></div>
+        </div>
+        <!-- 광고배너 종료 -->
+        <div class="sell best">
+            <div class="title">
+                <h2>BEST</h2>
+                <p class="sub_text">가장 인기있는 상품들을 만나보세요</p>
+            </div>
+            <div class="category">
+                <a href="#" class="active">전체</a>
+                <a href="#">신생아</a>
+                <a href="#">베이비</a>
+                <a href="#">키즈</a>
+                <a href="#">악세서리</a>
+                <a href="#">세일</a>
+            </div>
+            <div class="best_container">
+                <div class="best_main_bg">
+                </div>
+                <div class="right_contents">
+                    <div class="swiper best_aria">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide4">
+                                <a href="./sell_page.html" class="item_bg4">
+                                    <div class="best_item_bg"><img src="./images/index/best_000.jpg" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide5">
+                                <a href="./sell_page.html" class="item_bg5">
+                                    <div class="best_item_bg"><img src="./images/index/best_001.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide6">
+                                <a href="./sell_page.html" class="item_bg6">
+                                    <div class="best_item_bg"><img src="./images/index/best_002.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide4">
+                                <a href="./sell_page.html" class="item_bg4">
+                                    <div class="best_item_bg"><img src="./images/index/best_000.jpg" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide5">
+                                <a href="./sell_page.html" class="item_bg5">
+                                    <div class="best_item_bg"><img src="./images/index/best_001.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide6">
+                                <a href="./sell_page.html" class="item_bg">
+                                    <div class="best_item_bg"><img src="./images/index/best_002.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper best_aria">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html" class="item_bg1">
+                                    <div class="best_item_bg"><img src="./images/index/best_004.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html" class="item_bg2">
+                                    <div class="best_item_bg"><img src="./images/index/best_005.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html" class="item_bg3">
+                                    <div class="best_item_bg"><img src="./images/index/best_006.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html" class="item_bg1">
+                                    <div class="best_item_bg"><img src="./images/index/best_004.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html" class="item_bg2">
+                                    <div class="best_item_bg"><img src="./images/index/best_005.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html" class="item_bg3">
+                                    <div class="best_item_bg"><img src="./images/index/best_006.png" alt=""></div>
+                                    <div class="hide_text">
+                                        <h3>애기후드집업재킷</h3>
+                                        <span>50,400원</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more_btn">
+                <a href="#" class="more_view">
+                    <p>상품 더보기</p>
+                </a> 
+            </div> 
+        </div>
+        <!-- event 시작 -->
+        <div class="sell event">
+            <div class="event_bg">
+                <div class="title">
+                    <h2>EVENT</h2>
+                    <p>베베드피노에서 진행중인 이벤트!</p>
+                </div>
+                <div class="event_container">
+                    <a href="#">
+                        <div class="event_contents">
+                            <div class="event_img1"><img src="./images/index/event_001.png" alt=""></div>
+                            <h3>2월 BMILY DAY</h3>
+                            <p>매주 수요일 오전 11시 최대 70% 할인</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="event_contents">
+                            <div class="event_img2"><img src="./images/index/event_002.png" alt=""></div>
+                            <h3>SAVE THE SEA</h3>
+                            <p>돌핀 시리즈 전 상품 무료배송/교환/반품 이벤트</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="event_contents">
+                            <div class="event_img3"><img src="./images/index/event_003.png" alt=""></div>
+                            <h3>PICK YOUR TOK!</h3>
+                            <p>7만원 이상 구매 시 베베드피노 그립 톡 증정</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- event 종료 -->
+        <!-- SALE 시작  -->
+        <div class="sell sale_area">
+            <div class="sale_contents">
+                <div class="left_container">
+                    <div class="title_column">
+                        <h2>SALE</h2>
+                        <p class="sub_text">가격대 별로 할일율이 높은 상품 확인해보세요.</p>
+                    </div>
+                    <div class="category_column">
+                        <a href="#" class="active">모든 상품</a>
+                        <a href="#">10,000 원 ~ 30,000 원</a>
+                        <a href="#">30,000 원 ~ 50,000 원</a>
+                        <a href="#">50,000 원 ~ 70,000 원</a>
+                        <a href="#">70,000 원 ~ 100,000 원</a>
+                        <a href="#">100,000 원 이상</a>
+                    </div>
+                </div>
+                <div class="right_container">
+                    <div class="swiper sale_container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_001.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_002.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_003.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide4">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_004.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_001.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_002.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_003.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide4">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_004.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="swiper sale_container1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_005.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_006.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_007.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide4">
+                                <a href="#">
+                                    <div><img src="./images/index/sale_008.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide1">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_005.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide2">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_006.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide3">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_007.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide slide4">
+                                <a href="./sell_page.html">
+                                    <div><img src="./images/index/sale_008.png" alt=""></div>
+                                    <h3>애기후드집업재킷</h3>
+                                    <div class="sale_price">
+                                        <del>56,000원</del>
+                                    </div>
+                                    <div>
+                                        <em>10%</em>
+                                        <span>50,400원</span>
+                                    </div>
+                                    <div class="star">
+                                        <p><img src="./images/index/kid_star.png" alt=""> 4.8</p>
+                                        <p><img src="./images/index/heart.png" alt=""> 1.1만</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SALE 종료  -->
+        <!-- 광고배너 시작  -->
+        <div class="banner_bg">
+            <h2>
+                예민한 아이 피부를 생각한 소재<br>
+                감각적인 색감과 디자인
+            </h2>
+        </div>
+        <!-- 광고배너 종료  -->
+        <!-- 리뷰 시작  -->
+        <div class="sell review">
+            <div class="title">
+                <h2>베스트리뷰</h2>
+                <p>고객님들의 리뷰를 확인해보세요</p>
+            </div>
+            <div class="swiper review_container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide1">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_001.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_001.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_002.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_002.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_003.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_003.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_004.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_004.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_005.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_005.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide1">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_001.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_001.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_002.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_002.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_003.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_003.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_004.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_004.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="#">
+                            <div class="review_bg"><img src="./images/index/review_005.png" alt=""></div>
+                            <p>도톰하고 정말 부드러워요. 그리고 안에 기모가 있어서 .... </p>
+                            <h3>애기후드집업재킷</h3>
+                            <div class="user_info">
+                                <div class="user_id_count">
+                                    <div class="review_img"><img src="./images/index/user_profile_005.png" alt=""></div>
+                                    <div class="user_info_row">
+                                        <p>gusdnd****</p>
+                                        <p>리뷰<span>15</span></p>
+                                    </div>
+                                </div>
+                                <div class="total_point">
+                                    <p>평점</p>
+                                    <span>4.8</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>  
+            </div>
+            <div class="slide_btn">
+                <!-- (아래) 기본 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="more_btn">
+                <a href="#" class="more_view">
+                    <p>상품 더보기</p>
+                </a> 
+            </div>
+        </div>    
+        <!-- 리뷰 종료  -->
+        <!-- 인스타 시작 -->
+        <div class="sell instar">
+            <div class="title">
+                <h2>INSTARGRAM</h2>
+                <p>FOLLOW US ON INSTAGRAM @ BEBEDEPINO</p>
+            </div>
+            <div class="swiper instar_container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide1">
+                        <a href="#"><img src="./images/index/instagram_001.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="#"><img src="./images/index/instagram_002.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="#"><img src="./images/index/instagram_003.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="#"><img src="./images/index/instagram_004.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="#"><img src="./images/index/instagram_005.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide1">
+                        <a href="#"><img src="./images/index/instagram_001.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <a href="#"><img src="./images/index/instagram_002.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <a href="#"><img src="./images/index/instagram_003.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <a href="#"><img src="./images/index/instagram_004.png" alt=""></a>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <a href="#"><img src="./images/index/instagram_005.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide_btn">
+                <!-- (아래) 기본 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div class="more_btn">
+                <a href="#" class="more_view">
+                    <p>상품 더보기</p>
+                </a> 
+            </div>
+        </div>
+        <!-- 인스타 종료 -->
+        <!--하단배너 시작  -->
+        <div class="btm_bnr">
+            <div class="bnr_inner">
+                <div class="btm_bnr_logo"><img src="./images/index/btm_bnr_logo.png" alt=""></div>
+                <a href="#">더캐리 포인트 안내</a>
+            </div>
+        </div>
+        <!--하단배너 종료  -->
+    </main>
+    <!-- main 종료 -->
+    <!-- footer 시작 -->
+    <footer>
+        <div class="footer_top">
+            <div class="footer_menu">
+                <div class="left_menu">
+                    <a href="#">회사소개</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">고객센터</a>
+                    <a href="#">이벤트</a>
+                    <a href="#">공지사항</a>
+                </div>
+                <div class="right_menu">
+                    <a href="#">제휴문의</a>
+                    <a href="#">고객지원</a>
+                    <a href="#">Q&A</a>
+                </div>
+            </div>
+        </div>
+        <!-- footer 시작 -->
+        <div class="footer_btm">
+            <div class="footer_btm_left">
+                <h2>(주)더캐리</h2>
+                <p>사업장 : 서울특별시 용산구 한남동 738-36 2F-5F  |  대표이사 : 이은정,윤중용</p>
+                <address>사업자등록번호 : 128-87-03548  |  E-mail : bebedepino@thekary.com  |  통신판매업신고번호제 : 제 2021-서울용산-1694호 </address>
+                <p>전화상담 : 1833-2005 | FAX : +82.2.6119.5003 | 상담시간 : 평일 09:00 - 17:00 (점심 12:00 - 13:00) 토/ 일요일·공휴일 휴무  |  온라인 상담 : 이메일 1:1 상담문의 <a href="#"><img src="./images/index/down_arrow.png" alt=""></a></p>
+                <p>온라인 고객센터 : 1833-2005(주문/반품/교환/배송관련) | 물류센터: 경기도 파주시 광탄면 부흥로 235번길 146 C동 1번 게이트 더캐리 파주 물류센터</p>
+                <p>Copyright © BEBE DE PINO. All rights reserved.</p>
+            </div>
+            <div class="footer_btm_right">
+                <a href="#"><img src="./images/index/twitter.png" alt=""></a>
+                <a href="#"><img src="./images/index/instar.png" alt=""></a>
+                <a href="#"><img src="./images/index/youtube.png" alt=""></a>
+            </div>
+        </div> 
+        <!-- footer 종료 -->
+    </footer>
+    <!-- footer 종료 -->
+</body>
+</html>

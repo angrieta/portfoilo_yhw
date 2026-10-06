@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>CARMONG · 전 차종 견적</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+:root{
+  --dark-brown:#472606; --brown-card:#5a3410;
+  --yellow-sub:#ffd400; --yellow-main:#ffc300;
+  --orange-sub:#ff8c00; --orange-main:#ff5f00;
+  --hint-brown:#4b2605; --hint-orange:#fb5405;
+  --gutter:24px;
+  --card-radius:8px;
+}
+@media (max-width:430px){ :root{ --gutter:16px; } }
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{
+  background:#e9e9ec;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color:var(--dark-brown);
+  -webkit-text-size-adjust:100%;
+  line-height:1.45;
+}
+img{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+a{color:inherit;text-decoration:none;}
+
+/* ===== 모바일 컨테이너 ===== */
+.page{
+  position:relative;
+  max-width:600px;min-width:320px;width:100%;
+  margin:0 auto;background:#f5f3ef;min-height:100vh;
+  box-shadow:0 0 40px rgba(0,0,0,.12);
+  overflow-x:hidden;
+}
+
+/* ===================================================== */
+/* HEADER                                                */
+/* ===================================================== */
+.header{
+  position:sticky;top:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px var(--gutter);
+  background:#fff;border-bottom:1px solid #efe9df;
+}
+/* index 헤더와 동일한 로고 스타일 (Baloo 2, 옐로우 워드마크) */
+.logo{
+  display:block;
+  font-family:"Baloo 2","Pretendard","Apple SD Gothic Neo",sans-serif;
+  font-size:26px;font-weight:800;line-height:.9;letter-spacing:0;
+  color:var(--yellow-main);white-space:nowrap;
+}
+.head-btns{display:flex;gap:8px;align-items:center;}
+.btn-allcar{
+  background:var(--orange-sub);color:#fff;font-weight:700;
+  font-size:13px;padding:9px 14px;border-radius:12px;white-space:nowrap;
+}
+.btn-quote{
+  background:var(--yellow-main);color:#fff;font-weight:700;
+  font-size:13px;padding:9px 16px;border-radius:12px;white-space:nowrap;
+}
+
+/* ===================================================== */
+/* SECTION 공통                                          */
+/* ===================================================== */
+.section{padding:22px var(--gutter) 0;}
+.sec-head{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.sec-title{font-size:19px;font-weight:800;color:var(--dark-brown);}
+.sec-title .accent{color:var(--orange-main);}
+.sec-badge{
+  margin-left:auto;font-size:11px;font-weight:700;color:var(--orange-sub);
+  background:#fff3e0;padding:4px 10px;border-radius:20px;
+}
+
+/* ===================================================== */
+/* 1. 카몽 BEST 추천 (Swiper)                            */
+/* ===================================================== */
+.best-wrap{position:relative;overflow:visible;}
+/* 오른쪽(좌우) gutter에서 카드가 잘려 가려지도록 — 가로는 컨테이너 끝(=섹션 여백)에서 클립,
+   세로는 카드 그림자가 보이도록 패딩 확보 */
+.bestSwiper{overflow:hidden;padding:6px 0 12px;}
+.best-card{
+  background:#fff;border-radius:var(--card-radius);
+  padding:14px 12px 12px;
+  box-shadow:0 6px 16px rgba(71,38,6,.08);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  height:100%;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease;
+  border:1px solid #f0ece4;
+}
+.best-card:active{transform:scale(.97);}
+.best-rank{
+    align-self: flex-start;
+    font-family: "Baloo 2", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--orange-main);
+    width: 34px;
+    height: 34px;
+    border-radius: 8px 0px 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    line-height: 1;
+    top: 1px;
+    left: 0;
+
+}
+.best-thumb{
+  width:100%;height:84px;display:flex;align-items:center;justify-content:center;
+}
+.best-thumb img{max-height:84px;width:auto;object-fit:contain;
+  filter:drop-shadow(0 6px 8px rgba(71,38,6,.14));}
+.best-name{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;}
+.best-name .blogo{width:16px;height:16px;object-fit:contain;border-radius:4px;}
+.best-price{text-align:center;}
+/* 장기렌트·리스 가격 표기 (공통) — 기본은 그리드/모델 카드용(좁음) */
+.p-rent{font-size:10px;font-weight:800;color:var(--orange-main);line-height:1.32;white-space:nowrap;}
+.p-lease{font-size:9px;font-weight:600;color:#8a6a44;line-height:1.32;white-space:nowrap;}
+.p-none{font-size:10px;font-weight:700;color:#a07a44;}
+/* BEST 카드는 넓으므로 약간 크게 */
+.best-card .p-rent{font-size:12px;}
+.best-card .p-lease{font-size:11px;}
+
+/* Swiper 스크롤바 */
+.best-scrollbar{
+  position:relative;margin:14px auto 0;height:6px;width:88%;
+  background:#e7ded0;border-radius:10px;
+  bottom: var(--swiper-scrollbar-bottom, -4px) !important;
+}
+.best-scrollbar .swiper-scrollbar-drag{
+  background:var(--orange-main);border-radius:10px;
+}
+
+/* ===================================================== */
+/* 2. 전 차종 실시간 견적 (그리드)                       */
+/* ===================================================== */
+.allcar-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  padding-bottom:120px;
+}
+@media (max-width:380px){ .allcar-grid{gap:9px;} }
+.car-card{
+  background:#fff;border-radius:var(--card-radius);
+  padding:12px 8px 10px;
+  box-shadow:0 4px 12px rgba(71,38,6,.07);
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  border:1px solid #f0ece4;cursor:pointer;
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.car-card:active{transform:scale(.96);}
+.car-thumb{width:100%;height:64px;display:flex;align-items:center;justify-content:center;}
+.car-thumb img{max-height:64px;width:auto;object-fit:contain;
+  filter:drop-shadow(0 5px 7px rgba(71,38,6,.13));}
+.car-name{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;
+  text-align:center;line-height:1.2;}
+.car-name .blogo{width:14px;height:14px;object-fit:contain;flex:none;}
+.car-name span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:72px;}
+.car-price{text-align:center;display:flex;flex-direction:column;gap:1px;align-items:center;}
+
+.load-more{
+  grid-column:1/-1;margin-top:6px;
+  background:#fff;border:1px solid #ecd9c2;color:var(--orange-sub);
+  font-weight:700;font-size:13px;padding:13px;border-radius:14px;
+}
+
+/* ===================================================== */
+/* 3. 플로팅 카테고리 버튼                                */
+/* ===================================================== */
+.fab-cat{
+  position:fixed;z-index:70;
+  right:max(calc((100vw - 600px)/2 + 18px),18px);
+  bottom:24px;
+  background:var(--orange-main);color:#fff;
+  font-weight:800;font-size:15px;
+  width:74px;height:74px;border-radius:22px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  transition:transform .15s ease;
+}
+.fab-cat:active{transform:scale(.92);}
+.fab-cat.hide{opacity:0;pointer-events:none;transform:scale(.4);}
+
+/* ===================================================== */
+/* 4·5·6. 카테고리 풀스크린 오버레이                      */
+/* ===================================================== */
+.cat-overlay{
+  position:fixed;z-index:80;inset:0;
+  max-width:600px;margin:0 auto;
+  background:url("asset/bg_002.png") center/cover no-repeat, var(--yellow-main);
+  display:flex;flex-direction:column;
+  clip-path:circle(0px at calc(100% - 52px) calc(100% - 60px));
+  transition:clip-path .55s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+.cat-overlay.open{
+  clip-path:circle(160% at calc(100% - 52px) calc(100% - 60px));
+  pointer-events:auto;
+}
+
+.cat-top{
+  display:flex;align-items:center;gap:10px;
+  padding:18px var(--gutter) 6px;
+}
+.cat-back{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(71,38,6,.10);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:var(--dark-brown);font-weight:700;
+}
+.cat-title{font-size:20px;font-weight:800;color:var(--dark-brown);}
+.cat-step{
+  margin-left:auto;font-size:14px;font-weight:800;color:var(--dark-brown);
+  background:rgba(255,255,255,.6);padding:5px 12px;border-radius:20px;
+}
+
+/* 국산/수입 토글 + 정렬 토글 공통 pill */
+.toggle-row{
+  display:flex;gap:0;margin:10px var(--gutter) 4px;
+  background:#fff;border-radius:16px;padding:5px;
+  box-shadow:0 4px 12px rgba(71,38,6,.12);
+}
+.toggle-row button{
+  flex:1;padding:12px 0;border-radius:12px;
+  font-size:15px;font-weight:700;color:#a98a6a;
+  transition:background .2s ease,color .2s ease;
+}
+.toggle-row button.active{
+  background:var(--dark-brown);color:#fff;
+  box-shadow:0 3px 8px rgba(71,38,6,.3);
+}
+
+/* 패널 스택 (제조사 ↔ 차종 슬라이드) */
+.cat-body{position:relative;flex:1;overflow:hidden;}
+.panel{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+  will-change:transform;
+}
+.panel-maker{transform:translateX(0);}
+.panel-model{transform:translateX(100%);}
+.cat-body.show-model .panel-maker{transform:translateX(-100%);}
+.cat-body.show-model .panel-model{transform:translateX(0);}
+
+.panel-scroll{flex:1;overflow-y:auto;padding:6px var(--gutter) 30px;
+  -webkit-overflow-scrolling:touch;}
+
+/* 제조사 그리드 */
+.maker-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px;
+}
+@media (max-width:430px){ .maker-grid{grid-template-columns:repeat(3,1fr);} }
+.maker-card{
+  background:#fff;border-radius:16px;padding:14px 6px 10px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  box-shadow:0 3px 9px rgba(71,38,6,.1);
+  border:2px solid transparent;cursor:pointer;
+  transition:transform .14s ease,border-color .14s ease;
+}
+.maker-card:active{transform:scale(.95);}
+.maker-card.sel{border-color:var(--dark-brown);}
+.maker-logo{width:42px;height:42px;display:flex;align-items:center;justify-content:center;}
+.maker-logo img{max-width:42px;max-height:42px;object-fit:contain;}
+.maker-name{font-size:13px;font-weight:700;}
+.maker-count{font-size:10px;color:#b07a3a;font-weight:600;}
+
+/* 차종(모델) 그리드 */
+.model-head{
+  display:flex;align-items:center;gap:8px;margin:4px var(--gutter) 0;
+}
+.model-brandlogo{width:26px;height:26px;object-fit:contain;}
+.model-brandname{font-size:16px;font-weight:800;}
+.model-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:10px;
+}
+@media (max-width:380px){ .model-grid{gap:8px;} }
+.model-card{
+  background:#fff;border-radius:16px;padding:11px 7px 9px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  box-shadow:0 3px 9px rgba(71,38,6,.1);cursor:pointer;
+  border:1px solid #f0ece4;transition:transform .14s ease;
+}
+.model-card:active{transform:scale(.96);}
+.model-thumb{width:100%;height:58px;display:flex;align-items:center;justify-content:center;}
+.model-thumb img{max-height:58px;width:auto;object-fit:contain;
+  filter:drop-shadow(0 4px 6px rgba(71,38,6,.13));}
+.model-name{font-size:12px;font-weight:700;text-align:center;line-height:1.2;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:84px;}
+.model-price{text-align:center;display:flex;flex-direction:column;gap:1px;align-items:center;}
+
+.empty-msg{text-align:center;color:#a07a44;font-size:14px;padding:40px 0;}
+</style>
+<meta name="robots" content="noindex,nofollow"><script src="../demo-guard.js"></script></head>
+<body>
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="CARMONG">CARMONG</a>
+    <div class="head-btns">
+      <button class="btn-allcar" id="goAllCar">전 차종 견적</button>
+      <button class="btn-quote">견적신청</button>
+    </div>
+  </header>
+
+  <!-- ===== 1. 카몽 BEST 추천 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-title">카몽 <span class="accent">BEST</span> 추천</div>
+      <div class="sec-badge">인기 차종</div>
+    </div>
+    <div class="best-wrap">
+      <div class="swiper bestSwiper">
+        <div class="swiper-wrapper" id="bestWrapper"><!-- JS --></div>
+      </div>
+      <div class="swiper-scrollbar best-scrollbar" id="bestScrollbar"></div>
+    </div>
+  </section>
+
+  <!-- ===== 2. 전 차종 실시간 견적 ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-title">전 차종 <span class="accent">실시간 견적</span></div>
+      <div class="sec-badge" id="totalCount">전체</div>
+    </div>
+    <div class="allcar-grid" id="allcarGrid"><!-- JS --></div>
+  </section>
+
+  <!-- ===== 3. 플로팅 카테고리 버튼 ===== -->
+  <button class="fab-cat" id="fabCat"><span id="fabText">차종찾기</span></button>
+
+  <!-- ===== 4·5·6. 카테고리 오버레이 ===== -->
+  <div class="cat-overlay" id="catOverlay">
+    <div class="cat-body" id="catBody">
+
+      <!-- 제조사 선택 패널 -->
+      <div class="panel panel-maker">
+        <div class="cat-top">
+          <button class="cat-back" id="catClose">×</button>
+          <div class="cat-title">제조사 선택</div>
+          <div class="cat-step">1 / 2</div>
+        </div>
+        <div class="toggle-row" id="countryToggle">
+          <button class="active" data-country="domestic">국산차</button>
+          <button data-country="import">수입차</button>
+        </div>
+        <div class="panel-scroll">
+          <div class="maker-grid" id="makerGrid"><!-- JS --></div>
+        </div>
+      </div>
+
+      <!-- 차종 선택 패널 -->
+      <div class="panel panel-model">
+        <div class="cat-top">
+          <button class="cat-back" id="modelBack">‹</button>
+          <div class="cat-title">차종 선택</div>
+          <div class="cat-step">2 / 2</div>
+        </div>
+        <div class="toggle-row" id="sortToggle">
+          <button class="active" data-sort="asc">가격 낮은 순</button>
+          <button data-sort="desc">가격 높은 순</button>
+        </div>
+        <div class="model-head">
+          <img class="model-brandlogo" id="modelBrandLogo" alt="" />
+          <div class="model-brandname" id="modelBrandName"></div>
+        </div>
+        <div class="panel-scroll">
+          <div class="model-grid" id="modelGrid"><!-- JS --></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="carbay_images/all_cars_data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var CARS   = (window.ALL_CARS   || []).slice();
+  var BRANDS = (window.ALL_BRANDS || []).slice();
+
+  /* ---------- 인기도 점수 (베스트셀러 키워드 우선) ---------- */
+  var POPULAR = [
+    "그랜저","쏘렌토","카니발","싼타페","스포티지","셀토스","아반떼","투싼",
+    "쏘나타","K5","K8","팰리세이드","레이","캐스퍼","모닝","코나","니로",
+    "G80","GV80","GV70","G70","GV60","아이오닉 5","아이오닉 6","EV3","EV6",
+    "타스만","트래버스","트레일블레이저","토레스","액티언",
+    "5 시리즈","3 시리즈","E-클래스","C-클래스","A6","Q5","XC60","모델 Y","모델 3","모델Y","모델3"
+  ];
+  function popScore(car){
+    for(var i=0;i<POPULAR.length;i++){
+      if(car.name.indexOf(POPULAR[i])!==-1) return POPULAR.length - i; // 앞일수록 높음
+    }
+    return 0;
+  }
+  // 인기 정렬: 인기점수 desc, 동률이면 newPrice desc(고급차 우선 살짝)
+  CARS.forEach(function(c){ c._pop = popScore(c); });
+  var byPopularity = CARS.slice().sort(function(a,b){
+    if(b._pop!==a._pop) return b._pop - a._pop;
+    return b.newPrice - a.newPrice;
+  });
+
+  /* ---------- 가격 포맷 ---------- */
+  function won(n){ return n.toLocaleString("ko-KR"); }
+  function manwon(n){
+    if(!n) return "-";
+    var m = Math.round(n/10000);
+    if(m>=10000){ // 1억 이상
+      var eok=Math.floor(m/10000), rest=m%10000;
+      return rest? (eok+"억 "+won(rest)+"만원") : (eok+"억원");
+    }
+    return won(m)+"만원";
+  }
+  function monthly(car){
+    // 렌트 비용을 우선 표기 (렌트 > 리스)
+    var v = car.rent || car.lease;
+    if(!v) return "견적 문의";
+    var label = car.rent? "렌트" : "리스";
+    return label+" 월 "+won(v)+"원~";
+  }
+  // 카드용 가격: 장기렌트·리스 월 납입금 (렌트 우선 노출)
+  function priceHtml(c){
+    var out = "";
+    if(c.rent)  out += '<div class="p-rent">렌트 월 '+won(c.rent)+'원~</div>';
+    if(c.lease) out += '<div class="p-lease">리스 월 '+won(c.lease)+'원~</div>';
+    if(!c.rent && !c.lease) out = '<div class="p-none">견적 문의</div>';
+    return out;
+  }
+
+  /* ---------- 이미지 에러 폴백 ---------- */
+  function imgTag(src, cls){
+    return '<img class="'+cls+'" src="'+src+'" loading="lazy" alt="" '+
+           'onerror="this.style.visibility=\'hidden\'">';
+  }
+  function brandLogo(name){
+    var b = BRANDS.filter(function(x){return x.name===name;})[0];
+    return b? b.logo : "";
+  }
+
+  /* ===================================================== */
+  /* 1. BEST 추천 스와이퍼 채우기 (상위 인기 12종)          */
+  /* ===================================================== */
+  var bestList = byPopularity.slice(0,12);
+  var bestHtml = bestList.map(function(c,i){
+    return '<div class="swiper-slide">'+
+      '<div class="best-card" data-id="'+c.id+'">'+
+        '<div class="best-rank">'+(i+1)+'</div>'+
+        '<div class="best-thumb">'+imgTag(c.image,"")+'</div>'+
+        '<div class="best-name">'+imgTag(brandLogo(c.brand),"blogo")+
+          '<span>'+c.brand+' '+c.name+'</span></div>'+
+        '<div class="best-price">'+priceHtml(c)+'</div>'+
+      '</div></div>';
+  }).join("");
+  document.getElementById("bestWrapper").innerHTML = bestHtml;
+
+  new Swiper(".bestSwiper",{
+    slidesPerView:2.3, spaceBetween:12, freeMode:true,
+    scrollbar:{ el:"#bestScrollbar", draggable:true },
+    breakpoints:{ 480:{slidesPerView:2.8}, 560:{slidesPerView:3.2} }
+  });
+
+  /* ===================================================== */
+  /* 2. 전 차종 실시간 견적 (인기순, 더보기)               */
+  /* ===================================================== */
+  var grid = document.getElementById("allcarGrid");
+  var shown = 0, PAGE = 18;
+  document.getElementById("totalCount").textContent = "총 "+CARS.length+"종";
+
+  function carCardHtml(c){
+    return '<div class="car-card" data-id="'+c.id+'">'+
+      '<div class="car-thumb">'+imgTag(c.image,"")+'</div>'+
+      '<div class="car-name">'+imgTag(brandLogo(c.brand),"blogo")+'<span>'+c.name+'</span></div>'+
+      '<div class="car-price">'+priceHtml(c)+'</div>'+
+    '</div>';
+  }
+  function renderMore(){
+    var next = byPopularity.slice(shown, shown+PAGE);
+    var html = next.map(carCardHtml).join("");
+    var btn = document.getElementById("loadMoreBtn");
+    if(btn) btn.remove();
+    grid.insertAdjacentHTML("beforeend", html);
+    shown += next.length;
+    if(shown < byPopularity.length){
+      grid.insertAdjacentHTML("beforeend",
+        '<button class="load-more" id="loadMoreBtn">더 많은 차종 보기 ('+shown+'/'+byPopularity.length+')</button>');
+      document.getElementById("loadMoreBtn").addEventListener("click", renderMore);
+    }
+  }
+  renderMore();
+
+  /* ===================================================== */
+  /* 3·4. 플로팅 버튼 → 풀스크린 오버레이                  */
+  /* ===================================================== */
+  var fab = document.getElementById("fabCat");
+  var fabText = document.getElementById("fabText");
+  var overlay = document.getElementById("catOverlay");
+  var catBody = document.getElementById("catBody");
+
+  function openCat(){
+    fabText.style.opacity="0";
+    fab.classList.add("hide");
+    overlay.classList.add("open");
+    renderMakers(curCountry);
+  }
+  function closeCat(){
+    overlay.classList.remove("open");
+    catBody.classList.remove("show-model");
+    setTimeout(function(){
+      fab.classList.remove("hide");
+      fabText.style.opacity="1";
+    },300);
+  }
+  fab.addEventListener("click", openCat);
+  document.getElementById("catClose").addEventListener("click", closeCat);
+  document.getElementById("goAllCar").addEventListener("click", openCat);
+
+  /* ===================================================== */
+  /* 5. 제조사 선택                                        */
+  /* ===================================================== */
+  var curCountry = "domestic";
+  var makerGrid = document.getElementById("makerGrid");
+
+  function renderMakers(country){
+    curCountry = country;
+    var list = BRANDS.filter(function(b){return b.country===country;});
+    // 차량 많은 순
+    list.sort(function(a,b){return b.count - a.count;});
+    makerGrid.innerHTML = list.map(function(b){
+      return '<div class="maker-card" data-code="'+b.code+'" data-name="'+b.name+'">'+
+        '<div class="maker-logo">'+imgTag(b.logo,"")+'</div>'+
+        '<div class="maker-name">'+b.name+'</div>'+
+        '<div class="maker-count">'+b.count+'종</div>'+
+      '</div>';
+    }).join("");
+  }
+
+  document.getElementById("countryToggle").addEventListener("click", function(e){
+    var btn = e.target.closest("button"); if(!btn) return;
+    [].forEach.call(this.children, function(b){b.classList.remove("active");});
+    btn.classList.add("active");
+    renderMakers(btn.dataset.country);
+  });
+
+  makerGrid.addEventListener("click", function(e){
+    var card = e.target.closest(".maker-card"); if(!card) return;
+    openModel(card.dataset.name);
+  });
+
+  /* ===================================================== */
+  /* 6. 차종 선택 (정렬)                                   */
+  /* ===================================================== */
+  var modelGrid = document.getElementById("modelGrid");
+  var curBrand = null, curSort = "asc";
+
+  // 정렬 기준: 렌트 비용 우선 (렌트 > 리스). 0 = 가격 미정(견적문의)
+  function priceOf(c){ return c.rent || c.lease || 0; }
+
+  function renderModels(){
+    var list = CARS.filter(function(c){return c.brand===curBrand;});
+    list.sort(function(a,b){
+      var pa=priceOf(a), pb=priceOf(b);
+      // 가격 미정(0) 차량은 정렬 방향과 무관하게 항상 뒤로
+      if(pa===0 && pb===0) return 0;
+      if(pa===0) return 1;
+      if(pb===0) return -1;
+      return curSort==="asc" ? pa-pb : pb-pa;
+    });
+    if(!list.length){
+      modelGrid.innerHTML = '<div class="empty-msg" style="grid-column:1/-1">등록된 차종이 없습니다.</div>';
+      return;
+    }
+    modelGrid.innerHTML = list.map(function(c){
+      return '<div class="model-card" data-id="'+c.id+'">'+
+        '<div class="model-thumb">'+imgTag(c.image,"")+'</div>'+
+        '<div class="model-name">'+c.name+'</div>'+
+        '<div class="model-price">'+priceHtml(c)+'</div>'+
+      '</div>';
+    }).join("");
+  }
+
+  function openModel(brandName){
+    curBrand = brandName; curSort = "asc";
+    [].forEach.call(document.getElementById("sortToggle").children,function(b,i){
+      b.classList.toggle("active", i===0);
+    });
+    document.getElementById("modelBrandName").textContent = brandName;
+    var lg = brandLogo(brandName);
+    var lgEl = document.getElementById("modelBrandLogo");
+    if(lg){ lgEl.src=lg; lgEl.style.display="block"; } else { lgEl.style.display="none"; }
+    renderModels();
+    catBody.classList.add("show-model");
+    var ps = document.querySelector(".panel-model .panel-scroll");
+    if(ps) ps.scrollTop=0;
+  }
+
+  document.getElementById("modelBack").addEventListener("click", function(){
+    catBody.classList.remove("show-model");
+  });
+  document.getElementById("sortToggle").addEventListener("click", function(e){
+    var btn = e.target.closest("button"); if(!btn) return;
+    [].forEach.call(this.children,function(b){b.classList.remove("active");});
+    btn.classList.add("active");
+    curSort = btn.dataset.sort;
+    renderModels();
+  });
+
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("find") === "1" || params.get("open") === "find" || window.location.hash === "#find-car") {
+    window.setTimeout(openCat, 120);
+  }
+
+  /* ===================================================== */
+  /* 상세페이지 진입 자리 (추후 연결)                       */
+  /* ===================================================== */
+  function goDetail(id){
+    location.href = "detail.html?id=" + encodeURIComponent(id);
+  }
+  [grid, makerGrid, modelGrid, document.getElementById("bestWrapper")].forEach(function(el){
+    el.addEventListener("click", function(e){
+      var card = e.target.closest("[data-id]"); if(!card) return;
+      goDetail(card.dataset.id);
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

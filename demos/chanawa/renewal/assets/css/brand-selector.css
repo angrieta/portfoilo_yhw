@@ -1,0 +1,55 @@
+/* Shared circular brand selectors for the catalogue and ready-stock pages. */
+.list-company-brand-container.brand-circles{
+  display:flex;flex-wrap:nowrap;justify-content:flex-start;align-items:flex-start;
+  gap:12px;padding:18px 2px;min-width:0;border:0;background:#fff;
+  overflow-x:auto;scrollbar-width:none;scroll-padding-inline:32px;
+}
+.brand-circles::-webkit-scrollbar{display:none}
+.list-company-brand-container.brand-circles .brand{
+  display:flex;flex:0 0 76px;flex-direction:column;align-items:center;gap:9px;
+  width:76px;min-width:76px;height:auto;margin:0;padding:0;
+  border:0;border-radius:0;background:transparent;box-shadow:none;
+  color:#263449;font-size:13px;font-weight:400;text-align:center;line-height:20px;
+}
+/* Align the compact origin tabs and logo rail to the same starting edge. */
+.brand-circles .brand:first-child{margin-left:0}
+.brand-circles .brand:last-child{margin-right:0}
+.brand-circles .brand .brand-logo{
+  display:flex;align-items:center;justify-content:center;flex:none;
+  width:54px;height:54px;border:1px solid #dce5f2;border-radius:50%;background:#fff;
+  transition:border-color .15s,background-color .15s;
+}
+.list-company-brand-container.brand-circles .brand img{
+  display:block;width:34px;height:28px;object-fit:contain;margin:0;
+}
+.brand-circles .brand .brand-label{display:block;white-space:nowrap;line-height:20px}
+.brand-circles .brand .brand-label em{
+  margin-left:3px;font-size:12px;line-height:20px;color:#929baa;font-style:normal;font-weight:400;
+}
+.list-company-brand-container.brand-circles .brand-on{color:#1673ef;font-weight:600}
+.brand-circles .brand-on .brand-logo{border-color:#2a88ff;background:#edf5ff;box-shadow:inset 0 0 0 1px #2a88ff}
+.brand-circles .brand:focus-visible{outline:2px solid #2a88ff;outline-offset:3px;border-radius:5px}
+@media(hover:hover){
+  .list-company-brand-container.brand-circles .brand:hover{border:0;background:transparent;box-shadow:none;color:#1673ef}
+  .brand-circles .brand:hover .brand-logo{border-color:#2a88ff;background:#f8fbff}
+}
+@media(max-width:600px){
+  .list-company-brand-container.brand-circles{gap:6px;padding-block:16px}
+  .list-company-brand-container.brand-circles .brand{flex-basis:76px;width:76px;min-width:76px;gap:8px;font-size:12px}
+  .brand-circles .brand .brand-logo{width:52px;height:52px}
+  .list-company-brand-container.brand-circles .brand img{width:32px;height:26px}
+  .brand-circles .brand .brand-label em{font-size:11px}
+}
+.list-company-tab-container.brand-origin-tabs{
+  display:inline-flex;align-items:center;gap:2px;width:auto;max-width:100%;
+  padding:4px;border:0;border-radius:12px;background:#f4f6fa;
+}
+.list-company-tab-container.brand-origin-tabs .tab{
+  flex:none;width:auto;min-width:76px;height:36px;padding:0 18px;
+  border:0;border-radius:9px;background:transparent;color:#59677c;font-size:13px;font-weight:500;
+}
+.list-company-tab-container.brand-origin-tabs .tab-on{background:#fff;color:#237cff;font-weight:700;box-shadow:0 2px 5px #1732590c}
+.brand-origin-tabs .tab:focus-visible{outline:2px solid #2a88ff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.brand-circles .brand .brand-logo{transition:none}}
+.list-product > ul > li[hidden],.list-product .car-price[hidden],.catalog-contract-empty[hidden]{display:none}
+.catalog-contract-empty{padding:32px 0;color:#738399;text-align:center}

@@ -1,0 +1,2291 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css');
+
+/*초기화*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+img {
+    border: none
+}
+
+h1, h2, h3, h4, h5, h6, header, body, footer, section, div, p, ul, li, a, input, button, address {
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111111;
+    letter-spacing: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+}
+
+h1, h2, h3, address {
+    cursor: default;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+}
+
+.text-primary {
+    color: #2b88ff;
+}
+
+.title01 {
+    font-size: 44px;
+}
+
+.title02 {
+    font-size: 32px;
+}
+
+.title03 {
+    font-size: 24px;
+}
+
+.title04 {
+    font-size: 20px;
+}
+
+.pc {
+    display: block;
+}
+
+.mo {
+    display: none;
+}
+
+section {
+    position: relative;
+    top: 80px;
+}
+
+/*header*/
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 999;
+}
+
+
+header .container {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+nav.pc {
+    width: 1200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+nav .pc-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-navbar-l > a > img {
+    width: 91px;
+}
+
+.p-navbar-r ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 47px;
+}
+
+.p-navbar-r ul li a {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.p-navbar-r ul li a:hover {
+    color: #2b88ff;
+}
+
+.p-navbar-r ul li img {
+    width: 14px;
+}
+
+.p-navbar-r ul li.btn-download {
+    background-color: #2b88ff;
+    border: 1px solid #2b88ff;
+    border-radius: 10px;
+}
+
+.p-navbar-r ul li.btn-download:hover {
+    background-color: #fff;
+    border: 1px solid #2b88ff;
+}
+
+.p-navbar-r ul li.btn-download:hover .btn-download-hover {
+    display: inline-block;
+}
+
+.p-navbar-r ul li.btn-download:hover .btn-download-out {
+    display: none;
+}
+
+.btn-download-hover {
+    display: none;
+}
+
+.p-navbar-r ul li.btn-download a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 16px;
+    color : #fff;
+    padding: 12px 23px;
+}
+
+.p-navbar-r ul li.btn-download:hover a {
+    color: #2b88ff;
+}
+
+/*visual*/
+#visual {
+    background-color: #e4f0ff;
+    width: 100%;
+    padding: 56px 0;
+}
+
+#visual .container {
+    width: 1200px;
+    color: #111;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#visual video {
+    width: calc(50% - 50px);
+    border-radius: 10px;
+}
+
+.acc{width:40px;}
+.acc2{width:40px;}
+.title-wrap {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 0;
+    gap: 24px;
+}
+
+.title-top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.title-top h1 {
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+
+.title-top .title03 {
+    font-weight: 600;
+}
+
+.title-tag {
+    color: #4171ac;
+    line-height: 24px;
+}
+
+.title-tag span {
+    word-wrap: normal;
+}
+
+/*carlist*/
+#carlist {
+    width: 100%;
+    padding: 120px 0;
+}
+
+#carlist .container {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#carlist .title02 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    padding-bottom: 8px;
+}
+
+.car-category ul {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.car-category ul li a {
+    font-size: 14px;
+    color: #111;
+    padding: 4px 16px;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+}
+
+.car-category ul li a:hover {
+    background-color: #2b88ff;
+    color: #fff;
+    border: 1px solid #2b88ff;
+}
+
+.car-category ul li a.selected {
+    background-color: #2b88ff;
+    color: #fff;
+    border: 1px solid #2b88ff;
+}
+
+.car-list {
+    position: relative;
+}
+
+
+.btn-previous {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -65px;
+    z-index: 99;
+    border: 1px solid #e1e6ef;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn-previous:hover, .btn-next:hover {
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+}
+
+.btn-previous img, .btn-next img {
+    width: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-next {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -65px;
+    transform: translateY(-50%);
+    z-index: 99;
+    border: 1px solid #e1e6ef;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+}
+
+.car-list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.car-list ul li {
+    width: 30%;
+}
+
+.car-list ul li a {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.car-list ul li .car-image {
+    padding: 24px 32px 8px;
+    background-color: #f1f5fa;
+    border-radius: 10px 10px 0 0;
+    border-left: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.car-list ul li .car-image img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    min-width: 100px;
+}
+
+.car-list ul li .car-kind {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    z-index: 999;
+}
+
+.car-list ul li .car-kind.rent {
+    background-color: #2465bd;
+}
+
+.car-list ul li .car-kind.lease {
+    background-color: #535353;
+}
+
+.car-list ul li .car-detail-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 16px;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    height: 100%;
+    align-items: center;
+}
+
+.car-list ul li .car-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.car-list ul li .car-name {
+    font-weight: 700;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.car-list ul li .car-option {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    height: 100%;
+    justify-content: center;
+}
+
+.car-list ul li .car-condition {
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.car-list ul li .car-condition span {
+    font-size: 12px;
+    color: #6d8db3;
+    background-color: #e8f4ff;
+    border-radius: 100px;
+    padding: 4px 12px;
+}
+
+.car-list ul li .car-price {
+    font-size: 18px;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.car-list ul li .car-price span {
+    font-weight: 700;
+    color: #2b88ff;
+}
+
+.car-list ul li .btn-estimate {
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #2b88ff;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    line-height: 50px;
+}
+
+.car-list ul li .btn-estimate:hover {
+    background-color: #fff;
+    color: #2b88ff;
+    border: 1px solid #2b88ff;
+}
+
+.btn-estimate-hover {
+    display: none;
+}
+
+.car-list ul li .btn-estimate:hover .btn-estimate-hover {
+    display: inline-block;
+}
+
+.car-list ul li .btn-estimate:hover .btn-estimate-out {
+    display: none;
+}
+
+.car-list ul li .btn-estimate img {
+    margin-left: 8px;
+}
+
+/*preview*/
+#preview {
+    width: 100%;
+    position: relative;
+    padding: 88px 0;
+}
+
+#preview .container {
+    width: 1200px;
+    height: 363px;
+    background:url(/portfoilo_yhw/demos/chanawa/assets/img/banner-bg.png) no-repeat center center;
+    padding: 24px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#preview .text-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#preview .text-wrap p {
+    color: #fff;
+}
+
+#preview .text-wrap p.text01 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+#preview .text-wrap p.title04 {
+    font-weight: 500;
+    line-height: 30px;
+}
+
+#preview .text-wrap p.title04 span {
+    color: #fff391;
+}
+
+.preview-image img {
+    position: relative;
+    top: 2px;
+}
+
+.btn-preview {
+    padding: 16px 32px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.btn-preview:hover {
+    color: #2b88ff;
+}
+
+.btn-preview:hover .btn-preview-out {
+    display: none;
+}
+
+.btn-preview:hover .btn-preview-hover {
+    display: block;
+}
+
+.preveiw-image img {
+    position: relative;
+    top: 2px;
+}
+
+.btn-preview-hover {
+    display: none;
+}
+
+
+/*consulting*/
+#consulting {
+    width: 100%;
+    padding: 120px 0;
+    background-color: #f7fbff;
+}
+
+#consulting .container {
+    width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#consulting .title02 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 42px;
+    text-align: center;
+}
+
+#consulting .title-wrap {
+    text-align: left;
+    padding: 0;
+}
+
+#consulting .merit-wrap {
+    width: 100%;
+}
+
+#consulting .merit-wrap ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#consulting .merit-wrap ul li {
+    width: 32%;
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(86,130,186,0.1);
+}
+
+#consulting .merit-wrap ul li img {
+    width: 150px;
+}
+
+#consulting .merit-wrap ul li p {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/*review*/
+#review {
+    width: 100%;
+    padding: 120px 0;
+}
+
+#review .container {
+    width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+#review .container .title-wrap {
+    padding: 0;
+}
+
+#review .container .title-wrap .title02 {
+    font-weight: 700;
+    text-align: center;
+}
+
+.review-grade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-grade .star img {
+    width: 120px;
+}
+
+.review-grade .grade {
+    color: #2b88ff;
+    padding-bottom: 8px;
+}
+
+.review-grade hr {
+    width: 50px;
+    border: 1px solid #2b88ff;
+}
+
+.review-list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.review-list ul li {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    border: 3px solid #2b88ff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.review-list ul li img {
+    width: 50px;
+}
+
+.review-list ul li p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    word-break: break-all;
+}
+
+.review-list ul li p::before {
+    display: block;
+    content: "";
+    background-image: url("/portfoilo_yhw/demos/chanawa/assets/img/quote_left.png");
+    background-size: 30px 18px;
+    width: 30px;
+    height: 18px;
+    margin: 10px auto;
+}
+
+.review-list ul li p::after {
+    display: block;
+    content: "";
+    background-image: url("/portfoilo_yhw/demos/chanawa/assets/img/quote_right.png");
+    background-size: 30px 18px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 18px;
+    margin: 10px auto;
+}
+
+/*footer*/
+footer {
+    width:100%;
+    background-color: #f7fbff;
+    padding: 56px;
+    position: relative;
+    top: 80px;
+}
+
+footer .container {
+    width: 1200px;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer-logo {
+    width: 100px;
+}
+
+.info-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+hr {
+    border: 0px solid #e4f0ff;
+    height: 1px;
+    background-color: #e8f4ff;
+}
+
+.privacy-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.privacy-wrap p a {
+    color: #9ba8c0;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.privacy-wrap p a:hover, .privacy-wrap p a.agency-list:hover {
+    color: #4171ac;
+}
+
+.privacy-wrap p a.agency-list {
+    color: #2b88ff;
+}
+
+.company-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.company-wrap p {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.company-wrap span {
+    color: #9ba8c0;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/*대출성 금융상품판매대리 중개업 등록증 팝업 */
+@media (max-width:900px){
+	.certificate_inner{
+		width:90% !important;
+	}
+}
+
+
+/*popup-견적*/
+
+.popup-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.65);
+    scroll-behavior: auto;
+    overflow-y: auto;
+    z-index:99999;
+}
+
+.popup-wrap .container {
+    width: 540px;
+    position: relative;
+    top: 30px;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.popup-title {
+    width: 100%;
+    height: 289px;
+    background: url(/portfoilo_yhw/demos/chanawa/assets/img/popup-title.png) center center no-repeat;
+    border-radius: 20px 20px 0 0;
+}
+
+.popup-btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+}
+
+.popup-form {
+    width: 540px;
+    background-color: #fff;
+    border-radius: 0px 0px 20px 20px;
+    padding: 40px;
+}
+
+.popup-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.popup-form form > p {
+    width: 100%;
+}
+
+.popup-form form > p:not(.popup-privacy) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.popup-carinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+}
+
+.popup-carinfo > span:first-child {
+    font-size: 14px;
+    font-weight: 400;
+    color: #808080;
+}
+
+.popup-carinfo > span {
+    text-align: center;
+    line-height: 22px;
+}
+
+.popup-form form > p > input {
+    height: 50px;
+    background-color: #f4f7fb;
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-form form > p > input::placeholder {
+    font-size: 14px;
+    color: #999999;
+}
+
+.popup-form form > p.popup-privacy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 0;
+}
+
+.popup-form form > p.popup-privacy input {
+    width: 18px;
+    height: 18px;
+}
+
+.popup-form form > p.popup-privacy > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.popup-btn-detail {
+    font-size: 14px;
+    background-color: #4d4d4d;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 100px;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.popup-btn-estimate {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b88ff;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popup-btn-estimate:hover {
+    background-color:#fff;
+    border: 1px solid #2b88ff;
+    color: #2b88ff;
+}
+
+/*quick form*/
+.quick-form {
+    width: 200px;
+    position: fixed;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+}
+
+.quick-form .container {
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    gap: 8px;
+}
+
+.quick-form .title-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0 12px;
+}
+
+.quick-form .title-wrap img {
+    width: 20px;
+}
+
+.quick-form .title-wrap span {
+    font-weight: 600;
+}
+
+.quick-form input[type="text"] {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    height: 50px;
+    text-align: center;
+}
+
+.quick-form input[type="text"]::placeholder {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+
+.quick-form .agreement-wrap {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.quick-form .agreement-wrap a {
+    font-size: 14px;
+    color: #999;
+}
+
+.quick-form .agreement-wrap a:hover {
+    color: #2b88ff;
+}
+
+.quick-form .btn-quickform {
+    width: 100%;
+    background-color: #f44a6e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0;
+}
+.quick-form .btn-quickform:hover {
+    background-color: #fff;
+    color: #f44a6e;
+    border: 1px solid #f44a6e;
+}
+
+.quick-call img {
+    right: 0 !important;
+}
+
+.quick-call {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*  justify-content: center;*/
+    height: 100px;
+    padding-left: 20px;
+    background-color: #2b88ff;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.quick-call p {
+    position:relative;
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+}
+
+.quick-call img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 102px;
+    height:auto;
+}
+
+.quick-call img {
+    position: absolute;
+    bottom: 0;
+    right: -13px;
+    width: 83px;
+}
+
+
+/* agreement popup*/
+.layer_popup_wrap_new {display: none;  margin-left: 0px; margin-top: 0px; width: 100%; height:100%; position: fixed;top: 0;left: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 99999999; }
+.layer_popup_wrap_new .layer_popup_renew02 {  position: absolute; width: 450px; height: 536px; left: 50%; top: 50%; margin-left: -225px; margin-top: -268px; background-color: #FFF; border-radius: 16px;}
+.layer_popup_wrap_new .popup_body_renew02 { width: 450px; height: 467px; padding: 30px; box-sizing: border-box; overflow-y: scroll; overflow-x:hidden;}
+.layer_popup_wrap_new .popup_body_renew02 ul { width: 390px; height: 416px;}
+.layer_popup_wrap_new .popup_body_renew02 li { list-style: none; margin-bottom: 0; padding:0;}
+.layer_popup_wrap_new .popup_title_renew02 { width: 100%; height: 60px; background-color: #2b88ff; padding: 0 30px; box-sizing: border-box; margin-top: -18px; border-top-left-radius: 16px; border-top-right-radius: 16px;}
+.layer_popup_wrap_new .popup_title_renew02 p.tc { color: #FFF;font-size: 18px; line-height: 58px; text-align: center; }
+.layer_popup_wrap_new .popup_close_renew02 { position: absolute; top: 0px; right: 30px; cursor: pointer;}
+
+ul.terms_list li.terms_item:first-child { background-color: #ffffff; }
+ul.terms_list li.terms_item.open:first-child .btn02 { background-color: #ffffff; border:none; }
+ul.terms_list li.terms_item.open:first-child .input_chk_new label { background-color: #ffffff; }
+ul.terms_list li.terms_item .desc {position: relative; left: 50%;	transform: translateX(-50%);	width: 100%;	height: 410px;	background-color: #f8f8f8;	padding: 0;	list-style: none;box-sizing:border-box;	overflow: hidden; 		}
+ul.terms_list li.terms_item .desc::-webkit-scrollbar { 	overflow-x: hidden;	width: 7px;}
+ul.terms_list li.terms_item .desc::-webkit-scrollbar-track { background-color: transparent;	}
+ul.terms_list li.terms_item .desc::-webkit-scrollbar-thumb { border-radius: 3px; background-color: #1b57a4;	}
+ul.terms_list li.terms_item .desc::-webkit-scrollbar-button { width: 0; height: 0;}
+ul.terms_list li.terms_item .btn02 {position: relative;width: 100%; background-color: #fff;cursor: pointer; padding:18px 0; box-sizing: border-box;}
+
+/*item이 open클래스/close클래스일 때 변경되는 css 작성  */
+ul.terms_list li.terms_item.close .btn02 .arrow_down { position: absolute; right: 0px; top:15px;}
+ul.terms_list li.terms_item.open .btn02 .arrow_down { position: absolute; right: 0px; top:15px; transform: rotate(180deg);}
+ul.terms_list li.terms_item.open .desc {height: 207px;padding: 10px 19px;overflow-y: scroll; border: 1px solid #ebebeb; border-top: none;}
+ul.terms_list li.terms_item.close .desc { height: 0; overflow: hidden; }
+ul.terms_list li.terms_item.open .btn02 {	background-color: #f8f8f8; border: 1px solid #ebebeb; border-bottom: none;}
+ul.terms_list li.terms_item.close .btn02 { background-color: #fff; }
+/*
+ul.terms_list li.terms_item.open .input_chk_new label {background-color: #f8f8f8;}
+ul.terms_list li.terms_item.close .input_chk_new label {background-color: #fff;}
+*/
+
+ul.terms_list li.terms_item .red { color:rgb(221, 42, 42); }
+ul.terms_list li.terms_item .bold { font-weight:normal; }
+ul.terms_list li.terms_item .blue {  color:#2b88ff; }
+ul.terms_list li.terms_item .normal {  font-weight: normal; }
+ul.terms_list li.terms_item .desc p { word-break: break-all; font-size: 13px;}
+ul.terms_list li.terms_item .desc span { display: block; font-size: 13px; padding-bottom: 5px;}
+ul.terms_list li.terms_item .desc .tr { text-align: right; }
+ul.terms_list li.terms_item .desc .terms_table { border:none; margin: 10px 0px;}
+ul.terms_list li.terms_item .desc .terms_table tr th { border:1px solid #ffffff; background-color: #d6e5fa; padding:10px; text-align: center; font-size: 13px;}
+ul.terms_list li.terms_item .desc .terms_table tr td { border:1px solid #ffffff; background-color: #ffffff; padding:10px; font-size: 13px; }
+
+ul.terms_list li.terms_item.terms_chk_all .btn02 .chk_all_txt { font-weight: bold; color:#2b88ff; }
+ul.terms_list li.terms_item .input_chk_new input { position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px; }
+ul.terms_list li.terms_item .input_chk_new label {position: relative;width: 100%;padding: 10px 0px 10px 43px;font-size: 14px;font-weight: 700;line-height: 21px;cursor: pointer;color: #333;box-sizing: border-box;background: url(/portfoilo_yhw/demos/chanawa/assets/img/chk_blue_icon_off.png) no-repeat 3px 6px;background-size: 30px;}
+ul.terms_list li.terms_item .input_chk_new input:checked+label { background: transparent; background-size: 0px;}
+ul.terms_list li.terms_item .input_chk_new input:checked+label:before {content: '';position: absolute;top: 57%;left: 1px;display: block;width: 33px;height: 32px;margin-top: -15px;background: url(/portfoilo_yhw/demos/chanawa/assets/img/chk_blue_icon_on.png) no-repeat 3px 1px;background-size: 29px;}
+
+@media (max-width:500px) {
+    .layer_popup_wrap_live .popup_body_renew02 { padding:60px 0px 0px 0px; }
+    ul.terms_list li.terms_item .input_chk_new label { font-size:13px; padding:10px 0px 10px 36px; }
+    ul.terms_list li.terms_item .btn02 { padding:20px 0px; }
+    ul.terms_list li.terms_item.close .btn02 .arrow_down { right:0px; }
+    ul.terms_list li.terms_item.open .btn02 .arrow_down { right: 0px; }
+    ul.terms_list li.terms_item.open .desc { height:160px; }
+}
+
+/* 닫기버튼 */
+.agreement_new_close_btn {cursor: pointer; background-color: #2b88ff; margin: 50px auto; text-align: center; transition: ease-in 0.4s; color: #fff; border: 1px solid #2b88ff; border-radius: 5px; display: block; box-sizing: border-box; width: 100%; height: 45px; padding: 11px; font-weight: bold;}
+.agreement_new_close_btn:hover { background-color: #fff; color:#1b57a4; }
+
+
+
+/*모바일-1200*/
+@media screen and (max-width:1200px) {
+    section, footer {
+        top: 48px;
+    }
+
+    .pc {
+        display: none !important;
+    }
+
+    .mo {
+        display: block;
+    }
+
+    /*header-1200*/
+    header {
+        height: 48px;
+    }
+
+    nav.mo {
+        width: 100%;
+    }
+
+    nav .mo-wrap {
+        display: flex;
+		flex-flow:column;
+        justify-content: space-between;
+        align-items: start;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100px;
+        border-bottom: 1px solid #e3e3e3;
+        padding: 15px 16px;
+		background: #fff;
+
+    }
+	.mo-wrap::after{
+	position: absolute;
+        content: "";
+        left: 0;
+        top: 40px;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #e3e3e3;
+        margin-top: 10px;
+	}
+
+	.my_car_sell_btn{
+	position:absolute; right:15px; font-size:12px;
+	padding:6px 20px;
+	color:#fff; background:#222; border-radius:4px; border:1px #222 solid;
+	}
+	.my_car_sell_btn:hover{
+	padding:6px 20px; font-size:12px;
+	color:#222; background:#fff; border-radius:4px; border:1px #222 solid;
+	}
+    .m-navbar-l {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+    }
+	.nav_top {
+        width: 100%;
+        justify-content: space-between;
+    }
+	.mo-wrap::after{
+	position: absolute;
+        content: "";
+        left: 0;
+        top: 44px;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #e3e3e3;
+        margin-top: 10px;
+	}
+	.navbar-sub {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        margin-top: 30px;
+        overflow-x: auto;
+        width: 100%;
+        scrollbar-width: none;
+
+	}
+    .navbar-sub a {
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+	.navbar-sub.hide {
+	  opacity: 0;
+	  transform: translateY(-10px);
+	  pointer-events: none;
+	}
+    .m-navbar-l .btn-menu img {
+        width: 20px;
+        margin-top: 3px;
+    }
+
+    .m-navbar-l .m-logo img {
+        width: 69px;
+    }
+
+    .m-navbar-r a {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: -0.5px;
+        background: #2b88ff;
+        border-radius: 8px;
+        padding: 8px 16px;
+    }
+
+    .m-navbar-r a img {
+        width: 13px;
+    }
+
+    /*mobile menu-1200*/
+    /* mobile nav 팝업 수정 */
+    .m-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);z-index:999}
+    .m-menu-inner{position:absolute;top:0;left:0;width:0;height:100%;background:#fff;transition-duration: 0.2s;}
+    .m-menu ul { display: flex;flex-direction: column;gap : 30px;padding: 17px 18px 0 34px;}
+
+    .m-menu ul li a {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .m-menu ul li.btn-close {
+        text-align: right;
+    }
+
+    .m-menu ul li.btn-close img {
+        width: 16px;
+    }
+
+    /*visual-1200*/
+    #visual .container {
+        width: calc(100% - 64px);
+    }
+
+    .title-wrap {
+        gap: 16px;
+    }
+
+    .title-tag {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*carlist-1200*/
+    #carlist .container {
+        width: calc(100% - 64px);
+    }
+
+    .car-list ul {
+        gap: 16px;
+    }
+
+    .car-list ul li .car-image img {
+        width: 130px;
+        position: relative;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .car-category ul {
+        gap: 4px;
+        line-height: 28px;
+    }
+
+    .car-category ul li a {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
+    .car-list ul li {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .car-list ul li a {
+        flex-direction: row;
+        border-radius: 16px;
+        background-color: #f7fbff;
+    }
+
+    .car-list ul li .car-image {
+        background-color:transparent;
+        border: 0;
+        padding: 16px;
+    }
+
+    .car-list ul li .btn-estimate {
+        display: none;
+    }
+
+    .car-list ul li .car-kind.rent, .car-list ul li .car-kind.lease{
+        display: none;
+    }
+
+    .car-list ul li .car-detail-wrap {
+        border: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .car-list ul li .car-detail {
+        align-items: flex-start;
+    }
+
+    /*preview-1200*/
+    #preview {
+        width: 100%;
+        padding: 0;
+    }
+
+    #preview .container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    /*consulting-1200*/
+    #consulting {
+        width: 100%;
+    }
+
+    #consulting .container {
+        width: calc(100% - 32px);
+
+    }
+
+    #consulting .merit-wrap ul {
+        align-items: stretch;
+    }
+
+    /*review-1200*/
+    #review {
+        padding: 48px 0;
+    }
+
+    #review .container {
+        width: calc(100% - 32px);
+    }
+
+    .review-list ul {
+        gap: 20px;
+    }
+
+    .review-list ul li {
+        flex-basis: 48%;
+        flex-shrink: 0;
+    }
+
+    /*footer-1200*/
+    footer {
+        width: 100%;
+        padding: 48px 0 78px 0;
+    }
+
+    footer .container {
+        width: calc(100% - 32px);
+    }
+
+    .company-wrap p, .privacy-wrap p a {
+        font-size: 14px;
+    }
+
+    .company-wrap {
+        gap: 4px;
+    }
+
+    /*quick form-1200*/
+    .m-btn-wrap {
+        position: fixed;
+        bottom: 0;
+        height: 58px;
+        width: 100%;
+        background-color: #f4f7fb;
+        display: flex;
+        flex-direction: row;
+        padding: 4px 16px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid #e3e3e3;
+        box-shadow: 0px -3px 10px rgba(0,0,0,0.08);
+    }
+
+    .m-btn-wrap a {
+        width: 100%;
+        border-radius: 4px;
+        height: 42px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: #fff;
+        letter-spacing: -1px;
+        font-weight: 600;
+    }
+
+    .m-btn-quickform {
+        background-color: #f44a6e;
+    }
+
+    .m-btn-quickcall {
+        background-color: #102655;
+    }
+
+    .m-btn-wrap img {
+        width: 20px;
+    }
+
+    /*popup*/
+    .popup-wrap {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.65);
+        z-index:99999;
+    }
+
+    .popup-wrap .container {
+        width: 540px;
+        position: relative;
+        top: 30px;
+        flex-direction: column;
+        border-radius: 24px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+
+    .popup-title {
+        width: 100%;
+        height: 289px;
+        background: url(/portfoilo_yhw/demos/chanawa/assets/img/popup-title.png) center center no-repeat;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+
+    .popup-btn-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .popup-form {
+        width: 540px;
+        background-color: #fff;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+        padding: 40px;
+    }
+
+    .popup-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .popup-form form > p {
+        width: 100%;
+    }
+
+    .popup-form form > p:not(.popup-privacy) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .popup-carinfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 16px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+    }
+
+    .popup-carinfo > span:first-child {
+        font-size: 14px;
+        font-weight: 400;
+        color: #808080;
+    }
+
+    .popup-carinfo > span {
+        text-align: center;
+        line-height: 22px;
+    }
+
+    .popup-form form > p > input {
+        height: 50px;
+        background-color: #f4f7fb;
+        border: 0;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .popup-form form > p > input::placeholder {
+        font-size: 14px;
+        color: #999999;
+    }
+
+    .popup-form form > p.popup-privacy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px 0;
+    }
+
+    .popup-form form > p.popup-privacy input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .popup-form form > p.popup-privacy > span {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .popup-btn-detail {
+        font-size: 14px;
+        background-color: #4d4d4d;
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 100px;
+        letter-spacing: -1px;
+        cursor: pointer;
+    }
+
+    .popup-btn-estimate {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2b88ff;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .popup-btn-estimate:hover {
+        background-color:#fff;
+        border: 1px solid #2b88ff;
+        color: #2b88ff;
+    }
+}
+
+
+/*모바일-700*/
+@media screen and (max-width:700px) {
+
+    #visual {
+        padding: 48px 0;
+    }
+
+    #visual .container {
+        flex-direction: column;
+        width: calc(100% - 32px);
+    }
+
+    #visual video {
+        width: 100%;
+    }
+
+    .title-wrap {
+        gap: 50px;
+    }
+
+    /*carlist-700*/
+    #carlist {
+        padding: 48px 0;
+    }
+
+    #carlist .container {
+        gap: 24px;
+        width: calc(100% - 32px);
+    }
+
+    .car-list ul li .car-image {
+        width: 30%;
+        padding-right: 0;
+    }
+
+    .car-list ul li .car-image img {
+        width: 76px;
+        min-width: 60px;
+    }
+
+    .car-list ul li .car-name {
+        font-size: 16px;
+    }
+
+    .car-list ul li .car-option {
+        font-size: 12px;
+        padding-bottom: 4px;
+    }
+
+    .m-car-list ul li a .car-condition span {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .car-list ul li .car-detail {
+        gap: 0;
+		width: 57%;
+    }
+
+    .car-list ul li .car-condition {
+        padding-top: 0px;
+        justify-content: flex-start;
+    }
+
+    .car-list ul li .car-condition span {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .car-list ul li .car-price span {
+        font-size: 14px;
+    }
+
+    .car-list ul li .car-price {
+        font-size: 14px;
+    }
+
+    .car-list ul li .car-detail-wrap {
+        width: 100%;
+    }
+
+    /*preview-700*/
+    #preview {
+        padding: 0;
+    }
+
+    #preview .container {
+        position: relative;
+        height: 400px;
+        background:url(/portfoilo_yhw/demos/chanawa/assets/img/banner-bg-m.webp) no-repeat center center;
+        justify-content: flex-start;
+    }
+
+    #preview .text-wrap {
+        flex-basis: 60%;
+        flex-shrink: 0;
+        gap: 24px;
+    }
+
+    #preview .text-wrap p.text01 {
+        font-size:32px;
+    }
+
+    #preview .preview-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        flex-basis: calc(50% - 32px);
+        width: 50%;
+        overflow: hidden;
+    }
+
+    #preview .preview-image img {
+        right: -50px;
+        width: 100%;
+        top: 4px !important;
+    }
+
+    #preview .text-wrap p.title04 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .btn-preview {
+        font-size: 16px;
+    }
+
+    /*consulting-700*/
+    #consulting {
+        padding: 48px 0;
+    }
+
+    #consulting .merit-wrap ul {
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    #consulting .merit-wrap ul li {
+        width: 100%;
+    }
+
+    #consulting .merit-wrap ul li img {
+        max-width: 150px;
+        width: 50%;
+    }
+
+
+    .review-list ul {
+        gap: 20px;
+    }
+
+    .review-list ul li {
+        flex-basis: 100%;
+        flex-shrink: 0;
+    }
+
+    /*footer-700*/
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .privacy-wrap {
+        flex-direction: column;
+        gap: 8px;
+
+    }
+
+    .company-wrap p {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    /*popup-700*/
+    .popup-wrap .container {
+        padding: 0;
+        width: calc(100% - 32px);
+    }
+
+    .popup-title {
+        width: 100%;
+        height: auto;
+        padding: 24% 0;
+        background: url(/portfoilo_yhw/demos/chanawa/assets/img/popup-title-m.webp) left center no-repeat;
+        background-size: cover;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+
+    .popup-form {
+        width: 100%;
+        padding: 24px 16px;
+    }
+
+    /*agreement popup-700*/
+    .layer_popup_wrap_new .layer_popup_renew02 {
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding: 0 16px;
+        background: transparent;
+    }
+
+    .layer_popup_wrap_new .popup_title_renew02 {
+        margin: 0;
+        top: 12px;
+    }
+
+    .layer_popup_wrap_new .popup_body_renew02 {
+        width: 100%;
+        background-color: #fff;
+        padding: 30px;
+        height: auto;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .layer_popup_wrap_new .popup_close_renew02 {
+        top: 19px;
+    }
+
+    .layer_popup_wrap_new .popup_body_renew02 ul {
+        width: 100%;
+    }
+
+    ul.terms_list li.terms_item .input_chk_new label {
+        background: url(/portfoilo_yhw/demos/chanawa/assets/img/chk_blue_icon_off.png) no-repeat 3px 4px;
+        background-size: 30px;
+    }
+
+}
+
+/*모바일-359*/
+@media screen and (max-width:359px) {
+    .car-list ul li .car-image img {
+        width: 50px;
+    }
+}
+
+
+#special {
+    width: 100%;
+    padding: 120px 0;
+}
+
+#special .container {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#special .title02 {
+    font-weight: 700;
+    letter-spacing: -1px;
+    padding-bottom: 8px;
+}
+
+#special .car-list .btn-left-arrow {
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    color: #ccc;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 35px;
+}
+
+#special .car-list .btn-left-arrow:hover {
+    color: #2b88ff;
+    border: 1px solid #2b88ff;
+}
+
+#special .car-list .btn-right-arrow {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    color: #ccc;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 35px;
+}
+
+#special .car-list .btn-right-arrow:hover {
+    color: #2b88ff;
+    border: 1px solid #2b88ff;
+}
+
+#special .car-list ul {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+#special .car-list ul li {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: auto;
+}
+
+#special .car-list ul li > img {
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+#special .car-list ul li > div {
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+#special .car-list ul li > div > p:first-child {
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+#special .car-list ul li > div > p > img {
+    width: 120px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+
+#special .car-list ul li > div > .car-name {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
+
+#special .car-list ul li > div > .car-name > span {
+    font-size: 12px;
+    color: #999999;
+    font-weight: normal;
+}
+
+#special .origin-price {
+    font-size: 16px;
+    color: #A3A3A3;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    text-decoration: line-through;
+    margin-bottom: -5px;
+}
+
+#special .sale-price {
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+#special .sale-price > span {
+    color: #2b88ff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#special .car-list ul li .btn-estimate {
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #2b88ff;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#special .car-list ul li .btn-estimate:hover {
+    background-color: #fff;
+    color: #2b88ff;
+    border: 1px solid #2b88ff;
+}
+
+#special .btn-estimate-hover {
+    display: none;
+}
+
+#special .car-list ul li .btn-estimate:hover .btn-estimate-hover {
+    display: inline-block;
+}
+
+#special .car-list ul li .btn-estimate:hover .btn-estimate-out {
+    display: none;
+}
+
+#special .car-list ul li .btn-estimate img {
+    margin-left: 8px;
+}
+
+/*모바일-1200*/
+
+@media screen and (max-width:1200px) {
+    /*special-1200*/
+    #special .container {
+        width: calc(100% - 64px);
+    }
+
+    #special .car-list ul {
+        flex-wrap: nowrap;
+    }
+
+    #special .car-list ul li {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #special .car-list ul li > p:first-child {
+        height: 39px;
+    }
+
+    #special .car-list ul li > div > p > img {
+        width: 100px;
+        padding-bottom: 0px;
+    }
+
+    #special .car-list ul li > div > .car-name {
+        padding-bottom: 5px;
+    }
+
+    #special .car-list .btn-right-arrow {
+        display: none;
+    }
+
+    #special .car-list .btn-left-arrow {
+        display: none;
+    }
+
+    #special .car-list ul li .btn-estimate {
+        display: block;
+    }
+}
+
+
+/*모바일-700*/
+
+@media screen and (max-width:700px) {
+    /*special-700*/
+    #special {
+        padding: 48px 0;
+    }
+
+    #special .container {
+        gap: 24px;
+        width: calc(100% - 32px);
+    }
+
+    #special .car-list ul li {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: auto;
+    }
+
+    #special .origin-price {
+        font-size: 16px;
+    }
+
+    #special .car-list ul li .btn-estimate {
+        font-size: 16px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    #special .sale-price > span {
+        font-size: 18px;
+    }
+
+    #special .car-list ul li > div > .car-name {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:700px) {
+			#promotionList ul{gap:8%}
+			#promotionList ul li {position: relative;width:46%; margin-bottom:50px}
+			#promotionList .promotion-list-thumb{margin-bottom:16px}
+			#promotionList .promotion-list-title{margin-bottom:4px;}
+			#promotionList .promotion-list-title > a {font-size: 18px;}
+		}
+		#promotionList{}
+		.container {
+			margin: 0 auto;
+			display: flex;
+			justify-items: center;
+		}
+		.title-h8 {font-size: 36px; line-height: 48px; font-weight: 700; letter-spacing: -0.1rem;}
+		#promotionList .container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		section .container {
+			padding: 24px 0;
+			max-width: 1200px;
+		}
+		#promotionList ul {
+			display: flex;
+			padding: 0;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 5%;
+			list-style: none;
+		}
+		#promotionList ul li {
+			position: relative;
+			width: 30%;
+			margin-bottom: 100px;
+		}
+		#promotionList .promotion-list-thumb {
+			margin-bottom: 24px;
+		}
+		#promotionList .promotion-list-thumb img {
+			width: 100%;
+			height: auto;
+			border-radius: 16px;
+			border: 1px solid var(--grey030);
+		}
+		#promotionList .promotion-list-title {
+			margin-bottom: 10px;
+			color: var(--black);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		#promotionList .promotion-list-date {
+			color: var(--grey050);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		#topBanner a {max-width: 1200px;}
+		#topBanner img {width: 100%;}
+		#menuTitle .container {display: flex; flex-direction: column; gap: 24px;}
+		#menuTitle .line {border: 1px solid #3e3223}
+		#menuTitle .promotion-view-title{display: flex; flex-direction: row; justify-content: space-between;}
+		#menuTitle .promotion-view-title-btn{padding:4px 16px;border-radius:4px;background:var(--black);}
+		*:hover {transition: all 0.8s ease;}
+
+
+/*게시판*/
+ .community_container {
+	 position:relative; top:80px;
+ }
+ .community_container .select_menu{}
+ .community_container .select_menu a {}
+ .community_container .select_menu .active{}
+ .community_container .select_menu .ad_img{}
+
+ .community_container .commu_inner{}
+ .community_container .commu_inner .commu_img{}
+ .community_container .commu_inner .commu_title{}
+ .community_container .commu_inner .commu_contents{}
+ .community_container .commu_inner .commu_info{}
+ .community_container .commu_inner .commu_info .writer{}
+ .community_container .commu_inner .commu_info .time{}
+ .community_container .commu_inner .commu_info .view{}
+
+
+/* 야간 당직 팝업 */
+.working-hours-pop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(25,25,25,0.85);z-index:9999;}
+.working-hours-pop-inner{position:absolute;width:100%;max-width:620px;left:50%;top:45%;transform:translate(-50%, -50%);background-color:rgba(0,0,0,0);text-align:center;}
+.working-hours-pop-inner img{width:100%;height:auto}
+.working-hours-btn{position:absolute;bottom:10px;width:100%;text-align:center;color:#fff;}
+.working-hours-btn a{font-size:16px;color:#fff;}
+.working-hours-btn span{display:inline-block;margin:0 20px 3px 20px;width:1px;height:10px;background:#fff;vertical-align:middle}
+
+@media (max-width:620px) {
+    .working-hours-btn{position:absolute;bottom:-10px;}
+    .working-hours-btn a{font-size:13px;}
+    .popup-skstoa-img-pc{display:none}
+    .popup-skstoa-img-m{display:block}
+    .popup-skstoa-link-pc{display:none;position:absolute; bottom: 19.5%;left:35.7%;width: 28%;height: 5%;background:rgba(0,0,0,0)}
+    .popup-skstoa-link-m{display:block;position:absolute; bottom: 19.5%;left:31.5%;width: 36.5%;height: 5.8%;background:rgba(0,0,0,0)}
+    .working-hours-btn{position:absolute;bottom:-10px;}
+    .working-hours-btn a{font-size:13px;}
+}
+
+/* 추석 팝업  css*/
+.working-hours-pop{display:none;position:fixed;top:0px;left:0;width:100%;height:100%;background-color:rgba(25,25,25,0.85);z-index:999999999;}
+.working-hours-pop-inner{position:absolute;width:100%; max-width:620px;left:50%;top:52%;transform:translate(-50%, -50%);background-color:rgba(0,0,0,0);text-align:center;}
+.working-hours-pop-inner img{width:100%;height:auto}
+.working-hours-btn{
+    position: absolute;
+    bottom: 8%;
+    width: 52%;
+    right: 25%; text-align: center; color: #fff; display: flex; justify-content: space-between;
+}
+.working-hours-btn a {
+    color: #fff;
+}
+
+@media screen and (max-width: 420px) {
+    .navbar-sub a {
+        font-size: 13px;
+    }
+}
+/* 후기 0건 대기 영역 */
+.review_wait{display:flex;align-items:center;justify-content:center;padding:48px 20px;}
+.review_wait_inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+.review_wait_inner img{width:64px;height:auto;opacity:.6;}
+.wait_title{font-size:15px;color:#555;font-style:normal;font-weight:500;}
+.wait_sub_title{font-size:13px;color:#999;}
+
+/* ===== 메인 즉시출고 구역 · 최근 출고후기 (2026-09) =====
+   TOP 5 줄 자체는 /stock 과 같은 stock.css 의 .stock-rank. 알약형 버튼·색 뱃지·아이콘 없이 글자·괘선으로만. */
+#homestock{width:100%;padding:100px 0 0}
+#homestock .container{width:1200px;flex-direction:column;gap:24px}
+.homestock-head{display:flex;align-items:flex-end;justify-content:space-between}
+.homestock-head .title02{font-weight:700;letter-spacing:-1px;padding-bottom:8px}
+.homestock-head .desc{font-weight:400;color:#2b88ff}
+.homestock-side{display:flex;align-items:center;gap:20px;padding-bottom:4px}
+.homestock-side p{font-size:15px;font-weight:400;color:#535353;white-space:nowrap;font-variant-numeric:tabular-nums}
+.homestock-side p b{font-size:18px;font-weight:700;color:#111}
+.home-more{display:inline-block;white-space:nowrap;padding:0 22px;height:44px;border:1px solid #b2b2b2;border-radius:10px;background:#fff;font-size:15px;line-height:42px;color:#111}
+.home-more:hover{border-color:#2b88ff;color:#2b88ff}
+
+.homereview{width:100%}
+.homereview ul{display:flex;justify-content:space-between}
+.homereview li{width:23.5%;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;background:#fff}
+.homereview li:hover{border-color:#2b88ff}
+.homereview a{display:block;height:100%}
+/* 출고후기는 사진이 4장(앞·뒤·옆·실내) — 2x2 로 깐다 */
+.homereview .ph{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;aspect-ratio:4 / 3;background:#fff}
+.homereview .ph img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;background:#f4f7fb}
+.homereview .tx{padding:18px 20px 16px}
+.homereview .car{font-size:18px;font-weight:700}
+.homereview .opt{margin-top:2px;font-size:13px;font-weight:400;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.homereview .body{margin-top:12px;height:96px;font-size:15px;font-weight:400;line-height:24px;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
+.homereview .meta{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid #ebebeb;font-size:13px;font-weight:400;color:#9698a5}
+.homereview .meta span{font-size:13px;font-weight:400;color:#535353}
+.homereview-more{text-align:center}
+.homereview-more .home-more{padding:0 32px;height:50px;font-size:16px;line-height:48px}
+
+@media screen and (max-width:1200px){
+    #homestock .container{width:calc(100% - 32px)}
+    .homereview ul{flex-wrap:wrap;gap:20px 0}
+    .homereview li{width:48.5%}
+}
+@media screen and (max-width:700px){
+    #homestock{padding:48px 0 0}
+    .homestock-head{display:block}
+    .homestock-head .title02{font-size:24px;padding-bottom:4px}
+    .homestock-head .desc{font-size:14px}
+    .homestock-side{justify-content:space-between;margin-top:12px;padding-bottom:0}
+    .homestock-side p{font-size:13px}
+    .homestock-side p b{font-size:15px}
+    .home-more{padding:0 14px;height:36px;border-radius:8px;font-size:13px;line-height:34px}
+    /* 후기는 테두리 없는 줄 목록으로 — 지금의 세로 카드 4장(1,900px)보다 짧다 */
+    .homereview ul{display:block}
+    .homereview li{width:100%;margin-top:-1px;border-radius:0;border-left:none;border-right:none}
+    .homereview a{padding:16px 0}
+    /* 좁은 화면에서는 4장을 한 줄로 — 출고후기 페이지의 사진 줄과 같은 모양 */
+    .homereview .ph{grid-template-columns:repeat(4,1fr);grid-template-rows:auto;gap:4px;aspect-ratio:auto}
+    .homereview .ph img{aspect-ratio:1 / 1;height:auto;border-radius:6px}
+    .homereview .tx{padding:10px 0 0}
+    .homereview .car{font-size:16px}
+    .homereview .opt{display:none}
+    .homereview .body{margin-top:4px;height:40px;font-size:13px;line-height:20px;-webkit-line-clamp:2}
+    .homereview .meta{margin-top:6px;padding-top:0;border-top:none;font-size:12px}
+    .homereview .meta span{font-size:12px}
+    .homereview-more{width:100%}
+    .homereview-more .home-more{width:100%;height:46px;font-size:15px;line-height:44px}
+}

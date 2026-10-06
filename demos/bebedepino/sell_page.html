@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bebe_de_pino | 큐어카라맨투맨 </title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/sell_page.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/sell_page_responsive.css">
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/sell_page.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="./images/header/top_logo.png" type="image/x-icon">
+    <link rel="icon" href="./images/header/top_logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- 헤더 시작 -->
+    <header>
+        <div class="inner">
+            <div class="top_header">
+                <a class="logo" href="./index.html"><h1><img src="./images/header/rogo.png" alt="메인페이지로 가기"></h1></a>
+                <div class="top_right_menu">
+                    <a href="#">로그인</a>
+                    <a href="#">마이페이지</a>
+                    <a href="#">고객센터</a>
+                </div>
+            </div>
+            <div class="btm_header">
+                <a href="#" class="btm_left_menu"><img src="./images/header/menu.png" alt="메뉴열기"></a>
+                <div class="btm_center_menu">
+                    <a href="#">신상품</a>
+                    <a href="#">BEST</a>
+                    <a href="#">세일</a>
+                    <a href="#">콜라보</a>
+                    <a href="#">신생아</a>
+                    <a href="#">베이비</a>
+                    <a href="#">키즈</a>
+                    <a href="#">액세서리</a>
+                    <a href="#">언더웨어</a>
+                </div>
+                <div class="btm_rigth_menu">
+                    <a href="#" class="search_btn"><img src="./images/header/ico_search.png" alt="검색"></a>
+                    <a href="#"><img src="./images/header/ico_cart.png" alt="장바구니"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더 종료 -->
+    <!-- 위로가기 시작-->
+    <div class="top_arrow">
+        <a href="#top_arrow"><img src="./images/header/top_arrow.png" alt="위로가기"></a>
+    </div>
+    <!-- 위로가기 시작 -->
+    <!-- 검색 기능 시작  -->
+    <div class="search_aria">
+        <a href="#" class="search_close"><img src="./images/header/close.png" alt=""></a>
+        <div class="search_inner">
+            <form action="#" method="get" id="Search">
+                <input type="text" name="userSearch" id="userSearch" maxlength="30" placeholder="검색어를 입력해주세요.">
+                <p><img src="./images/header/ico_search_large.png" alt=""></p>
+            </form>
+            <div class="btm_contents">
+                <div class="suggest_search">
+                    <h3>추천 검색어</h3>
+                    <a href="#">1.와이키</a>
+                    <a href="#">2.허니베어</a>
+                    <a href="#">3.베니베어</a>
+                    <a href="#">4.울오버</a>
+                    <a href="#">5.맨투맨</a>
+                    <a href="#">6.핑크엘리펀트</a>
+                    <a href="#">7.러브데이지</a>
+                </div>
+                <div class="popular_search">
+                    <h3>추천 검색어</h3>
+                    <a href="#">1.후드티</a>
+                    <a href="#">2.원피스</a>
+                    <a href="#">3.티셔츠</a>
+                    <a href="#">4.패딩</a>
+                    <a href="#">5.가방</a>
+                    <a href="#">6.모자</a>
+                    <a href="#">7.디즈니</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 검색 기능 시작  -->
+    <!-- 메뉴 카테고리 시작  -->
+    <div class="header_menu">
+        <a href="#" class="menu_close"><img src="./images/header/close.png" alt=""></a>
+        <ul class="menu_box">
+            <li>
+                <div class="menu-item"><a href="#">전체보기</a></div>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">신상품</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">2025 봄</a></li>
+                    <li><a href="#">베이비</a></li>
+                    <li><a href="#">키즈</a></li>
+                    <li><a href="#">신생아</a></li>
+                    <li><a href="#">디즈니</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">BEST</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">후드티</a></li>
+                    <li><a href="#">티셔츠</a></li>
+                    <li><a href="#">바람막이</a></li>
+                    <li><a href="#">원피스</a></li>
+                    <li><a href="#">맨투맨</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">신생아</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">울오버</a></li>
+                    <li><a href="#">허니베어</a></li>
+                    <li><a href="#">하트제이미</a></li>
+                    <li><a href="#">브룩스베이비</a></li>
+                    <li><a href="#">레이첼</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">베이비</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">패딩</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">키즈</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">언더웨어</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">언더웨어</a></li>
+                    <li><a href="#">파자마</a></li>
+                    <li><a href="#">라운지웨어</a></li>
+                    <li><a href="#">패밀리웨어</a></li>
+                    <li><a href="#">액세서리</a></li>
+                    <li><a href="#">펫웨어</a></li>
+                    <li><a href="#">세일</a></li>
+                    <li><a href="#">아울렛</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">액세서리</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">양말</a></li>
+                    <li><a href="#">모자</a></li>
+                    <li><a href="#">스카프&턱받이</a></li>
+                    <li><a href="#">헤어 액세서리</a></li>
+                    <li><a href="#">기타</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="menu-item"><a href="#">세일</a><a href="#">+</a></div>
+                <ul class="submenu">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">수트&드레스</a></li>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">패딩</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 메뉴 카테고리 종료  -->
+    <main>
+        <div class="sell_container">
+            <div class="sell_inner" id="top_arrow">
+                <div class="left_contents">
+                    <div class="sub_menu">
+                        <div class="subBg sub_view1"><img src="./images/sell_page/seb_menu_001.jpg" alt=""></div>
+                        <div class="subBg sub_view2"><img src="./images/sell_page/seb_menu_002.jpg" alt=""></div>
+                        <div class="subBg sub_view3"><img src="./images/sell_page/seb_menu_003.jpg" alt=""></div>
+                        <div class="subBg sub_view4"><img src="./images/sell_page/seb_menu_004.jpg" alt=""></div>
+                        <div class="subBg sub_view5"><img src="./images/sell_page/seb_menu_005.jpg" alt=""></div>
+                    </div>
+                    <div class="main_bg"><img src="./images/sell_page/main_bg.jpg" alt=""></div>
+                </div>
+                <div class="right_contents">
+                    <div class="right_inner">
+                        <div class="item_title">
+                            <div class="top_text">
+                                <h2>큐어카라맨투맨</h2>
+                                <div class="top_text_left">
+                                    <a href="#" class="heart_on"></a>    
+                                    <a href="#" class="share_on"></a>    
+                                </div>
+                            </div>
+                            <div class="star_point">
+                                <p><img src="./images/sell_page/star.png" alt=""><span>4.8</span></p>
+                                <a href="#" class="review_text">상품평 137건</a>
+                            </div>
+                        </div>
+                        <!-- 제목부터 ~ 별점까지 -->
+                        <ul class="middle_title">
+                            <li class="price_aria">
+                                <span class="sale_persent">10%</span>
+                                <em>50,400원</em>
+                                <del>27,800원</del>
+                            </li>
+                            <li class="transfer_price">
+                                <p>배송비 <span>3,000원 (39,900원 이상 구매시 무료)</span></p>
+                            </li>
+                            <li class="select_color">
+                                <p>색상<span>(필수*)</span></p>
+                                <div class="select_menu">
+                                    <a href="#" class="active"><span id="gray"></span></a>
+                                    <a href="#"><span id="white_gray"></span></a>
+                                    <a href="#"><span id="pink"></span></a>
+                                    <a href="#"><span id="chacol"></span></a>
+                                </div>
+                            </li>
+                            <li class="select_size">
+                                <p>사이즈<span>(필수*)</span></p>
+                                <div class="size_aria">
+                                    <a href="#" id="no_9" class="active">9호</a>
+                                    <a href="#" id="no_11">11호</a>
+                                    <a href="#" id="no_13">13호</a>
+                                    <a href="#" id="no_15">15호</a>
+                                    <a href="#" id="no_17">17호</a>
+                                    <a href="#" id="no_19">19호</a>
+                                </div>
+                            </li>
+                            <li class="size_check">
+                                <a href="#"><span>실측 사이즈 확인하기</span></a>
+                            </li>
+                        </ul>
+                        <div class="buy_value">
+                            <div class="selling_info"><p>Gray/11호</p><a href="#" id="value_close"><img src="./images/sell_page/close.png" alt=""></a></div>
+                            <div class="value_btn">
+                                <div class="box">
+                                <button type="button" id="numMinus"><img src="./images/sell_page/minus.png" alt=""></button>
+                                <input type="number" name="num" id="num" value="1">
+                                <button type="button" id="numPlus"><img src="./images/sell_page/plus.png" alt=""></button>
+                                <!-- +버튼을 클릭할때마다 input의 value가 1씩 증가하기 --> 
+                            </div>
+                            <a href="#">쿠폰적용</a>
+                            </div>
+                        </div>
+                        <div class="total_price">
+                            <p class="total_left_text">총금액</p>
+                            <p class="total_right_text"><em id="total_price_math">50400</em><span>원</span></p>
+                        </div>
+                        <div class="buy_btn">
+                            <div class="top_buy">
+                                <a href="#" class="cart">장바구니</a>
+                                <a href="#" class="main_buy">구매하기</a>
+                            </div>
+                            <div class="simple_buy">
+                                <a href="#"><img src="./images/sell_page/kakao.png" alt="카카오페이 결제"><span>카카오 간편구매</span></a>
+                                <a href="#"><img src="./images/sell_page/naver.png" alt="네이버페이 결제"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item_information">
+            <a href="#details" class="active">상품정보</a>
+            <a href="#size">사이즈</a>
+            <a href="#review_area">상풍평 3</a>
+            <a href="#qnaArea">문의</a>
+        </div>
+        <a href="#details" id="details" class="details_page">
+            <img src="./images/sell_page/details_page.png" alt="">
+        </a>
+        <a href="#size" id="size" class="size_page">
+            <img src="./images/sell_page/size.jpg" alt="">
+        </a>
+        <div class="review_aria">
+            <div class="review_inner review">
+                <div class="revier_container">
+                    <div class="review_title"><h2>REVIEW (8)</h2><a href="#" id="review_area">리뷰 전체보기</a></div>
+                    <div class="star_point_aria">
+                        <div class="left_contents">
+                            <div class="top_aria"><img src="./images/sell_page/star.png" alt=""><em>4.9</em></div>
+                            <p>100%의 구매자가 이 상품을 좋아합니다.</p>
+                        </div>
+                        <div class="right_contents">
+                            <div class="like_best">
+                                <p>아주 좋아요</p>
+                                <div class="like_bar"><div class="bar"></div></div>
+                                <p class="like_num">7</p>
+                            </div>
+                            <div class="like_best">
+                                <p>맘에 들어요</p>
+                                <div class="like_bar"><div class="bar_gray"></div></div>
+                                <p class="like_num">1</p>
+                            </div>
+                            <div class="like_best">
+                                <p>보통이에요</p>
+                                <div class="like_bar"><div class="bar_X"></div></div>
+                                <p class="like_num">0</p>
+                            </div>
+                            <div class="like_best">
+                                <p>그냥그래요</p>
+                                <div class="like_bar"><div class="bar_X"></div></div>
+                                <p class="like_num">0</p>
+                            </div>
+                            <div class="like_best">
+                                <p>별로에요</p>
+                                <div class="like_bar"><div class="bar_X"></div></div>
+                                <p class="like_num">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review_inner review">
+                <div class="revier_container">
+                    <div class="review_title photo"><h2>포토&동영상 (2)</h2><a href="#">사진 전체보기</a></div>
+                    <div class="photo_bg">
+                        <a href="#" class="photo1"><img src="./images/sell_page/seb_menu_001.jpg" alt=""></a>
+                        <a href="#" class="photo2"><img src="./images/sell_page/seb_menu_002.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="review_category">
+                    <a href="#" class="active">추천순</a>
+                    <a href="#">최신순</a>
+                    <a href="#">별점순</a>
+                </div>
+                <div class="user_review user1">
+                    <div class="reviewleft">
+                        <div class="top">
+                            <div class="star_point">
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p>아주 좋아요</p>
+                            </div>
+                            <p>2025.2.9</p>
+                        </div>
+                        <p class="user_review_text">
+                            손주에게 주려고 선물로 구입하게 되었는데 너무 귀엽다는 이야기를 들었네요~<br>
+                            키 100, 몸무게 14kg인데 100사이즈가 넉넉하게 잘 맞더라구요~
+                        </p>
+                        <div class="photo_bg user_review_photo">
+                            <a href="#" class="photo1"><img src="./images/sell_page/seb_menu_004.jpg" alt=""></a>
+                        </div>
+                        <div class="good_bad">
+                            <a href="#"><img src="./images/sell_page/good.png" alt=""><span>도움돼요!</span></a>
+                            <a href="#"><img src="./images/sell_page/bad.png" alt=""><span>도움 안돼요!</span></a>
+                            <a href="#">댓글 0</a>
+                        </div>
+                    </div>
+                    <ul class="reviewright">
+                        <li>양****님의 리뷰입니다.</li>
+                        <li>키 95cm</li>
+                        <li>평소사이즈 100호</li>
+                        <li>개월 수 12개월</li>
+                        <li>Color Oatmeal</li>
+                        <li>Size 90</li>
+                    </ul>
+                </div>
+                <div class="user_review user2">
+                    <div class="reviewleft">
+                        <div class="top">
+                            <div class="star_point">
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p><img src="./images/sell_page/star.png" alt=""></p>
+                                <p>아주 좋아요</p>
+                            </div>
+                            <p>2025.2.9</p>
+                        </div>
+                        <p class="user_review_text">
+                            손주에게 주려고 선물로 구입하게 되었는데 너무 귀엽다는 이야기를 들었네요~<br>
+                            키 100, 몸무게 14kg인데 100사이즈가 넉넉하게 잘 맞더라구요~
+                        </p>
+                        <div class="photo_bg user_review_photo">
+                            <a href="#" class="photo1"><img src="./images/sell_page/seb_menu_004.jpg" alt=""></a>
+                        </div>
+                        <div class="good_bad">
+                            <a href="#"><img src="./images/sell_page/good.png" alt=""><span>도움돼요!</span></a>
+                            <a href="#"><img src="./images/sell_page/bad.png" alt=""><span>도움 안돼요!</span></a>
+                            <a href="#">댓글 0</a>
+                        </div>
+                    </div>
+                    <ul class="reviewright">
+                        <li>양****님의 리뷰입니다.</li>
+                        <li>키 95cm</li>
+                        <li>평소사이즈 100호</li>
+                        <li>개월 수 12개월</li>
+                        <li>Color Oatmeal</li>
+                        <li>Size 90</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="review_inner review">
+                <div class="revier_container">
+                    <div class="review_title qnaTitle">
+                        <h2>상품Q&A</h2>
+                        <div class="right_contents checkbox_aria">
+                            <p class="qnaArea">
+                                <input type="checkbox" name="check_box" value="agree_on" id="agree1">
+                                <label for="agree1"><span>비밀글 제외</span></label>
+                            </p>
+                            <a href="#">문의하기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="user_qna_contents">
+                    <div class="user_qna">
+                        <a href="#">
+                            <p>카**** 님</p>
+                            <p>교환문의 입니다.</p>
+                            <p>2024.10.21</p>
+                            <p>답변 완료</p>
+                        </a>
+                    </div>
+                    <div class="user_qna">
+                        <a href="#">
+                            <p>카**** 님</p>
+                            <p>교환문의 입니다.</p>
+                            <p>2024.10.21</p>
+                            <p>답변 완료</p>
+                        </a>
+                    </div>
+                    <div class="user_qna">
+                        <a href="#">
+                            <p>카**** 님</p>
+                            <p>교환문의 입니다.</p>
+                            <p>2024.10.21</p>
+                            <p>답변 완료</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer_top">
+            <div class="footer_menu">
+                <div class="left_menu">
+                    <a href="#">회사소개</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">고객센터</a>
+                    <a href="#">이벤트</a>
+                    <a href="#">공지사항</a>
+                </div>
+                <div class="right_menu">
+                    <a href="#">제휴문의</a>
+                    <a href="#">고객지원</a>
+                    <a href="#">Q&A</a>
+                </div>
+            </div>
+        </div>
+        <!-- footer 시작 -->
+        <div class="footer_btm">
+            <div class="footer_btm_left">
+                <h2>(주)더캐리</h2>
+                <p>사업장 : 서울특별시 용산구 한남동 738-36 2F-5F  |  대표이사 : 이은정,윤중용</p>
+                <address>사업자등록번호 : 128-87-03548  |  E-mail : bebedepino@thekary.com  |  통신판매업신고번호제 : 제 2021-서울용산-1694호 </address>
+                <p>전화상담 : 1833-2005 | FAX : +82.2.6119.5003 | 상담시간 : 평일 09:00 - 17:00 (점심 12:00 - 13:00) 토/ 일요일·공휴일 휴무  |  온라인 상담 : 이메일 1:1 상담문의 <a href="#"><img src="./images/index/down_arrow.png" alt=""></a></p>
+                <p>온라인 고객센터 : 1833-2005(주문/반품/교환/배송관련) | 물류센터: 경기도 파주시 광탄면 부흥로 235번길 146 C동 1번 게이트 더캐리 파주 물류센터</p>
+                <p>Copyright © BEBE DE PINO. All rights reserved.</p>
+            </div>
+            <div class="footer_btm_right">
+                <a href="#"><img src="./images/index/twitter.png" alt=""></a>
+                <a href="#"><img src="./images/index/instar.png" alt=""></a>
+                <a href="#"><img src="./images/index/youtube.png" alt=""></a>
+            </div>
+        </div> 
+        <!-- footer 종료 -->
+    </footer>
+    <!-- footer 종료 -->
+</body>
+</html>

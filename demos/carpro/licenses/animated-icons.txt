@@ -1,0 +1,14 @@
+Animated Icons — Fuel and Trophy
+Source/attribution: gorkem-bwl/animated-icons
+https://github.com/gorkem-bwl/animated-icons
+Source commit: df5e85d3f46e5949a4443626a41f6009915f1975
+Source files: dist/react/Fuel.jsx, dist/react/Trophy.jsx
+
+Upstream license declaration (README.md and package.json): ISC.
+https://github.com/gorkem-bwl/animated-icons/blob/df5e85d3f46e5949a4443626a41f6009915f1975/README.md#license
+
+The original upstream components are retained unchanged. The site's adapters
+reuses its animation and adds viewport-controlled autoplay.
+
+Underlying icon geometry: Lucide Icons and Contributors, ISC License.
+Complete Lucide copyright and permission notice: /licenses/lucide.txt

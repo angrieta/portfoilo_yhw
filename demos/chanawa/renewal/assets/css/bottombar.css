@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* ===================================================================
+   PC 하단 고정 견적신청 바 (.rwb)  — Figma 2023:25
+   -------------------------------------------------------------------
+   바 1920x120, 콘텐츠 1200 중앙.
+   좌 840 = 안내문 + 입력 2개(410 x2, gap 20)
+   우 340 = 동의 줄 + 신청하기
+   모바일은 원본 .m-btn-wrap(견적문의/전화상담)이 이미 하단을 쓰므로
+   PC 에서만 노출한다.
+   =================================================================== */
+
+.rwb{
+  position:fixed; left:0; right:0; bottom:0; z-index:900;
+  height:120px; background:#2a88ff;
+  display:none;                      /* 기본 숨김, PC 에서만 켠다 */
+}
+.rwb, .rwb *{ box-sizing:border-box }
+.rwb-inner{
+  width:1200px; max-width:100%; height:100%; margin:0 auto;
+  display:flex; align-items:center; gap:20px;
+}
+
+/* ── 좌: 안내문 + 입력 ─────────────────────────────── */
+.rwb-left{
+  width:840px; flex:0 0 840px; height:100%;
+  display:flex; flex-direction:column; justify-content:center;
+  align-items:flex-start; gap:15px;
+}
+/* 원본 main.css 가 p 에 font-size/color 를 직접 걸어 상속이 끊기므로 명시한다 */
+.rwb-title{ margin:0; font-size:16px; font-weight:700; color:#fff; white-space:nowrap }
+.rwb-fields{ display:flex; gap:20px; width:100% }
+.rwb-fields input{
+  flex:1 1 0; min-width:0; height:42px; padding:0 16px;
+  background:#fff; border:1px solid transparent; border-radius:6px;
+  font-family:inherit; font-size:13px; font-weight:500; color:#333;
+}
+.rwb-fields input::placeholder{ color:#a1a5b3 }
+.rwb-fields input:focus{ outline:none; border-color:#102655 }
+.rwb-fields input.is-error{ border-color:#f44a6e }
+
+/* ── 우: 동의 + 신청 ──────────────────────────────── */
+.rwb-right{
+  flex:1 1 auto; min-width:0; height:100%;
+  display:flex; flex-direction:column; justify-content:center;
+  align-items:flex-end; gap:15px;
+}
+.rwb-consent{ display:flex; align-items:center; gap:8px }
+.rwb-consent label{ display:flex; align-items:center; gap:8px; cursor:pointer; margin:0 }
+.rwb-consent input{ position:absolute; opacity:0; width:0; height:0 }
+/* Keep the white box visible in both states; only the check mark toggles. */
+.rwb-dot{
+  position:relative; width:18px; height:18px; border-radius:3px; flex:0 0 auto;
+  border:1.5px solid #fff; background:#fff;
+}
+.rwb-dot::after{
+  content:''; position:absolute; left:4px; top:2px; width:5px; height:8px;
+  border:solid #102655; border-width:0 2px 2px 0;
+  transform:rotate(45deg); opacity:0;
+}
+.rwb-consent input:checked + .rwb-dot::after{ opacity:1 }
+.rwb-consent input:focus-visible + .rwb-dot{ outline:2px solid #102655; outline-offset:3px }
+.rwb-consent .tx{ font-size:12px; font-weight:500; color:#e1e7ff; white-space:nowrap }
+.rwb-detail{
+  background:#102655; color:#e1e7ff; border:0; cursor:pointer; font-family:inherit;
+  font-size:10px; line-height:13px; padding:4px 10px; border-radius:10px; white-space:nowrap;
+}
+.rwb-detail:hover{ filter:brightness(1.25) }
+
+.rwb-submit{
+  width:100%; height:42px; padding:0 24px; border:0; border-radius:6px;
+  background:#ffe764; color:#111; font-family:inherit;
+  font-size:14px; font-weight:800; cursor:pointer; white-space:nowrap;
+  transition:transform .2s cubic-bezier(.22,.61,.36,1), background-color .2s ease, color .2s ease;
+}
+.rwb-submit:hover{ transform:translateY(-2px); background:#111; color:#ffe764 }
+.rwb-submit:active{ transform:none }
+
+/* 전송 완료 */
+.rwb-done{
+  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+  gap:10px; color:#fff; font-size:16px; font-weight:700;
+}
+
+/* ── PC 에서만 노출 ───────────────────────────────── */
+@media screen and (min-width:1201px){
+  .rwb{ display:block }
+  /* 바에 가려 푸터 끝이 잘리지 않도록 자리를 비운다 */
+  .rw{ padding-bottom:120px }
+  body[data-renewal-header]:has(.rwb){ padding-bottom:120px }
+  /* 우측 퀵폼이 바와 겹치지 않게 위로 올린다 */
+  .rw .quick-form{ top:auto; bottom:140px; transform:none }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rwb-submit{ transition-duration:.001ms !important }
+}

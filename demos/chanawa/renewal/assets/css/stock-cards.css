@@ -1,0 +1,177 @@
+/* Same image panel, typography and price hierarchy as the homepage cards. */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+#stockTop.stock-rank-cards{--stock-card-width:252px;display:flex;gap:12px;align-items:stretch;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}
+#stockTop.stock-rank-cards::-webkit-scrollbar{display:none}
+#stockTop.stock-rank-cards::after{content:none}
+#stockTop.stock-rank-cards.is-scrollable::after{content:"";flex:0 0 max(0px,calc(100% - var(--stock-card-width) - 12px))}
+#stockTop.stock-rank-cards > li:not(.none){flex:0 0 var(--stock-card-width);max-width:none;scroll-snap-align:start;scroll-snap-stop:always;display:block;grid-row:auto;border:1px solid #2a88ff33;border-radius:12px;background:#fff}
+#stockTop.stock-rank-cards > li > a,#stockList .stock-tr{
+  position:relative;display:flex;flex-direction:column;gap:10px;grid-row:auto;
+  padding:142px 16px 16px;border-radius:12px;overflow:hidden;background:#fff;
+}
+#stockList .stock-tr{border:1px solid #2a88ff33}
+#stockTop .stock-card-thumb,#stockList .im{
+  position:absolute;top:0;left:0;right:0;height:126px;display:grid;place-items:center;
+  grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);
+  padding:0;margin:0;background:#f0f7ff;overflow:hidden;
+}
+#stockTop .stock-card-thumb .stock-top-image,#stockList .im img{
+  display:block;grid-area:auto;align-self:auto;width:90%;height:78%;max-width:none;max-height:none;aspect-ratio:auto;
+  margin:0;padding:0;object-fit:contain;
+}
+#stockTop .stock-top-position{top:11px;left:11px;right:auto;z-index:1;min-height:0;margin:0;padding:4px 10px;font-size:12px;line-height:16px;background:#f44a6e}
+#stockTop .stock-top-info,#stockList .info{
+  display:flex;flex-direction:column;gap:6px;min-height:0;width:100%;padding:0 0 10px;margin:0;
+  border-bottom:1px solid #0003;
+}
+#stockTop .stock-card-brand,#stockList .stock-card-brand{font-size:13px;font-weight:600;line-height:1.4;color:#64748b;margin:0}
+#stockTop .stock-top-info .nm,#stockList .nm{
+  min-height:0;margin:0;font-size:24px;font-weight:800;line-height:1.25;color:#0f172a;
+  font-family:'Outfit','Pretendard Variable',sans-serif;word-break:keep-all;overflow-wrap:anywhere;
+}
+#stockTop .stock-top-info .tr,#stockList .tr{margin:0;font-size:12px;line-height:1.5;color:#64748b;overflow-wrap:anywhere}
+#stockTop .stock-top-price,#stockList .pr{display:flex;flex-direction:column;gap:8px;min-height:0;width:100%;padding:0;margin:auto 0 0;line-height:1.4}
+:is(#stockTop .stock-top-price,#stockList .pr) .stock-payment{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:26px;margin:0;line-height:1.4}
+:is(#stockTop .stock-top-price,#stockList .pr) .stock-payment-label{flex:0 0 auto;min-width:0;height:auto;margin:0;font-size:12px;font-weight:500;line-height:1.4;color:#4b5b75}
+:is(#stockTop .stock-top-price,#stockList .pr) .stock-payment-value{display:inline;min-width:0;height:auto;margin:0;font:800 18px/1.4 'Outfit','Pretendard Variable',sans-serif;color:#2a88ff;letter-spacing:0;font-variant-numeric:tabular-nums}
+:is(#stockTop .stock-top-price,#stockList .pr) .stock-payment-value b{font:inherit;color:inherit;letter-spacing:0}
+:is(#stockTop .stock-top-price,#stockList .pr) [data-kind=lease] .stock-payment-value{color:#4b5b75;font-weight:700}
+:is(#stockTop .stock-top-price,#stockList .pr) .stock-payment-value.stock-price-pending{color:#8a97aa;font-size:12px;font-weight:400}
+.stock-card-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
+#stockTop .stock-card-meta :is(.stock-top-stock,.stock-top-contract),#stockList :is(.stock-card-meta,.stock-card-media) :is(.st,.ct){padding:0;margin:0;border:0;font-size:12px;line-height:1.5;color:#64748b}
+#stockTop .stock-card-meta .stock-top-stock b,#stockList :is(.stock-card-meta,.stock-card-media) .st b{font-size:14px;color:#17243b}
+#stockTop .stock-top-cta,#stockList .bt a{display:flex;align-items:center;justify-content:center;height:42px;padding:10px;border-radius:10px;font-size:14px;font-weight:800;line-height:1.3}
+#stockTop .stock-top-cta{width:100%;margin:0;background:#2a88ff}
+#stockList .bt{display:flex;flex-direction:column;width:100%;gap:6px;margin:0}
+#stockList .bt a{flex:none;width:100%;min-width:0;white-space:nowrap}
+@media(hover:hover){
+  #stockTop.stock-rank-cards > li:hover,#stockList .stock-tr:hover{box-shadow:0 6px 18px #2a88ff24}
+  #stockTop.stock-rank-cards > li > a:hover{background:#fff}
+}
+@media(max-width:600px){
+  #stockList{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:16px;overflow:visible}
+  #stockList .pr{margin-top:0}
+  #stockList .stock-tr{padding:118px 12px 12px;border-radius:10px}
+  #stockList .im{height:104px}
+  #stockList .nm{font-size:19px}
+  #stockList .pr .stock-payment-value{font-size:15px}
+  #stockList .pr .stock-payment{min-height:22px}
+  #stockList .bt a{height:40px;font-size:13px}
+
+}
+
+  /* Compact inventory rows shared by mobile and desktop. */
+  #stockList{gap:0;border:1px solid #dce5f2;border-radius:0;overflow:hidden;background:#fff}
+  #stockList .stock-tr{
+    display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);
+    grid-template-areas:"media ct" "media info" "media pr" "media bt";
+    column-gap:10px;row-gap:6px;padding:12px;border:0;border-bottom:1px solid #e6ebf2;border-radius:0;
+    box-shadow:none;align-items:start;
+  }
+  #stockList .stock-tr:last-child{border-bottom:0}
+  #stockList .stock-card-media{grid-area:media;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;align-self:stretch;min-width:0}
+  #stockList .im{position:static;grid-area:im;display:flex;align-items:center;justify-content:center;align-self:center;width:100%;height:auto;min-width:0;margin:0;padding:0;background:transparent;overflow:visible}
+  #stockList .im img{width:100%;height:auto;max-height:115px;object-fit:contain;aspect-ratio:auto}
+  #stockList .info{grid-area:info;display:block;margin:0;padding:0;border:0;min-width:0}
+  #stockList .stock-card-brand,#stockList .nm{display:inline;font:700 16px/1.4 'Pretendard Variable',sans-serif;color:#17243b}
+  #stockList .stock-card-brand{margin-right:4px}
+  #stockList .tr{margin-top:3px;font-size:12px;line-height:1.4}
+  #stockList .stock-card-meta{display:contents}
+  #stockList .stock-card-meta .ct{grid-area:ct;justify-self:start;padding:2px 6px;border-radius:4px;background:#edf5ff;color:#176dde;font-size:11px;font-weight:600;line-height:16px;text-align:left}
+  #stockList :is(.stock-card-meta,.stock-card-media) .st{grid-area:st;align-self:center;justify-self:center;color:#13a34a;font-size:13px;line-height:20px;white-space:nowrap}
+  #stockList .stock-card-media .st{display:flex;align-items:center;justify-content:center;min-height:36px;flex-shrink:0}
+  #stockList :is(.stock-card-meta,.stock-card-media) .st::before{display:inline;margin-right:4px;color:#8a97aa;font-size:11px;line-height:16px}
+  #stockList :is(.stock-card-meta,.stock-card-media) .st b{color:inherit;font-size:16px}
+  #stockList :is(.stock-card-meta,.stock-card-media) .st.low{color:#f44a6e}
+  #stockList .pr{grid-area:pr;gap:2px;margin:0}
+  #stockList .pr .stock-payment{justify-content:flex-start;gap:6px;min-height:22px}
+  #stockList .pr .stock-payment-label{font-size:11px}
+  #stockList .pr .stock-payment-value{font-size:16px}
+  #stockList .pr [data-kind=lease] .stock-payment-value:not(.stock-price-pending){font-size:16px;font-weight:800}
+  #stockList .bt{grid-area:bt;gap:4px;align-self:start}
+  #stockList .bt a.btn-blue{height:36px;padding:6px;font-size:12px;border-radius:6px}
+
+@media(min-width:601px){
+  .stock-table{container-type:inline-size}
+  /* Two columns only when each row has at least 420px for its image and action. */
+  #stockList{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,max(420px,50%)),1fr));column-gap:0;row-gap:0;align-items:stretch}
+  #stockList .stock-tr{
+    /* Equal flexible tracks for the left, middle and right whitespace. */
+    grid-template-columns:minmax(16px,1fr) min(300px,40%,calc(100% - 264px)) minmax(16px,1fr) 54px 12px 150px minmax(16px,1fr);
+    grid-template-areas:". im . ct ct ct ." ". im . info info info ." ". im . pr pr pr ." ". im . st . bt .";
+    column-gap:0;row-gap:6px;padding:16px 0;align-items:start;border:0;border-bottom:1px solid #e6ebf2;border-radius:0;
+  }
+  #stockList .im{align-self:center}
+  #stockList .im img{max-height:170px}
+  #stockList .stock-card-meta .st{justify-self:start;align-self:center;font-size:14px}
+  #stockList .stock-card-meta .st::before{display:block;margin:0 0 2px;font-size:12px}
+  #stockList .stock-card-meta .st b{font-size:17px}
+  #stockList .bt{justify-self:start;width:100%;max-width:150px;align-self:center}
+  #stockList .bt a.btn-blue{height:38px;font-size:13px}
+  #stockList .pr .stock-payment-label{font-size:12px}
+  #stockList .pr .stock-payment-value{font-size:18px}
+  #stockList .pr [data-kind=lease] .stock-payment-value:not(.stock-price-pending){font-size:18px}
+}
+/* Match the two 420px columns plus the list's outer borders. */
+@container(min-width:842px){
+  #stockList::before{content:"";position:absolute;inset:0 auto 0 50%;width:1px;background:#e6ebf2;z-index:1;pointer-events:none}
+}
+/* Match the shared header's content width and responsive side gutters. */
+.stock-visual{min-width:0}
+.stock-visual ~ footer .container{max-width:100%}
+.sub-wrap:has(> .sub-container > .stock-head){padding-inline:0}
+.sub-wrap:has(> .sub-container > .stock-head) > .sub-container{width:min(1200px,calc(100% - 64px));max-width:none}
+@media(min-width:1000px){
+  .stock-visual .inner{width:min(1200px,calc(100% - 64px));padding-inline:0}
+}
+@media(min-width:1000px) and (max-width:1240px){
+  .stock-visual .inner,
+  .sub-wrap:has(> .sub-container > .stock-head) > .sub-container{width:calc(100% - 40px)}
+}
+@media(max-width:999px){
+  .sub-wrap:has(> .sub-container > .stock-head) > .sub-container{width:calc(100% - 32px)}
+}
+@media(min-width:1201px){
+  #stockTop.stock-rank-cards{--stock-card-width:calc((100% - 48px)/5)}
+}
+@media(max-width:600px){
+  #stockList .stock-card-media .im{transform:translateY(-6px)}
+}
+
+/* Keep summary text opposite its controls, aligned along their bottom edges. */
+.stock-top-toolbar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-top:16px}
+.stock-top-toolbar > .stock-rail{flex:1 1 420px;min-width:0}
+.stock-top-toolbar .stock-texttab{margin-top:0}
+.stock-top-toolbar .stock-asof{flex:none;margin:0 0 0 auto;padding:0;font-size:18px;line-height:1.5;color:#111;white-space:nowrap}
+.stock-top-toolbar .stock-asof span{color:#2b88ff}
+@media(min-width:701px){
+  .stock-toolbar{display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px}
+  .stock-toolbar .stock-count{order:2;margin:0 0 0 auto;line-height:1.5;white-space:nowrap}
+  .stock-toolbar .stock-controls{order:1;flex:none;width:auto;flex-wrap:nowrap;margin:0}
+}
+@media(max-width:600px){
+  .stock-top-toolbar{margin-top:14px}
+  .stock-top-toolbar .stock-asof{margin:0;font-size:14px;text-align:left}
+  .stock-toolbar{display:flex;flex-direction:column;align-items:stretch;gap:16px}
+  .stock-toolbar .stock-controls{order:1;margin:0;flex-wrap:nowrap}
+  .stock-toolbar #stockSort{flex:0 0 140px;max-width:44%;min-width:0}
+  .stock-toolbar .stock-search{flex:1 1 0;min-width:0}
+  .stock-toolbar .stock-count{order:2;margin:0;font-size:14px;line-height:1.5;text-align:left}
+}
+
+/* A local dropdown keeps sort choices aligned with the search toolbar on every device. */
+.stock-sort{position:relative;flex:0 0 160px;min-width:0}
+.stock-sort > select[hidden]{display:none}
+.stock-sort-trigger{display:block;position:relative;width:100%;height:42px;padding:0 36px 0 14px;border:1px solid #dce5f2;border-radius:10px;background:#fff;color:#334155;font:inherit;font-size:14px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.stock-sort-trigger::after{content:"";position:absolute;right:15px;top:16px;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+.stock-sort-trigger[aria-expanded="true"]{border-color:#2b88ff;box-shadow:0 0 0 3px #2b88ff14}
+.stock-sort-trigger[aria-expanded="true"]::after{top:19px;transform:rotate(225deg)}
+.stock-sort-trigger:focus-visible{outline:2px solid #2b88ff;outline-offset:2px}
+.stock-sort-menu{position:absolute;z-index:50;top:calc(100% + 8px);left:0;width:210px;max-width:calc(100vw - 32px);padding:6px;border:1px solid #dce5f2;border-radius:12px;background:#fff;box-shadow:0 8px 24px #142b5024}
+.stock-sort-menu[hidden]{display:none}
+.stock-sort.opens-up .stock-sort-menu{top:auto;bottom:calc(100% + 8px)}
+.stock-sort-option{position:relative;display:block;width:100%;min-height:42px;padding:10px 32px 10px 12px;border:0;border-radius:7px;background:transparent;color:#334155;font:inherit;font-size:14px;line-height:22px;text-align:left;cursor:pointer}
+.stock-sort-option:hover,.stock-sort-option:focus{background:#f3f6fb;outline:none}
+.stock-sort-option[aria-selected="true"]{background:#edf4ff;color:#176dde;font-weight:600}
+.stock-sort-option[aria-selected="true"]::after{content:"";position:absolute;right:14px;top:15px;width:5px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
+@media(max-width:600px){.stock-toolbar .stock-sort{flex:0 0 140px;max-width:44%;min-width:0}}
