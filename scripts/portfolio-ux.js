@@ -111,7 +111,7 @@
     const b=e.target.closest('[data-art]');if(!b)return;const p=art.find(item=>item.id===b.dataset.art);
     openDialog(`${p.brand} / ${labels[p.category]}`,`<h2 id="dialog-title" class="dialog-title">${esc(p.title)}</h2><p class="dialog-description">${esc(p.description)}</p><div class="dialog-actions"><a class="text-link" href="${esc(p.full)}" target="_blank" rel="noopener noreferrer">원본 이미지 ${arrow}</a>${p.node?`<a class="text-link" href="https://www.figma.com/design/M76Os4WpCOZ3zFDt5hgnpJ/Untitled?node-id=${p.node.replace(':','-')}" target="_blank" rel="noopener noreferrer">Figma ${arrow}</a>`:''}</div><img class="artwork-full ${p.dark?'dark':''}" src="${esc(p.full)}" alt="${esc(p.title)}">`);
   });
-  const sections=['web-project','graphic','about','contact'];
+  const sections=['about','web-project','graphic','contact'];
   const updateNav=()=>{let id='';for(const item of sections){if(document.getElementById(item).getBoundingClientRect().top<160)id=item;}document.querySelectorAll('.site-header nav a').forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});};
   window.addEventListener('scroll',updateNav,{passive:true});
   showProject(new URL(location).searchParams.get('project'),{updateUrl:false});renderGallery();updateNav();
