@@ -4,7 +4,7 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const arrow = '<img src="images/icons/arrow-up-right.svg" alt="">';
   const extras = {
-    carbay: {url:'./demos/carbay/',pages:'메인 · 차량 탐색 · 즉시출고',note:'최신 carbay-ui 소스의 UI 시연본입니다. 상담·상품 데이터는 운영 서버와 연결되지 않습니다.'},
+    carbay: {url:'./demos/carbay/?v=20261006-3',pages:'메인 · 차량 탐색 · 즉시출고',note:'최신 carbay-ui 소스의 UI 시연본입니다. 상담·상품 데이터는 운영 서버와 연결되지 않습니다.'},
     carpro: {url:'./demos/carpro/',pages:'메인 · 즉시출고 · FAQ',note:'직접 구현한 UI 시연본입니다. 실제 상담은 접수되지 않습니다.'},
     chanawa: {url:'./demos/chanawa/',pages:'메인 · 차량 선택 · 견적 UI',note:'리뉴얼 소스의 메인 UI 시연본입니다. 고객 후기와 실제 접수 기능은 제외했습니다.'},
     carmong: {url:'./demos/carmong/',pages:'메인 · 차량 목록 · 상세 · FAQ',role:'개인 UI 디자인 · 퍼블리싱',summary:'노란색과 캐릭터로 전개한 자동차 비교견적 사이트.',note:'개인 시안 #3·#4의 실제 HTML 구현입니다. 상품·이용 수치는 예시이며 상담은 접수되지 않습니다.'}
