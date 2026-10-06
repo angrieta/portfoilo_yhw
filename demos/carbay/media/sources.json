@@ -125,6 +125,10 @@
     {
       "file": "s60.webp",
       "source": "https://autoimg.danawa.com/photo/4419/model_360.png"
+    },
+    {
+      "file": "manager-5.webp",
+      "source": "carbay-ui/public/images/manager-profile-temporary.png"
     }
   ],
   "videos": [

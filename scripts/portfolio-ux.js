@@ -4,8 +4,8 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const arrow = '<img src="images/icons/arrow-up-right.svg" alt="">';
   const extras = {
-    carbay: {url:'./demos/carbay/?v=20261006-3',pages:'메인 · 차량 탐색 · 즉시출고',note:'최신 carbay-ui 소스의 UI 시연본입니다. 상담·상품 데이터는 운영 서버와 연결되지 않습니다.'},
-    carpro: {url:'./demos/carpro/',pages:'메인 · 즉시출고 · FAQ',note:'직접 구현한 UI 시연본입니다. 실제 상담은 접수되지 않습니다.'},
+    carbay: {url:'./demos/carbay/?v=20261006-4',pages:'메인 · 차량 탐색 · 즉시출고',note:'최신 carbay-ui 소스의 UI 시연본입니다. 상담·상품 데이터는 운영 서버와 연결되지 않습니다.'},
+    carpro: {url:'./demos/carpro/?v=20261006-4',pages:'메인 · 즉시출고 · FAQ',note:'직접 구현한 UI 시연본입니다. 실제 상담은 접수되지 않습니다.'},
     chanawa: {url:'./demos/chanawa/',pages:'메인 · 차량 선택 · 견적 UI',note:'리뉴얼 소스의 메인 UI 시연본입니다. 고객 후기와 실제 접수 기능은 제외했습니다.'},
     carmong: {url:'./demos/carmong/',pages:'메인 · 차량 목록 · 상세 · FAQ',role:'개인 UI 디자인 · 퍼블리싱',summary:'노란색과 캐릭터로 전개한 자동차 비교견적 사이트.',note:'개인 시안 #3·#4의 실제 HTML 구현입니다. 상품·이용 수치는 예시이며 상담은 접수되지 않습니다.'}
   };
@@ -23,7 +23,17 @@
   archive[1].note='기존 저장소에 보관된 베베드피노 원래 구현본을 복원한 시연 사이트입니다.';
   ['https://m.bebedepino.com/index/','https://timeclinicbp.com/','https://mpointmall.hyundaicard.com/main.do','https://www.nuphy.kr/'].forEach((url,i)=>archive[i+1].links.push(['리디자인 원본 사이트',url]));
   projects.push(...archive.slice(1),archive[0]);
-  const groups=[['회사 프로젝트',projects.slice(0,3)],['개인 프로젝트',projects.slice(3,8)],['인턴 실무',projects.slice(8)]];
+  projects.splice(3,0,{
+    id:'business-card',name:'카베이 전자명함',type:'회사 프로젝트',category:'모바일 전자명함',
+    url:'./demos/business-card/',title:'프로필부터 상담까지 이어지는 모바일 명함',
+    summary:'프로필, 출고후기, 상담과 공유를 하나로 연결한 전자명함.',
+    intro:'카베이 김민우 카매니저의 전자명함입니다. 모바일에서 프로필과 출고후기를 확인하고, 연락처 저장과 명함 공유까지 이어지도록 디자인하고 구현했습니다.',
+    role:'UI 디자인 · 퍼블리싱',period:'재직 중 작업',pages:'프로필 · 출고후기 · 상담 · 공유',
+    note:'첨부한 HTML 원본의 UI 시연본입니다. 상담은 저장·전송되지 않으며, 실적 수치는 시안 기준입니다.',
+    links:[],changes:[['모바일 프로필','인물, 담당 분야, 실적 정보를 한 화면에서 읽을 수 있도록 구성했습니다.'],['출고후기','사진 갤러리와 후기 상세 화면으로 작업 내용을 확장했습니다.'],['연락과 공유','연락처 저장, 링크 복사, QR 공유와 상담 화면을 구현했습니다.']]
+  });
+  const groups=[['회사 프로젝트',projects.filter(p=>['carbay','carpro','chanawa','business-card'].includes(p.id))],['개인 프로젝트',projects.filter(p=>['carmong','bebedepino','time-clinic','m-mall','nuphy'].includes(p.id))],['인턴 실무',projects.filter(p=>p.id==='krizer')]];
+  $('#web-title span').textContent=String(projects.length).padStart(2,'0');
   $('#project-list').innerHTML=groups.map(([label,items])=>`<div class="project-group"><h3>${label}</h3>${items.map(p=>`<button type="button" class="project-choice" data-project="${p.id}" aria-pressed="false"><span class="project-number">${String(projects.indexOf(p)+1).padStart(2,'0')}</span>${esc(p.name)}</button>`).join('')}</div>`).join('');
   $('#project-select').innerHTML=groups.map(([label,items])=>`<optgroup label="${label}">${items.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</optgroup>`).join('');
   let active;
@@ -33,7 +43,7 @@
   const stage=$('#preview-stage'),shell=$('#preview-shell');
   function fitPreview(){
     const width=stage.clientWidth;
-    const virtualWidth=device==='mobile'?390:active?.id==='carmong'?900:1440;
+    const virtualWidth=device==='mobile'?390:active?.id==='business-card'?414:active?.id==='carmong'?900:1440;
     const scale=Math.min(1,width/virtualWidth);
     frame.style.width=virtualWidth+'px';
     frame.style.height=Math.ceil(stage.clientHeight/scale)+'px';
@@ -68,6 +78,12 @@
   }
   $('#project-list').addEventListener('click',e=>{const button=e.target.closest('[data-project]');if(button)showProject(button.dataset.project);});
   $('#project-select').addEventListener('change',e=>showProject(e.target.value));
+  document.querySelectorAll('[data-intro-project]').forEach(a=>a.addEventListener('click',e=>{
+    if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();showProject(a.dataset.introProject,{updateUrl:false});
+    const url=new URL(location);url.searchParams.set('project',a.dataset.introProject);url.hash='web-project';
+    history.pushState({project:a.dataset.introProject},'',url);$('#web-project').scrollIntoView();
+  }));
   window.addEventListener('popstate',()=>showProject(new URL(location).searchParams.get('project'),{updateUrl:false}));
   document.querySelectorAll('[data-device]').forEach(b=>b.addEventListener('click',()=>{device=b.dataset.device;fitPreview();}));
   new ResizeObserver(fitPreview).observe(stage);
@@ -98,6 +114,7 @@
   const labels={banner:'배너',detail:'상세페이지',sns:'SNS',brand:'로고·브랜딩',popup:'팝업',concept:'UI 시안'};
   const art=window.portfolioCreative.map(p=>({...p,featured:true,thumb:`images/creative/${p.id}-thumb.webp`,full:`images/creative/${p.id}.webp`}));
   Object.entries(window.portfolioGallery).forEach(([category,files])=>files.forEach((file,i)=>art.push({id:file,category,title:`${labels[category]} 디자인 ${String(i+1).padStart(2,'0')}`,brand:'DESIGN ARCHIVE',description:'기존 포트폴리오 디자인 작업입니다.',thumb:`images/thumbs/${file}.webp`,full:`images/original_image/${file}`})));
+  $('#graphic-title span').textContent=String(art.length);
   let filter='featured',count=9;
   function renderGallery(){
     const selected=art.filter(p=>filter==='all'||(filter==='featured'?p.featured:filter==='concept'?['concept','popup'].includes(p.category):p.category===filter));

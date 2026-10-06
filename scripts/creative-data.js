@@ -14,8 +14,5 @@ window.portfolioCreative = [
     { id: 'carpro-promotion-a', category: 'banner', title: '최대 할인 프로모션', brand: 'CARPRO', size: '1200 × 760', node: '1873:846', description: '입체 그래픽과 금액 타이포그래피로 프로모션 혜택을 강조한 배너 시안입니다.' },
     { id: 'carpro-promotion-b', category: 'banner', title: '무심사 · 최대 할인', brand: 'CARPRO', size: '1200 × 760', node: '1962:141', description: '차량 이미지와 혜택 문구, 신청 버튼으로 구성한 카프로 프로모션 배너입니다.' },
     { id: 'carbay-popup', category: 'popup', title: '출고후기 감사 선물', brand: 'CARBAY', size: '1132 × 1426', node: '1935:12', description: '모델과 선물 상자, 상품권을 합성해 후기 작성 혜택을 표현한 팝업 디자인입니다.' },
-    { id: 'carpro-white-logo', category: 'brand', title: 'CARPRO 로고 활용안', brand: 'CARPRO', size: '404 × 62', node: '1324:27', description: '카프로 작업 파일에 포함된 화이트 로고 적용 자산입니다. 브랜드 아이덴티티의 활용 작업으로 정리했습니다.', dark: true },
-    { id: 'carpro-style-guide', category: 'brand', title: 'CARPRO 타이포그래피 가이드', brand: 'CARPRO', size: '1520 × 1172', node: '1702:6259', description: '서비스 화면에서 사용하는 제목과 본문, 강조 문구의 타이포그래피를 정리한 스타일 가이드입니다.' },
-    { id: 'carbay-business-card-a', category: 'concept', title: '전자명함 · 라이트 시안', brand: 'CARBAY', size: '390 × 1800', node: '2075:29', description: '담당자 소개, 상담 진입, 출고후기를 연결한 모바일 전자명함 UI 시안입니다. 화면의 인물 정보와 서비스 수치는 시안에 포함된 예시이며 포트폴리오 작성자의 성과가 아닙니다.' },
-    { id: 'carbay-business-card-b', category: 'concept', title: '전자명함 · 다크 시안', brand: 'CARBAY', size: '390 × 1800', node: '2075:255', description: '동일한 전자명함 구조를 다크 톤으로 전개한 모바일 UI 시안입니다. 화면의 인물 정보와 서비스 수치는 시안에 포함된 예시이며 포트폴리오 작성자의 성과가 아닙니다.' }
+    { id: 'carpro-white-logo', category: 'brand', title: 'CARPRO 로고 활용안', brand: 'CARPRO', size: '404 × 62', node: '1324:27', description: '카프로 작업 파일에 포함된 화이트 로고 적용 자산입니다. 브랜드 아이덴티티의 활용 작업으로 정리했습니다.', dark: true }
 ];
