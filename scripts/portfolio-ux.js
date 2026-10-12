@@ -79,6 +79,7 @@
   $('#project-list').addEventListener('click',e=>{const button=e.target.closest('[data-project]');if(button)showProject(button.dataset.project);});
   $('#project-select').addEventListener('change',e=>showProject(e.target.value));
   document.querySelectorAll('[data-intro-project]').forEach(a=>a.addEventListener('click',e=>{
+    if(a.closest('.featured-slider')?.swiper?.allowClick===false){e.preventDefault();return;}
     if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
     e.preventDefault();showProject(a.dataset.introProject,{updateUrl:false});
     const url=new URL(location);url.searchParams.set('project',a.dataset.introProject);url.hash='web-project';

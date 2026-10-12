@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="portfolio-version" content="2026-10-12.1">
+  <meta name="portfolio-version" content="2026-10-12.2">
   <title>양현웅 | 웹디자이너 & 퍼블리셔</title>
   <meta name="description" content="양현웅의 웹디자인·퍼블리싱 포트폴리오. 카베이, 카프로, 차나와 리뉴얼과 직접 구현한 웹사이트, 브랜드·그래픽 작업.">
   <link rel="icon" href="./images/favicon.png">
   <link rel="preload" href="./fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./styles/portfolio-ux.css?v=20261012-1">
+  <link rel="stylesheet" href="./styles/swiper-14.3.0.min.css">
+  <link rel="stylesheet" href="./styles/portfolio-ux.css?v=20261012-2">
   <script src="./scripts/projects.js?v=20261006" defer></script>
   <script src="./scripts/creative-data.js?v=20261006-4" defer></script>
-  <script src="./scripts/portfolio-ux.js?v=20261006-4" defer></script>
+  <script src="./scripts/portfolio-ux.js?v=20261012-2" defer></script>
+  <script src="./scripts/vendor/swiper-14.3.0.min.js" defer></script>
+  <script src="./scripts/featured-work.js?v=20261012-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#web-project">프로젝트로 바로가기</a>
@@ -29,10 +32,37 @@
         <div class="intro-copy"><h1 id="intro-title">양현웅<span>디자인에서<br>웹 구현까지.</span></h1><div class="intro-summary"><p class="intro-description">사용자의 선택과 행동을 생각하며,<br>화면을 디자인하고 직접 구현합니다.</p><a class="intro-link" href="#web-project">작업 살펴보기 <img src="images/icons/arrow-down-right.svg" alt=""></a></div></div>
       </div>
       <div class="intro-work-band">
-      <div class="intro-work section-inner" aria-label="대표 웹 디자인 작업">
-        <a class="intro-work-item" href="?project=carbay#web-project" data-intro-project="carbay"><img src="images/work/carbay-after.jpg" alt="카베이 웹사이트 UI 디자인" width="1400" height="900" fetchpriority="high"><span>01 / CARBAY <img src="images/icons/arrow-up-right.svg" alt=""></span></a>
-        <a class="intro-work-item" href="?project=carmong#web-project" data-intro-project="carmong"><img src="images/work/carmong-home.jpg" alt="CARMONG 개인 웹사이트 디자인" width="1400" height="900"><span>02 / CARMONG <img src="images/icons/arrow-up-right.svg" alt=""></span></a>
-        <a class="intro-work-item" href="?project=carpro#web-project" data-intro-project="carpro"><img src="images/work/carpro-after.jpg" alt="카프로 웹사이트 UI 디자인" width="1400" height="900"><span>03 / CARPRO <img src="images/icons/arrow-up-right.svg" alt=""></span></a>
+      <div class="intro-work section-inner" role="region" aria-roledescription="슬라이더" aria-label="대표 웹 디자인 작업">
+        <div class="featured-slider swiper" id="featured-slider">
+          <div class="swiper-wrapper">
+            <div class="featured-slide swiper-slide" data-name="CARBAY" data-kind="회사 프로젝트 · UI 디자인 & 퍼블리싱">
+              <a class="featured-preview" href="?project=carbay#web-project" data-intro-project="carbay" aria-label="카베이 프로젝트 보기">
+                <picture class="featured-picture"><source media="(max-width: 760px)" srcset="images/work/carbay-featured-mobile.png"><img class="featured-screen" src="images/work/carbay-featured.png" alt="카베이 메인 프로모션과 상담 신청 화면" width="1280" height="546" fetchpriority="high" draggable="false"></picture>
+              </a>
+            </div>
+            <div class="featured-slide swiper-slide" data-name="CARMONG" data-kind="개인 프로젝트 · UI 디자인 & 퍼블리싱" inert aria-hidden="true">
+              <a class="featured-preview featured-mobile-pages" href="?project=carmong#web-project" data-intro-project="carmong" aria-label="CARMONG 프로젝트 보기">
+                <img src="images/work/carmong-cars.jpg" alt="CARMONG 차량 목록 화면" width="600" height="1000" draggable="false">
+                <picture class="featured-picture"><source media="(max-width: 760px)" srcset="images/work/carmong-featured-mobile.png"><img src="images/work/carmong-home.jpg" alt="CARMONG 메인 화면" width="600" height="1000" draggable="false"></picture>
+                <img src="images/work/carmong-detail.jpg" alt="CARMONG 차량 상세 화면" width="600" height="1000" draggable="false">
+              </a>
+            </div>
+            <div class="featured-slide swiper-slide" data-name="CARPRO" data-kind="회사 프로젝트 · UI 디자인 & 퍼블리싱" inert aria-hidden="true">
+              <a class="featured-preview" href="?project=carpro#web-project" data-intro-project="carpro" aria-label="카프로 프로젝트 보기">
+                <picture class="featured-picture"><source media="(max-width: 760px)" srcset="images/work/carpro-featured-mobile.png"><img class="featured-screen" src="images/work/carpro-featured.png" alt="카프로 메인 프로모션과 즉시출고 배너 화면" width="1280" height="410" draggable="false"></picture>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="featured-footer">
+          <div class="featured-caption"><p id="featured-kind">회사 프로젝트 · UI 디자인 & 퍼블리싱</p><a id="featured-open" href="?project=carbay#web-project" data-intro-project="carbay" aria-label="카베이 프로젝트 보기"><span id="featured-name">CARBAY</span><img src="images/icons/arrow-up-right.svg" alt=""></a></div>
+          <div class="featured-controls" hidden>
+            <div class="featured-pagination" role="group" aria-label="대표 작업 선택"><button type="button" data-featured-slide="0" aria-label="카베이" aria-pressed="true" title="카베이"></button><button type="button" data-featured-slide="1" aria-label="CARMONG" aria-pressed="false" title="CARMONG"></button><button type="button" data-featured-slide="2" aria-label="카프로" aria-pressed="false" title="카프로"></button></div>
+            <span class="featured-count" aria-hidden="true"><b id="featured-current">01</b><span>/ 03</span></span>
+            <button type="button" class="featured-arrow featured-prev" aria-label="이전 대표 작업" title="이전 대표 작업"><img src="images/icons/arrow-right.svg" alt=""></button><button type="button" class="featured-arrow featured-next" aria-label="다음 대표 작업" title="다음 대표 작업"><img src="images/icons/arrow-right.svg" alt=""></button>
+          </div>
+        </div>
+        <p class="featured-status" role="status" aria-atomic="true"></p>
       </div>
       </div>
       <div class="intro-bottom section-inner"><p>카베이 웹디자이너 <span>2025.09 ~ 현재</span></p><p class="intro-discipline">UI DESIGN <span>+</span> PUBLISHING</p><a href="#about">About me <img src="images/icons/arrow-down.svg" alt=""></a></div>
