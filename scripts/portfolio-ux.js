@@ -41,15 +41,18 @@
   let loadTimer;
   let frame=$('#project-frame');
   const stage=$('#preview-stage'),shell=$('#preview-shell');
+  let expandedPreview=false,actualPreviewSize=false,nativePreview=false;
+  let previewInertNodes=[];
   function fitPreview(){
     const width=stage.clientWidth;
-    const virtualWidth=device==='mobile'?390:active?.id==='business-card'?414:active?.id==='carmong'?900:1440;
-    const scale=Math.min(1,width/virtualWidth);
+    const virtualWidth=expandedPreview?1920:device==='mobile'?390:active?.id==='business-card'?414:active?.id==='carmong'?900:1440;
+    const scale=expandedPreview&&actualPreviewSize?1:Math.min(1,width/virtualWidth);
     frame.style.width=virtualWidth+'px';
     frame.style.height=Math.ceil(stage.clientHeight/scale)+'px';
     frame.style.transform=`scale(${scale})`;
     frame.style.left=Math.max(0,(width-virtualWidth*scale)/2)+'px';
     document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.device===device)));
+    if(active)$('#preview-label').textContent=active.name.toUpperCase()+(expandedPreview?' / 1920px':' / LIVE WEB');
   }
   function loadPreview(){
     clearTimeout(loadTimer);frame.classList.remove('ready');
@@ -73,6 +76,7 @@
     $('#preview-label').textContent=p.name.toUpperCase()+' / LIVE WEB';$('#project-note').textContent=p.note;
     const figma=(p.links||[]).find(([,url])=>url.includes('figma.com'));
     $('#project-figma').hidden=!figma;if(figma)$('#project-figma').href=figma[1];
+    $('#compare-open').hidden=!(p.before&&p.after);
     if(updateUrl){const url=new URL(location);url.searchParams.set('project',p.id);history.pushState({project:p.id},'',url);}
     loadPreview();fitPreview();
   }
@@ -89,27 +93,68 @@
   document.querySelectorAll('[data-device]').forEach(b=>b.addEventListener('click',()=>{device=b.dataset.device;fitPreview();}));
   new ResizeObserver(fitPreview).observe(stage);
   $('#preview-reload').addEventListener('click',loadPreview);
+  function setExpandedPreview(open){
+    expandedPreview=open;actualPreviewSize=false;
+    shell.classList.toggle('expanded',open);shell.classList.remove('actual-size');
+    document.body.classList.toggle('preview-expanded',open);
+    $('#preview-expand').hidden=open;$('#preview-close').hidden=!open;
+    $('.preview-scale-controls').hidden=!open;
+    document.querySelectorAll('[data-preview-scale]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.previewScale==='fit')));
+    if(open){
+      shell.setAttribute('role','dialog');shell.setAttribute('aria-modal','true');shell.setAttribute('aria-label','1920px 웹페이지 미리보기');
+      // Also isolate the overlay when native fullscreen is unavailable.
+      for(let node=shell;node&&node!==document.body;node=node.parentElement){
+        [...node.parentElement.children].filter(sibling=>sibling!==node).forEach(sibling=>{
+          previewInertNodes.push([sibling,sibling.inert]);sibling.inert=true;
+        });
+      }
+    }else{
+      shell.removeAttribute('role');shell.removeAttribute('aria-modal');shell.removeAttribute('aria-label');
+      previewInertNodes.forEach(([node,inert])=>{node.inert=inert;});previewInertNodes=[];
+    }
+    stage.scrollLeft=0;stage.scrollTop=0;fitPreview();
+    $(open?'#preview-close':'#preview-expand').focus({preventScroll:true});
+  }
+  async function closeExpandedPreview(){
+    if(document.fullscreenElement===shell){try{await document.exitFullscreen();}catch{}}
+    if(expandedPreview)setExpandedPreview(false);
+  }
   $('#preview-expand').addEventListener('click',async()=>{
-    if(document.fullscreenElement){await document.exitFullscreen();return;}
-    if(shell.requestFullscreen){try{await shell.requestFullscreen();}catch{window.open(active.url,'_blank','noopener');}}
-    else window.open(active.url,'_blank','noopener');
+    if(expandedPreview)return;
+    setExpandedPreview(true);
+    if(shell.requestFullscreen){try{await shell.requestFullscreen();}catch{/* The fixed overlay remains available. */}}
+    if(expandedPreview){fitPreview();$('#preview-close').focus({preventScroll:true});}
   });
+  $('#preview-close').addEventListener('click',closeExpandedPreview);
+  document.querySelectorAll('[data-preview-scale]').forEach(button=>button.addEventListener('click',()=>{
+    actualPreviewSize=button.dataset.previewScale==='actual';
+    shell.classList.toggle('actual-size',actualPreviewSize);stage.scrollLeft=0;stage.scrollTop=0;
+    document.querySelectorAll('[data-preview-scale]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    fitPreview();
+  }));
+  document.addEventListener('keydown',event=>{if(expandedPreview&&event.key==='Escape'){event.preventDefault();closeExpandedPreview();}});
   document.addEventListener('fullscreenchange',()=>{
-    const expanded=!!document.fullscreenElement;
-    $('#preview-expand').setAttribute('aria-label',expanded?'확대 종료':'미리보기 확대');
-    $('#preview-expand').title=expanded?'확대 종료':'미리보기 확대';
-    $('#preview-expand img').src=expanded?'images/icons/x.svg':'images/icons/maximize-2.svg';fitPreview();
+    if(document.fullscreenElement===shell){nativePreview=true;fitPreview();}
+    else if(nativePreview){nativePreview=false;if(expandedPreview)setExpandedPreview(false);}
   });
   const dialog=$('#work-dialog');let opener;
   function openDialog(label,content){opener=document.activeElement;$('#dialog-label').textContent=label;$('#dialog-content').innerHTML=content;dialog.showModal();dialog.scrollTop=0;document.body.classList.add('modal-open');$('#dialog-close').focus();}
   $('#dialog-close').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
   dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');opener?.focus({preventScroll:true});});
+  function comparisonContent(p){
+    if(!p.before||!p.after)return '';
+    return `<div class="comparison">${[['before',p.beforeLabel,p.beforeText],['after',p.id==='carbay'?'리뉴얼 후 화면 기록':p.afterLabel,p.afterText]].map(([key,label,copy])=>`<figure><figcaption>${esc(label)}</figcaption><a href="images/work/${esc(p[key])}.jpg" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.name+' '+label+' 원본 이미지 보기')}"><img src="images/work/${esc(p[key])}.jpg" alt="${esc(p.name+' '+label)}"></a><p>${esc(copy)}</p></figure>`).join('')}</div>`;
+  }
+  $('#compare-open').addEventListener('click',()=>{
+    const p=active;
+    if(!p.before||!p.after)return;
+    openDialog('리뉴얼 전후 비교',`<h2 id="dialog-title" class="dialog-title">${esc(p.name)} 전후 비교</h2><p class="dialog-description">${esc(p.intro)}</p>${comparisonContent(p)}<div class="case-changes">${(p.changes||[]).map(([title,copy])=>`<div><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('')}</div><p class="dialog-note">비교 이미지는 작업 당시 보관한 화면입니다. 최신 구현 화면은 사이트 열기에서 확인할 수 있습니다.</p><div class="dialog-actions"><a class="button" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">사이트 열기 ${arrow}</a></div>`);
+  });
   $('#case-open').addEventListener('click',()=>{
     const p=active;
     const links=[['구현 사이트 열기',p.url],...(p.links||[])];
-    let comparison='';
-    if(p.before)comparison=`<div class="comparison">${[['before',p.beforeLabel,p.beforeText],['after',p.afterLabel,p.afterText]].map(([key,label,copy])=>`<figure><figcaption>${esc(label)}</figcaption><img src="images/work/${esc(p[key])}.jpg" alt="${esc(p.name+' '+label)}" loading="lazy"><p>${esc(copy)}</p></figure>`).join('')}</div>`;
+    const comparison=comparisonContent(p);
     openDialog(p.type,`<h2 id="dialog-title" class="dialog-title">${esc(p.name)}<br>${esc(p.title||p.summary)}</h2><p class="dialog-description">${esc(p.intro)}</p><div class="dialog-actions">${links.map(([label,url])=>`<a class="button" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ${arrow}</a>`).join('')}</div><div class="case-changes">${(p.changes||[]).map(([title,copy])=>`<div><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('')}</div>${comparison}<p class="dialog-note">${esc(p.note)}${p.id==='carbay'?' 전후 비교 이미지는 이전 기록이며, 위 시연 화면이 최신 소스 기준입니다.':''}</p>`);
   });
   const labels={banner:'배너',detail:'상세페이지',sns:'SNS',brand:'로고·브랜딩',popup:'팝업',concept:'UI 시안'};
