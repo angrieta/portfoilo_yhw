@@ -1,0 +1,239 @@
+[
+  {
+    "brand": "sb",
+    "name": "StarbucksSiren",
+    "url": "https://www.figma.com/api/mcp/asset/dc82c66e-c3d9-4887-adc8-710bdc9a3995.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ProductPhotograph",
+    "url": "https://www.figma.com/api/mcp/asset/5ff0baaf-4a46-47b0-8bdd-b4a6152034d0.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ProductPhotograph1",
+    "url": "https://www.figma.com/api/mcp/asset/9a0e3eb4-aa17-4f4a-998c-496c53c5e7ee.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ProductPhotograph2",
+    "url": "https://www.figma.com/api/mcp/asset/23315459-6826-4d27-849f-7046b968131b.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ProductPhotograph3",
+    "url": "https://www.figma.com/api/mcp/asset/e7262ca9-edba-4fff-b5c8-fb9efffa395a.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ProductPhotograph4",
+    "url": "https://www.figma.com/api/mcp/asset/a680d857-57a4-4d43-a843-988c29f92260.png"
+  },
+  {
+    "brand": "sb",
+    "name": "DrinkFoodAndMerchandiseCollection",
+    "url": "https://www.figma.com/api/mcp/asset/e37780ad-1d8c-4331-9695-1746a594dbbe.png"
+  },
+  {
+    "brand": "sb",
+    "name": "1971DarkRoastCoffeeBeans",
+    "url": "https://www.figma.com/api/mcp/asset/7dede3d8-220a-4700-b483-2f8346cf21b1.png"
+  },
+  {
+    "brand": "sb",
+    "name": "CostaRicaReserveCoffee",
+    "url": "https://www.figma.com/api/mcp/asset/27c02c18-88f1-4750-a266-22cfecf7281c.png"
+  },
+  {
+    "brand": "sb",
+    "name": "ReserveCoffeeMoments",
+    "url": "https://www.figma.com/api/mcp/asset/bb8d233c-f95c-43b9-843d-b7de0b89f3e5.png"
+  },
+  {
+    "brand": "sb",
+    "name": "CoffeeHouseCircle",
+    "url": "https://www.figma.com/api/mcp/asset/3340b7dc-a7bf-46a9-8b7b-18bae3813ffa.png"
+  },
+  {
+    "brand": "sb",
+    "name": "StoreCircle",
+    "url": "https://www.figma.com/api/mcp/asset/cd0c81cc-06e3-4514-8990-332220c2a2b3.png"
+  },
+  {
+    "brand": "sb",
+    "name": "reserve-gwanghwamun",
+    "file": "sb-reserve-gwanghwamun.jpg",
+    "width": 2000,
+    "height": 1257,
+    "source_page": "https://stories.starbucks.com/asia/stories/2025/experience-the-new-starbucks-reserve-destinations-across-asia-pacific/",
+    "url": "https://about.starbucks.com/uploads/sites/29/2025/09/20250826-스타벅스-사진자료9_스타벅스-리저브의-끝판왕-프리미엄-커피-라운지-‘리저브광화문-오픈-scaled-e1756961520205.jpg"
+  },
+  {
+    "brand": "ts",
+    "name": "StrawberryChocolateCakeCollection",
+    "file": "ts-StrawberryChocolateCakeCollection.png",
+    "url": "https://www.figma.com/api/mcp/asset/0df3b242-1706-4e7c-99a5-52ce807c4bb9.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "IceboxCakeTexture",
+    "file": "ts-IceboxCakeTexture.png",
+    "url": "https://www.figma.com/api/mcp/asset/65ac094c-03ed-46df-856b-123e4d87848f.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "CoffeePairingCollection",
+    "file": "ts-CoffeePairingCollection.png",
+    "url": "https://www.figma.com/api/mcp/asset/6461b261-2a12-4f25-9db2-495ca59edede.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "CraftAndExpertise",
+    "file": "ts-CraftAndExpertise.png",
+    "url": "https://www.figma.com/api/mcp/asset/05858a5f-f980-4ee5-8f6a-27d4f84403c2.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "CraftAndExpertise1",
+    "file": "ts-CraftAndExpertise1.png",
+    "url": "https://www.figma.com/api/mcp/asset/4ed9d1b1-f3d4-4d17-a8ed-e99228c9f50f.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "CraftAndExpertise2",
+    "file": "ts-CraftAndExpertise2.png",
+    "url": "https://www.figma.com/api/mcp/asset/450497cc-7722-41b7-8252-286492906ccc.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "OfficialTwosomeBrandFilm",
+    "file": "ts-OfficialTwosomeBrandFilm.png",
+    "url": "https://www.figma.com/api/mcp/asset/1b11983d-82fa-4a8f-95e9-f9698b2a9f44.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "StoreInterior",
+    "file": "ts-StoreInterior.png",
+    "url": "https://www.figma.com/api/mcp/asset/a274088d-bad5-44bf-8989-906357fcdaa0.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "StoreInterior1",
+    "file": "ts-StoreInterior1.png",
+    "url": "https://www.figma.com/api/mcp/asset/c3d56e38-a8bd-4eb1-b79a-06a4288d6486.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "StoreInterior2",
+    "file": "ts-StoreInterior2.png",
+    "url": "https://www.figma.com/api/mcp/asset/55ca885f-6236-471b-acb9-90199975bee9.png",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "Menu",
+    "file": "ts-Menu.svg",
+    "url": "https://www.figma.com/api/mcp/asset/ab630a5f-896c-40e4-8b0c-513220489c9d.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowRight",
+    "file": "ts-ArrowRight.svg",
+    "url": "https://www.figma.com/api/mcp/asset/85e12a46-092c-40a7-bf47-e73e7d422bbe.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowDown",
+    "file": "ts-ArrowDown.svg",
+    "url": "https://www.figma.com/api/mcp/asset/74888704-7ee5-45a2-8e40-abf5a6ebb0db.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight",
+    "file": "ts-ArrowUpRight.svg",
+    "url": "https://www.figma.com/api/mcp/asset/df312075-e6dd-49c2-ad33-68cd62268e59.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight1",
+    "file": "ts-ArrowUpRight1.svg",
+    "url": "https://www.figma.com/api/mcp/asset/18889ef3-f860-4740-8680-d0206172cd19.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight2",
+    "file": "ts-ArrowUpRight2.svg",
+    "url": "https://www.figma.com/api/mcp/asset/d3ba70b4-6532-4589-9dae-c7ad3609e153.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "Play",
+    "file": "ts-Play.svg",
+    "url": "https://www.figma.com/api/mcp/asset/a12f4f85-a1b4-4e85-906c-841d6761f961.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight3",
+    "file": "ts-ArrowUpRight3.svg",
+    "url": "https://www.figma.com/api/mcp/asset/a0dafb29-3f5f-42e2-85f8-353fe2074267.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "Menu1",
+    "file": "ts-Menu1.svg",
+    "url": "https://www.figma.com/api/mcp/asset/d610c8ee-d652-41ce-a0c3-3fb2d5dc9cc5.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "Heart",
+    "file": "ts-Heart.svg",
+    "url": "https://www.figma.com/api/mcp/asset/2786911e-f9bc-484b-a2a4-fc2c04455883.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "Heart1",
+    "file": "ts-Heart1.svg",
+    "url": "https://www.figma.com/api/mcp/asset/41800c37-b310-4bf9-84d1-83c8a67671f6.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowRight1",
+    "file": "ts-ArrowRight1.svg",
+    "url": "https://www.figma.com/api/mcp/asset/6d5e5953-0445-4bd0-a662-0e89d96afd9b.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight4",
+    "file": "ts-ArrowUpRight4.svg",
+    "url": "https://www.figma.com/api/mcp/asset/2e81b407-61db-4d4e-89db-e8dcb0db411f.svg",
+    "figma_node": "61:2189"
+  },
+  {
+    "brand": "ts",
+    "name": "ArrowUpRight5",
+    "file": "ts-ArrowUpRight5.svg",
+    "url": "https://www.figma.com/api/mcp/asset/016cc562-d758-4aed-bc67-bf867d10ba36.svg",
+    "figma_node": "61:2189"
+  }
+]

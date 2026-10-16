@@ -57,6 +57,36 @@ window.portfolioProjects = [
     links: [['기존 운영 사이트', 'https://www.chanawa.co.kr/'], ['Figma 작업 파일', 'https://www.figma.com/design/M76Os4WpCOZ3zFDt5hgnpJ/Untitled?node-id=2004-12']]
   },
   {
+    id: 'starbucks', name: '스타벅스', english: 'STARBUCKS', type: '개인 리디자인', category: '커피 브랜드 · 반응형 랜딩페이지',
+    title: '잠깐의 여유가, 더 좋은 하루로',
+    summary: '세이지 그린과 편안한 여백으로 메뉴 탐색부터 커피 이야기, 매장 찾기를 연결한 랜딩페이지.',
+    period: '2026.10', status: '반응형 웹사이트', role: 'UI 디자인 · 퍼블리싱',
+    url: './demos/coffee/index.html', pages: '추천 메뉴 · 메뉴 필터 · 커피 스토리 · 매장 찾기',
+    intro: 'Figma 초안을 바탕으로 스타벅스의 편안한 일상을 새롭게 풀어낸 개인 리디자인입니다. 부드러운 그린 계열과 곡선, 제품 중심의 화면을 사용하고 메뉴 탐색에서 브랜드 이야기와 매장 검색으로 이어지도록 구성했습니다.',
+    changes: [
+      ['부드러운 브랜드 경험', '여백과 둥근 형태, 세이지 그린을 중심으로 제품과 설명을 차분하게 읽을 수 있는 화면을 구성했습니다.'],
+      ['메뉴 탐색', '추천 음료 전환, 음료 종류별 필터와 상세 화면을 구현했습니다. 메뉴와 리워드 정보는 공식 홈페이지로 연결합니다.'],
+      ['반응형과 이미지 구성', '모바일에서는 콘텐츠를 세로로 재배치하고, 원두와 스토리 이미지의 여백을 조정했습니다. 고해상도 매장 사진과 지역 검색을 제공합니다.']
+    ],
+    note: '독립 포트폴리오 리디자인입니다. 주문·결제·회원가입은 제공하지 않으며 제품 사진과 상표의 권리는 Starbucks에 있습니다.',
+    links: [['Figma 초안', 'https://www.figma.com/design/osJPU9L97s0FOmIglaQ3rN?node-id=61-1944'], ['리디자인 원본 사이트', 'https://www.starbucks.co.kr/']]
+  },
+  {
+    id: 'twosome', name: '투썸플레이스', english: 'A TWOSOME PLACE', type: '개인 리디자인', category: '디저트 브랜드 · 반응형 랜딩페이지',
+    title: '케이크와 커피, 서로를 완성하는 시간',
+    summary: '크림색 배경과 세리프 타이포그래피, 비대칭 케이크 컬렉션으로 풀어낸 디저트 브랜드 랜딩페이지.',
+    period: '2026.10', status: '반응형 웹사이트', role: 'UI 디자인 · 퍼블리싱',
+    url: './demos/coffee/twosome.html', pages: '시그니처 케이크 · 커피 페어링 · 브랜드 이야기 · 투썸하트 · 매장 찾기',
+    intro: 'Figma의 The art of pairing 시안을 반응형 웹사이트로 구현했습니다. 따뜻한 크림색 배경과 세리프 제목, 비대칭 케이크 사진으로 시작해 커피·브랜드·멤버십·공간의 이야기를 이어갑니다.',
+    changes: [
+      ['시안의 분위기를 웹으로', 'DM Serif Display와 Pretendard, 크림·브라운·버건디의 색상 대비, 비대칭 사진 배치로 시안의 인상을 구현했습니다.'],
+      ['메뉴에서 공간까지', '케이크 사진 전환과 메뉴 상세, 투썸하트 앱 안내, 지역별 매장 검색을 구현해 각 섹션에서 다음 행동으로 이어지게 했습니다.'],
+      ['반응형 레이아웃', '데스크톱에서는 큰 사진과 여백을 살리고 모바일에서는 한 열로 재배치했습니다. 메뉴와 상세 창은 키보드로 사용할 수 있습니다.']
+    ],
+    note: '독립 포트폴리오 리디자인입니다. 주문·결제·회원가입은 제공하지 않으며 제품 사진과 상표의 권리는 A Twosome Place에 있습니다.',
+    links: [['Figma 디자인 시안', 'https://www.figma.com/design/osJPU9L97s0FOmIglaQ3rN?node-id=61-2189'], ['리디자인 원본 사이트', 'https://www.twosome.co.kr/']]
+  },
+  {
     id: 'brand-reference', name: '브랜드 레퍼런스', english: 'BRAND REFERENCE', type: '개인 프로젝트', category: '디자인 레퍼런스 라이브러리',
     title: '탐색부터 수집과 비교까지, 디자인 참고의 흐름을 잇다',
     summary: '웹사이트와 디자인 소재를 유형·색상별로 찾고, 저장하고 비교하는 레퍼런스 도구.',
