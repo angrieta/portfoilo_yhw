@@ -57,7 +57,22 @@ window.portfolioProjects = [
     links: [['기존 운영 사이트', 'https://www.chanawa.co.kr/'], ['Figma 작업 파일', 'https://www.figma.com/design/M76Os4WpCOZ3zFDt5hgnpJ/Untitled?node-id=2004-12']]
   },
   {
-    id: 'rolex', name: '롤렉스', english: 'ROLEX', type: '개인 리디자인', category: '제품 랜딩페이지 UI 디자인',
+    id: 'rolex-web', name: '롤렉스 · 웹사이트', english: 'ROLEX WEB', type: '개인 리디자인', category: '컬렉션 탐색 · 반응형 웹',
+    title: '탐색과 비교로 나만의 시계를 찾다',
+    summary: '세 가지 컬렉션의 탐색, 조건 선택, 모델 비교를 연결한 반응형 웹사이트.',
+    period: '2026.10', status: '인터랙티브 웹사이트', role: 'UI 디자인 · 퍼블리싱',
+    url: './demos/rolex-web/', pages: '컬렉션 · 조건별 탐색 · 모델 비교 · 관심 모델',
+    intro: '처음 제작한 롤렉스 웹사이트 리디자인입니다. Figma 레이아웃의 차콜과 샴페인 골드, 세리프 타이포그래피를 바탕으로 서브마리너·데이트저스트·데이토나를 탐색하는 경험을 구현했습니다. 화면 크기에 맞춰 레이아웃과 메뉴가 바뀌며 검색, 조건 선택과 모델 비교를 직접 사용할 수 있습니다.',
+    changes: [
+      ['탐색과 비교', '컬렉션 소개에서 케이스 크기·소재 선택과 사양 비교로 이어집니다. 비교표에서는 같은 사양을 숨겨 차이를 살펴볼 수 있습니다.'],
+      ['실제로 작동하는 UI', '모델명·소재·크기 검색, 상세 화면, 관심 모델 저장과 히어로 이미지 전환을 구현했습니다. 관심 모델은 해당 브라우저에 저장됩니다.'],
+      ['반응형 구성', '데스크톱의 컬렉션 그리드를 모바일에서는 세로 흐름으로 전환하고, 별도 모바일 메뉴와 가로 스크롤 비교표를 제공합니다.']
+    ],
+    note: '실제로 조작할 수 있는 반응형 웹사이트입니다. 비공식 포트폴리오 리디자인이며 제품 사진·상표의 권리는 Rolex에 있습니다. 제품 상세와 판매점 안내는 공식 사이트로 연결됩니다.',
+    links: [['Figma 레이아웃 원본', 'https://www.figma.com/design/osJPU9L97s0FOmIglaQ3rN?node-id=28-2'], ['리디자인 원본 사이트', 'https://www.rolex.com/ko']]
+  },
+  {
+    id: 'rolex', name: '롤렉스 · UI 시안', english: 'ROLEX UI', type: '개인 리디자인', category: '제품 랜딩페이지 UI 디자인',
     title: '정밀함의 깊이를 마주하다',
     summary: '서브마리너 데이트의 형태와 소재를 따라 읽는 한국어 제품 랜딩페이지.',
     image: 'rolex-submariner.jpg', period: '2026.10', status: 'UI 디자인 시안',

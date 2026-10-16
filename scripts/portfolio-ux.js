@@ -32,7 +32,7 @@
     note:'첨부한 HTML 원본의 UI 시연본입니다. 상담은 저장·전송되지 않으며, 실적 수치는 시안 기준입니다.',
     links:[],changes:[['모바일 프로필','인물, 담당 분야, 실적 정보를 한 화면에서 읽을 수 있도록 구성했습니다.'],['출고후기','사진 갤러리와 후기 상세 화면으로 작업 내용을 확장했습니다.'],['연락과 공유','연락처 저장, 링크 복사, QR 공유와 상담 화면을 구현했습니다.']]
   });
-  const groups=[['회사 프로젝트',projects.filter(p=>['carbay','carpro','chanawa','business-card'].includes(p.id))],['개인 프로젝트',projects.filter(p=>['rolex','carmong','bebedepino','time-clinic','m-mall','nuphy'].includes(p.id))],['인턴 실무',projects.filter(p=>p.id==='krizer')]];
+  const groups=[['회사 프로젝트',projects.filter(p=>['carbay','carpro','chanawa','business-card'].includes(p.id))],['개인 프로젝트',projects.filter(p=>['rolex-web','rolex','carmong','bebedepino','time-clinic','m-mall','nuphy'].includes(p.id))],['인턴 실무',projects.filter(p=>p.id==='krizer')]];
   $('#web-title span').textContent=String(projects.length).padStart(2,'0');
   $('#project-list').innerHTML=groups.map(([label,items])=>`<div class="project-group"><h3>${label}</h3>${items.map(p=>`<button type="button" class="project-choice" data-project="${p.id}" aria-pressed="false"><span class="project-number">${String(projects.indexOf(p)+1).padStart(2,'0')}</span>${esc(p.name)}</button>`).join('')}</div>`).join('');
   $('#project-select').innerHTML=groups.map(([label,items])=>`<optgroup label="${label}">${items.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</optgroup>`).join('');

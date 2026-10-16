@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111210">
+  <meta name="description" content="시간을 대하는 새로운 시선. 롤렉스의 아이코닉한 시계와 워치메이킹을 탐색하는 비공식 리디자인 포트폴리오.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="ROLEX | Time, Redefined">
+  <meta property="og:description" content="An independent design exploration. 비공식 롤렉스 리디자인 포트폴리오.">
+  <meta property="og:image" content="https://angrieta.github.io/portfoilo_yhw/demos/rolex-web/assets/hero-gold.webp">
+  <title>ROLEX | Time, Redefined · 리디자인 포트폴리오</title>
+  <link rel="icon" href="assets/crown.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero-gold.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/display.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="header">
+    <div class="nav-wrap">
+      <a href="#top" class="brand" aria-label="ROLEX 리디자인 홈"><img class="crown" src="assets/crown.svg" alt="" width="28" height="30"><img class="wordmark" src="assets/wordmark.svg" alt="ROLEX" width="88" height="16"></a>
+      <nav class="desktop-nav" aria-label="주요 메뉴"><a href="#collections">COLLECTIONS</a><a href="#craft">CRAFT</a><a href="#journal">JOURNAL</a><a href="#compare">COMPARE</a></nav>
+      <div class="nav-tools"><button class="icon-button" data-action="search" aria-label="시계 검색"><span class="icon search-icon"></span></button><span class="nav-divider"></span><button class="saved-button" data-action="saved" aria-label="MY SELECTION, 관심 모델 보기"><span class="icon heart-icon"></span><span class="saved-label">MY SELECTION</span><span class="saved-count" aria-hidden="true">0</span></button><button class="icon-button menu-button" data-action="menu" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu"><span class="icon menu-icon"></span></button></div>
+    </div>
+  </header>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="모바일 메뉴" hidden><a href="#collections">Collections <span>컬렉션</span></a><a href="#finder">Find your watch <span>나만의 시계</span></a><a href="#compare">Compare <span>모델 비교</span></a><a href="#craft">Craft <span>워치메이킹</span></a><a href="#journal">Journal <span>스토리</span></a><p>AN INDEPENDENT DESIGN EXPLORATION</p></nav>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title" aria-roledescription="carousel" aria-label="롤렉스 컬렉션 소개">
+      <div class="hero-media"><img id="hero-image" src="assets/hero-gold.webp" alt="18캐럿 옐로우 골드 서브마리너 데이트의 블랙 다이얼과 베젤 클로즈업" width="1600" height="900" fetchpriority="high"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-inner container">
+        <div class="hero-copy"><p class="eyebrow gold">A NEW PERSPECTIVE ON TIME</p><h1 id="hero-title">TIME,<br><span>REDEFINED.</span></h1><p class="hero-description">순간을 넘어, 오래도록.<br>당신만의 시간을 완성하는 롤렉스.</p><a class="button" href="#collections">컬렉션 살펴보기 <span class="icon arrow-icon"></span></a></div>
+        <div class="hero-bottom"><div class="slide-controls" aria-label="소개 이미지 선택"><button class="slide-button active" data-slide="0" aria-label="01 서브마리너 소개" aria-current="true">01<span></span></button><button class="slide-button" data-slide="1" aria-label="02 데이트저스트 소개" aria-current="false">02<span></span></button><button class="slide-button" data-slide="2" aria-label="03 데이토나 소개" aria-current="false">03<span></span></button></div><button class="hero-caption" id="hero-caption" data-action="hero-link"><span class="eyebrow">OYSTER PERPETUAL</span><strong>Submariner Date</strong><span class="caption-detail">41 mm / 18 ct yellow gold <span class="icon northeast-icon"></span></span></button></div>
+      </div>
+    </section>
+    <div class="promise container"><span class="eyebrow">A CROWN FOR EVERY ACHIEVEMENT</span><p>변하지 않는 기준. 끊임없이 진화하는 시간.</p><span class="eyebrow promise-end">PERPETUAL EXCELLENCE</span></div>
+    <section class="section container" id="collections" aria-labelledby="collections-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">THE COLLECTIONS</p><h2 id="collections-title">Three icons.<br><span class="gold">An enduring spirit.</span></h2></div><div class="heading-aside"><p>서로 다른 세계를 위한 세 가지 아이콘.<br>당신의 일상에 어울리는 시계를 만나보세요.</p><button class="text-link" data-action="explore">모델 한눈에 보기 <span class="icon northeast-icon"></span></button></div></div>
+      <div class="collection-grid" id="collection-grid"></div>
+    </section>
+    <section class="finder section" id="finder" aria-labelledby="finder-title">
+      <div class="container"><div class="section-heading reveal"><div><p class="eyebrow gold">A PERSONAL STARTING POINT</p><h2 id="finder-title">Find your watch.</h2></div><p class="heading-copy">어떤 시간이 당신에게 어울릴까요?<br>크기와 소재를 선택하고, 취향에 가까운 모델을 찾아보세요.</p></div>
+        <div class="finder-controls reveal"><fieldset><legend>CASE SIZE <span>케이스 크기</span></legend><div class="size-options"><button data-size="36" aria-pressed="false"><strong>36</strong><span>MM</span></button><button data-size="40" aria-pressed="false"><strong>40</strong><span>MM</span></button><button data-size="41" aria-pressed="true"><strong>41</strong><span>MM</span></button></div><p class="field-help" id="size-help">손목 위에 선명한 존재감을 더하는 41 mm.</p></fieldset><fieldset><legend>MATERIAL <span>소재</span></legend><div class="material-options"><button data-material="steel" aria-pressed="true"><span class="swatch steel"></span>오이스터스틸</button><button data-material="rolesor" aria-pressed="false"><span class="swatch rolesor"></span>화이트 롤레조</button></div><p class="field-help" id="material-help">견고함과 은은한 광택의 스틸.</p></fieldset><div class="finder-result" id="finder-result" aria-live="polite"></div></div>
+      </div>
+    </section>
+    <section class="section container compare-section" id="compare" aria-labelledby="compare-title">
+      <div class="section-heading reveal"><div><p class="eyebrow">THE DETAILS, SIDE BY SIDE</p><h2 id="compare-title">Clarity in every detail.</h2><p class="section-description">마음에 드는 세 모델, 작은 차이까지 나란히.</p></div><label class="switch-label"><input type="checkbox" id="differences"><span class="switch"></span>차이점만 보기</label></div>
+      <div class="comparison-scroll reveal" role="region" aria-label="롤렉스 모델 비교표. 작은 화면에서는 가로로 스크롤할 수 있습니다." tabindex="0"><table class="comparison"><caption class="sr-only">선택된 롤렉스 세 모델의 기술 사양 비교</caption><thead><tr><th scope="col" class="compare-label">YOUR SELECTION<span>세 가지 기준, 하나의 선택.</span></th><th scope="col"><img src="assets/submariner.webp" width="80" height="120" alt=""><button data-model="submariner">Submariner Date <span class="icon northeast-icon"></span></button><span>서브마리너 데이트</span></th><th scope="col"><img src="assets/datejust.webp" width="80" height="120" alt=""><button data-model="datejust">Datejust 36 <span class="icon northeast-icon"></span></button><span>데이트저스트 36</span></th><th scope="col"><img src="assets/daytona.webp" width="80" height="120" alt=""><button data-model="daytona">Cosmograph Daytona <span class="icon northeast-icon"></span></button><span>코스모그래프 데이토나</span></th></tr></thead><tbody>
+        <tr><th scope="row">케이스 크기</th><td class="large-value">41 <small>mm</small></td><td class="large-value">36 <small>mm</small></td><td class="large-value">40 <small>mm</small></td></tr>
+        <tr><th scope="row">케이스 소재</th><td>오이스터스틸</td><td>오이스터스틸 &amp; 화이트 골드</td><td>오이스터스틸</td></tr>
+        <tr><th scope="row">다이얼</th><td><span class="dial-dot black"></span>블랙</td><td><span class="dial-dot green"></span>민트 그린</td><td><span class="dial-dot white"></span>화이트</td></tr>
+        <tr><th scope="row">무브먼트</th><td>칼리버 3235<span>날짜 표시</span></td><td>칼리버 3235<span>날짜 표시</span></td><td>칼리버 4131<span>크로노그래프</span></td></tr>
+        <tr><th scope="row">파워리저브</th><td>약 70시간</td><td>약 70시간</td><td>약 72시간</td></tr>
+        <tr><th scope="row">방수 성능</th><td>300 m</td><td>100 m</td><td>100 m</td></tr>
+        <tr class="same-spec"><th scope="row">와인딩 방식</th><td>퍼페츄얼 셀프 와인딩</td><td>퍼페츄얼 셀프 와인딩</td><td>퍼페츄얼 셀프 와인딩</td></tr>
+      </tbody></table></div><p class="compare-note">표시된 레퍼런스 기준의 사양입니다. <a href="https://www.rolex.com/ko/watches" target="_blank" rel="noopener noreferrer">롤렉스 공식 정보 확인 <span aria-hidden="true">↗</span></a></p>
+    </section>
+    <section class="terminology" aria-labelledby="terms-title"><div class="container"><p class="eyebrow" id="terms-title">A LITTLE KNOWLEDGE GOES A LONG WAY</p><div class="terms-grid"><article><span class="icon ruler-icon"></span><h3>Case size <span>케이스 크기</span></h3><p>시계 케이스의 지름을 뜻합니다. 숫자가 클수록 손목 위에서 더 큰 존재감을 느낄 수 있습니다.</p></article><article><span class="icon gear-icon"></span><h3>Perpetual movement <span>퍼페츄얼 무브먼트</span></h3><p>손목의 움직임이 로터를 회전시켜 태엽을 감습니다. 일상의 움직임이 시계의 동력이 됩니다.</p></article><article><span class="icon clock-icon"></span><h3>Power reserve <span>파워리저브</span></h3><p>태엽을 충분히 감은 시계가 추가 와인딩 없이 작동할 수 있는 시간입니다.</p></article></div></div></section>
+    <section class="section craft container" id="craft" aria-labelledby="craft-title"><div class="craft-image reveal"><img src="assets/craft.webp" alt="확대경으로 시계의 마감을 세심하게 확인하는 롤렉스 워치메이커" width="1000" height="1641" loading="lazy"><span class="image-caption">THE ART OF WATCHMAKING</span></div><div class="craft-copy reveal"><p class="eyebrow gold">EXCELLENCE IN THE MAKING</p><h2 id="craft-title">Every detail.<br>Every day.<br><span class="gold">For generations.</span></h2><p>보이는 아름다움 너머, 보이지 않는 정밀함.</p><p>다이얼의 빛, 브레슬릿의 촉감, 무브먼트의 움직임까지. 하나의 롤렉스는 수많은 전문 기술과 세심한 마감이 만나 완성됩니다.</p><a class="text-link" href="https://www.rolex.com/ko/watchmaking" target="_blank" rel="noopener noreferrer">롤렉스 워치메이킹 살펴보기 <span class="icon northeast-icon"></span></a><div class="craft-signature"><img src="assets/crown.svg" width="28" height="30" alt=""><span>PRECISION IS A PRACTICE.<br>EXCELLENCE IS A COMMITMENT.</span></div></div></section>
+    <section class="journal section" id="journal" aria-labelledby="journal-title"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow">THE WORLD OF ROLEX</p><h2 id="journal-title">Beyond the dial.</h2></div><p class="heading-copy">시계에 담긴 기술과 이야기.<br>롤렉스를 조금 더 깊이 만나는 시간.</p></div><div class="journal-grid"><a class="story-card reveal" href="https://www.rolex.com/ko/watches/cosmograph-daytona" target="_blank" rel="noopener noreferrer"><div class="story-image"><img src="assets/story.webp" width="1200" height="675" alt="모터 스포츠의 역사와 함께하는 코스모그래프 데이토나" loading="lazy"><span class="story-arrow"><span class="icon northeast-icon"></span></span></div><p class="eyebrow">HERITAGE / COSMOGRAPH DAYTONA</p><h3>Born to race. Built to endure.</h3><p>속도와 정밀함을 향한 열정, 코스모그래프 데이토나.</p></a><a class="story-card reveal" href="https://www.rolex.com/ko/watches/datejust/m126234-0051" target="_blank" rel="noopener noreferrer"><div class="story-image dial-story"><img src="assets/dial.webp" width="1200" height="675" alt="선레이 피니시의 섬세한 빛을 보여주는 민트 그린 데이트저스트 다이얼" loading="lazy"><span class="story-arrow"><span class="icon northeast-icon"></span></span></div><p class="eyebrow">SAVOIR-FAIRE / THE DATEJUST</p><h3>The beauty of a finer detail.</h3><p>빛을 따라 달라지는 표정, 민트 그린 다이얼의 매력.</p></a></div></div></section>
+    <section class="section appointment container" aria-labelledby="appointment-title"><div class="reveal"><p class="eyebrow gold">YOUR TIME, YOUR CHOICE</p><h2 id="appointment-title">A personal connection.<br><span class="gold">An enduring companion.</span></h2><p>화면에서의 첫 만남을, 손목 위의 경험으로.<br>롤렉스 공식 판매점에서 당신만의 시계를 만나보세요.</p></div><div class="appointment-action reveal"><a class="button gold-button" href="https://www.rolex.com/ko/store-locator" target="_blank" rel="noopener noreferrer">공식 판매점 찾기 <span class="icon northeast-icon"></span></a><span>ROLEX.COM에서 이어집니다</span></div></section>
+  </main>
+  <footer class="container footer"><div class="footer-top"><a href="#top" class="brand" aria-label="페이지 맨 위로"><img class="crown" src="assets/crown.svg" width="28" height="30" alt=""><img class="wordmark" src="assets/wordmark.svg" width="88" height="16" alt="ROLEX"></a><p>시간을 대하는, 당신만의 태도.</p><nav aria-label="하단 메뉴"><a href="#collections">Collections</a><a href="#craft">Watchmaking</a><a href="https://www.rolex.com/ko/watch-care-and-service/caring-for-your-rolex" target="_blank" rel="noopener noreferrer">Care guide ↗</a><button data-action="about">About this project</button></nav></div><div class="footer-bottom"><span>INDEPENDENT REDESIGN / 2026</span><p>비공식 디자인 포트폴리오입니다. Rolex SA와 제휴 관계가 없으며,<br>상표와 제품 이미지의 권리는 Rolex SA에 있습니다.</p><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-top"><p class="eyebrow" id="dialog-eyebrow">ROLEX COLLECTIONS</p><button class="icon-button" data-action="close-dialog" aria-label="닫기"><span class="icon close-icon"></span></button></div><div id="dialog-content"></div></dialog>
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <noscript><div class="noscript">시계 검색과 모델 선택 기능을 사용하려면 JavaScript를 활성화해 주세요. <a href="https://www.rolex.com/ko/watches">롤렉스 공식 컬렉션 보기</a></div></noscript>
+</body>
+</html>
