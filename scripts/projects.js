@@ -57,6 +57,22 @@ window.portfolioProjects = [
     links: [['기존 운영 사이트', 'https://www.chanawa.co.kr/'], ['Figma 작업 파일', 'https://www.figma.com/design/M76Os4WpCOZ3zFDt5hgnpJ/Untitled?node-id=2004-12']]
   },
   {
+    id: 'brand-reference', name: '브랜드 레퍼런스', english: 'BRAND REFERENCE', type: '개인 프로젝트', category: '디자인 레퍼런스 라이브러리',
+    title: '탐색부터 수집과 비교까지, 디자인 참고의 흐름을 잇다',
+    summary: '웹사이트와 디자인 소재를 유형·색상별로 찾고, 저장하고 비교하는 레퍼런스 도구.',
+    period: '2026.10', status: '인터랙티브 웹사이트', role: '기획 · UI 디자인 · 퍼블리싱',
+    url: 'https://angrieta.github.io/favicon-save-Folder/?collection=gdweb&view=brands',
+    pages: '레퍼런스 탐색 · 사이트 상세 · 컬러 · 보관함',
+    intro: '브랜드와 GDWEB 선정 사이트의 화면, 버튼, 로고, 아이콘 등 디자인 참고 자료를 한곳에서 탐색하는 웹 도구입니다. 필요한 소재를 검색하고 유형과 색상으로 좁힌 뒤, 보관함에 모아 비교할 수 있도록 탐색부터 활용까지의 흐름을 구성했습니다.',
+    changes: [
+      ['목적에 맞는 탐색', '회사명·초성 검색과 소재 유형, 색상, 기기, 선정 연도 필터를 연결했습니다. 사이트별 화면과 개별 소재를 오가며 확인할 수 있습니다.'],
+      ['수집과 활용', '보관함 저장, 이미지 비교, 원본·ZIP 다운로드와 보관함 백업·복원을 구현했습니다. 선정 당시 화면과 현재 수집한 소재를 구분해 표시합니다.'],
+      ['이미지 표시와 반응형', '작은 아이콘의 과도한 확대를 방지하고, 최적화한 미리보기와 필요한 상세 자료만 불러오는 구조를 적용했습니다. 모바일 탐색과 밝은·어두운 테마를 지원합니다.']
+    ],
+    note: '검색·필터·보관함을 직접 사용할 수 있는 디자인 레퍼런스 도구입니다. 참고 이미지와 상표의 권리는 각 원저작자에게 있습니다.',
+    links: [['GitHub 저장소', 'https://github.com/angrieta/favicon-save-Folder']]
+  },
+  {
     id: 'rolex-web', name: '롤렉스 · 웹사이트', english: 'ROLEX WEB', type: '개인 리디자인', category: '컬렉션 탐색 · 반응형 웹',
     title: '탐색과 비교로 나만의 시계를 찾다',
     summary: '세 가지 컬렉션의 탐색, 조건 선택, 모델 비교를 연결한 반응형 웹사이트.',
