@@ -32,7 +32,7 @@
     note:'첨부한 HTML 원본의 UI 시연본입니다. 상담은 저장·전송되지 않으며, 실적 수치는 시안 기준입니다.',
     links:[],changes:[['모바일 프로필','인물, 담당 분야, 실적 정보를 한 화면에서 읽을 수 있도록 구성했습니다.'],['출고후기','사진 갤러리와 후기 상세 화면으로 작업 내용을 확장했습니다.'],['연락과 공유','연락처 저장, 링크 복사, QR 공유와 상담 화면을 구현했습니다.']]
   });
-  const groups=[['회사 프로젝트',projects.filter(p=>['carbay','carpro','chanawa','business-card'].includes(p.id))],['개인 프로젝트',projects.filter(p=>['carmong','bebedepino','time-clinic','m-mall','nuphy'].includes(p.id))],['인턴 실무',projects.filter(p=>p.id==='krizer')]];
+  const groups=[['회사 프로젝트',projects.filter(p=>['carbay','carpro','chanawa','business-card'].includes(p.id))],['개인 프로젝트',projects.filter(p=>['rolex','carmong','bebedepino','time-clinic','m-mall','nuphy'].includes(p.id))],['인턴 실무',projects.filter(p=>p.id==='krizer')]];
   $('#web-title span').textContent=String(projects.length).padStart(2,'0');
   $('#project-list').innerHTML=groups.map(([label,items])=>`<div class="project-group"><h3>${label}</h3>${items.map(p=>`<button type="button" class="project-choice" data-project="${p.id}" aria-pressed="false"><span class="project-number">${String(projects.indexOf(p)+1).padStart(2,'0')}</span>${esc(p.name)}</button>`).join('')}</div>`).join('');
   $('#project-select').innerHTML=groups.map(([label,items])=>`<optgroup label="${label}">${items.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</optgroup>`).join('');
@@ -45,25 +45,25 @@
   let previewInertNodes=[];
   function fitPreview(){
     const width=stage.clientWidth;
-    const virtualWidth=expandedPreview?1920:device==='mobile'?390:active?.id==='business-card'?414:active?.id==='carmong'?900:1440;
+    const virtualWidth=active?.previewType==='design'?active.previewWidth:expandedPreview?1920:device==='mobile'?390:active?.id==='business-card'?414:active?.id==='carmong'?900:1440;
     const scale=expandedPreview&&actualPreviewSize?1:Math.min(1,width/virtualWidth);
     frame.style.width=virtualWidth+'px';
     frame.style.height=Math.ceil(stage.clientHeight/scale)+'px';
     frame.style.transform=`scale(${scale})`;
     frame.style.left=Math.max(0,(width-virtualWidth*scale)/2)+'px';
     document.querySelectorAll('[data-device]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.device===device)));
-    if(active)$('#preview-label').textContent=active.name.toUpperCase()+(expandedPreview?' / 1920px':' / LIVE WEB');
+    if(active)$('#preview-label').textContent=(active.english||active.name).toUpperCase()+(active.previewType==='design'?' / UI 시안 · '+active.previewWidth+'px':expandedPreview?' / 1920px':' / LIVE WEB');
   }
   function loadPreview(){
     clearTimeout(loadTimer);frame.classList.remove('ready');
-    $('#preview-loading').hidden=false;$('#preview-loading').textContent='웹페이지를 불러오는 중입니다.';
+    $('#preview-loading').hidden=false;$('#preview-loading').textContent=active.previewType==='design'?'디자인 시안을 불러오는 중입니다.':'웹페이지를 불러오는 중입니다.';
     // A new browsing context avoids extra history entries when changing projects.
-    const next=frame.cloneNode(false);next.title=active.name+' 실제 웹페이지';next.src=active.url;
+    const next=frame.cloneNode(false);next.title=active.name+(active.previewType==='design'?' UI 디자인 시안':' 실제 웹페이지');next.src=active.url;
     next.addEventListener('load',()=>{if(next!==frame)return;clearTimeout(loadTimer);next.classList.add('ready');$('#preview-loading').hidden=true;});
     frame.replaceWith(next);frame=next;
     loadTimer=setTimeout(()=>{
       frame.classList.add('ready');$('#preview-loading').hidden=true;
-      $('#project-note').textContent=active.note+' 미리보기가 열리지 않으면 사이트 열기를 이용해 주세요.';
+      $('#project-note').textContent=active.note+' 미리보기가 열리지 않으면 '+(active.previewType==='design'?'시안 열기':'사이트 열기')+'를 이용해 주세요.';
     },18000);
   }
   function showProject(id,{updateUrl=true}={}){
@@ -72,6 +72,11 @@
     $('#project-select').value=p.id;$('#project-name').textContent=p.name;
     $('#project-type').textContent=p.type+' / '+(p.category||'WEB DESIGN');
     $('#project-summary').textContent=p.summary||p.intro;$('#project-open').href=p.url;
+    $('#project-open').innerHTML=(p.previewType==='design'?'시안 열기':'사이트 열기')+' '+arrow;
+    $('.device-controls').hidden=p.previewType==='design';
+    const expandLabel=(p.previewType==='design'?p.previewWidth:1920)+'px 전체화면 보기';
+    $('#preview-expand').setAttribute('aria-label',expandLabel);$('#preview-expand').title=expandLabel;
+    $('.preview-scale-controls').setAttribute('aria-label',(p.previewType==='design'?p.previewWidth:1920)+'px 화면 배율');
     $('#project-meta').innerHTML=[['역할',p.role],['기간',p.period||'개인 디자인 시안'],['작업 범위',p.pages]].map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
     $('#preview-label').textContent=p.name.toUpperCase()+' / LIVE WEB';$('#project-note').textContent=p.note;
     const figma=(p.links||[]).find(([,url])=>url.includes('figma.com'));
@@ -101,7 +106,7 @@
     $('.preview-scale-controls').hidden=!open;
     document.querySelectorAll('[data-preview-scale]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.previewScale==='fit')));
     if(open){
-      shell.setAttribute('role','dialog');shell.setAttribute('aria-modal','true');shell.setAttribute('aria-label','1920px 웹페이지 미리보기');
+      shell.setAttribute('role','dialog');shell.setAttribute('aria-modal','true');shell.setAttribute('aria-label',active.previewType==='design'?active.previewWidth+'px UI 디자인 시안':'1920px 웹페이지 미리보기');
       // Also isolate the overlay when native fullscreen is unavailable.
       for(let node=shell;node&&node!==document.body;node=node.parentElement){
         [...node.parentElement.children].filter(sibling=>sibling!==node).forEach(sibling=>{
@@ -153,7 +158,7 @@
   });
   $('#case-open').addEventListener('click',()=>{
     const p=active;
-    const links=[['구현 사이트 열기',p.url],...(p.links||[])];
+    const links=[[p.previewType==='design'?'전체 시안 보기':'구현 사이트 열기',p.url],...(p.links||[])];
     const comparison=comparisonContent(p);
     openDialog(p.type,`<h2 id="dialog-title" class="dialog-title">${esc(p.name)}<br>${esc(p.title||p.summary)}</h2><p class="dialog-description">${esc(p.intro)}</p><div class="dialog-actions">${links.map(([label,url])=>`<a class="button" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ${arrow}</a>`).join('')}</div><div class="case-changes">${(p.changes||[]).map(([title,copy])=>`<div><h3>${esc(title)}</h3><p>${esc(copy)}</p></div>`).join('')}</div>${comparison}<p class="dialog-note">${esc(p.note)}${p.id==='carbay'?' 전후 비교 이미지는 이전 기록이며, 위 시연 화면이 최신 소스 기준입니다.':''}</p>`);
   });

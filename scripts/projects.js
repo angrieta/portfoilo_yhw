@@ -57,6 +57,22 @@ window.portfolioProjects = [
     links: [['기존 운영 사이트', 'https://www.chanawa.co.kr/'], ['Figma 작업 파일', 'https://www.figma.com/design/M76Os4WpCOZ3zFDt5hgnpJ/Untitled?node-id=2004-12']]
   },
   {
+    id: 'rolex', name: '롤렉스', english: 'ROLEX', type: '개인 리디자인', category: '제품 랜딩페이지 UI 디자인',
+    title: '정밀함의 깊이를 마주하다',
+    summary: '서브마리너 데이트의 형태와 소재를 따라 읽는 한국어 제품 랜딩페이지.',
+    image: 'rolex-submariner.jpg', period: '2026.10', status: 'UI 디자인 시안',
+    role: 'UI 디자인', previewType: 'design', previewWidth: 1440,
+    url: './demos/rolex/', pages: '제품 소개 · 디테일 · 모델 구성 · 제품 사양',
+    intro: '롤렉스 한국어 웹사이트를 제품 중심으로 재해석한 개인 디자인입니다. 서브마리너 데이트 한 모델에 집중해 전체 형태에서 소재와 마감, 모델 구성과 사양으로 이어지는 흐름을 설계했습니다. 한국어 제목과 설명, 절제된 색감과 여백으로 차분하고 명확하게 읽히도록 구성했습니다.',
+    changes: [
+      ['제품 중심의 전개', '대표 이미지, 구조를 짚는 설명, 비대칭 매크로 이미지로 제품을 단계적으로 살펴보도록 구성했습니다.'],
+      ['한국어 정보 위계', '메뉴부터 제목, 구성 옵션과 사양까지 한국어 중심으로 정리하고 Pretendard로 읽기 흐름을 맞췄습니다.'],
+      ['소재와 정보의 대비', '브랜드와 소재 장면에는 어두운 배경을, 구성과 사양에는 밝은 배경을 사용했습니다. 실제 126610LN 모델의 자료를 기준으로 디자인했습니다.']
+    ],
+    note: '1440px 데스크톱 UI 디자인 시안입니다. 스크롤로 전체 화면을 살펴볼 수 있으며, 이미지 안의 메뉴와 옵션은 정적 표현입니다. 비공식 포트폴리오 작업으로 제품 사진·상표의 권리는 Rolex에 있습니다.',
+    links: [['Figma 디자인 원본', 'https://www.figma.com/design/jKqAvanQMOJxUsMZXWfj4N?node-id=2-36'], ['리디자인 원본 사이트', 'https://www.rolex.com/ko/watches/submariner/m126610ln-0001']]
+  },
+  {
     id: 'carmong', name: 'CARMONG', english: 'CARMONG', type: '개인 프로젝트', category: '사이트 디자인 시안 #3 · #4',
     title: '자동차 견적을 친근하게 풀어내는 디자인', role: '개인 사이트 디자인', status: '개인 디자인 시안',
     intro: '회사 업무와 별개로 만든 자동차 비교견적 사이트 디자인입니다. 노란색 중심의 컬러와 캐릭터를 활용해 친근한 인상을 만들고, 차량 탐색·견적·FAQ를 하나의 시각 언어로 연결했습니다.',
