@@ -47,8 +47,8 @@
   region.addEventListener('keydown', event => {
     if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
     const actions = {
-      ArrowLeft: () => slider.slidePrev(), ArrowRight: () => slider.slideNext(),
-      Home: () => slider.slideTo(0), End: () => slider.slideTo(slider.slides.length - 1)
+      ArrowLeft: () => slider.slidePrev(0), ArrowRight: () => slider.slideNext(0),
+      Home: () => slider.slideTo(0, 0), End: () => slider.slideTo(slider.slides.length - 1, 0)
     };
     if (!actions[event.key]) return;
     event.preventDefault();
