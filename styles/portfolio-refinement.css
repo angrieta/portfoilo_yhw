@@ -162,7 +162,8 @@ html{scroll-behavior:auto}
 .related-art>h3{font-size:22px;margin-bottom:10px}
 .related-art>p{font-size:14px;color:var(--muted);line-height:1.8}
 .related-art figure{margin:24px 0 0;background:var(--tint);padding:20px}
-.related-art img{width:auto;max-height:440px;object-fit:contain;margin:auto}
+.related-art a{display:block}
+.related-art img{width:100%;height:auto;max-height:760px;object-fit:contain;margin:auto}
 .related-art figcaption{font-size:14px;line-height:1.6;margin-top:14px}
 .campaign-application{margin:24px 0 32px;padding:20px;background:var(--tint)}
 .campaign-application img{width:100%;height:auto}
