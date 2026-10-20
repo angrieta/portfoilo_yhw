@@ -33,7 +33,7 @@
     links:[],changes:[['모바일 프로필','인물, 담당 분야, 실적 정보를 한 화면에서 읽을 수 있도록 구성했습니다.'],['출고후기','사진 갤러리와 후기 상세 화면으로 작업 내용을 확장했습니다.'],['연락과 공유','연락처 저장, 링크 복사, QR 공유와 상담 화면을 구현했습니다.']]
   });
   const caseData=window.portfolioCases||{};
-  const selectedIds=['carbay','business-card','brand-reference','rolex-web','twosome'];
+  const selectedIds=['carbay','business-card','brand-reference','moru','rolex-web','twosome'];
   const familyId=id=>id==='rolex'?'rolex-web':id;
   const projectLabel=p=>p.id==='rolex-web'?'롤렉스 리디자인':p.name;
   const groups=[
